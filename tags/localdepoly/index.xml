@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>LocalDepoly on tothemoon&#39;s blog</title>
-    <link>https://amber916young.github.io/tags/localdepoly/</link>
+    <link>https://hupochuanbird.github.io/tags/localdepoly/</link>
     <description>Recent content in LocalDepoly on tothemoon&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved</copyright>
-    <lastBuildDate>Tue, 13 Jun 2023 18:20:07 +0100</lastBuildDate><atom:link href="https://amber916young.github.io/tags/localdepoly/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Jun 2023 18:20:07 +0100</lastBuildDate><atom:link href="https://hupochuanbird.github.io/tags/localdepoly/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>使用XAMPP本地部署Flarum在MAC环境中</title>
-      <link>https://amber916young.github.io/posts/depoly-locally-macos-apache2/</link>
+      <link>https://hupochuanbird.github.io/posts/depoly-locally-macos-apache2/</link>
       <pubDate>Tue, 13 Jun 2023 18:20:07 +0100</pubDate>
       
-      <guid>https://amber916young.github.io/posts/depoly-locally-macos-apache2/</guid>
+      <guid>https://hupochuanbird.github.io/posts/depoly-locally-macos-apache2/</guid>
       <description>简单的流程只有三个，不过部署会遇到很多问题，mac自带apache的配置我实在是没弄好，还是下载了XAMPP来部署。
 下载XAMPP 下载composer 下载Flarum 1️⃣ Download XAMPP 进入官网，选择OS X操作系统。 双击dmg可能会出现不允许安装的情况。如果出现这种情况需要进入安全&amp;amp;隐私，输入密码点击同意就可以继续安装了。
 傻瓜安装，完成后运行。

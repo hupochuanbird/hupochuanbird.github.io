@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ubuntu on tothemoon&#39;s blog</title>
-    <link>https://amber916young.github.io/tags/ubuntu/</link>
+    <link>https://hupochuanbird.github.io/tags/ubuntu/</link>
     <description>Recent content in Ubuntu on tothemoon&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved</copyright>
-    <lastBuildDate>Sat, 10 Jun 2023 19:31:49 +0100</lastBuildDate><atom:link href="https://amber916young.github.io/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 Jun 2023 19:31:49 +0100</lastBuildDate><atom:link href="https://hupochuanbird.github.io/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Flarum:部署到云端(ubuntu 22.04)</title>
-      <link>https://amber916young.github.io/posts/flarum-deploy-to-cloud/</link>
+      <link>https://hupochuanbird.github.io/posts/flarum-deploy-to-cloud/</link>
       <pubDate>Sat, 10 Jun 2023 19:31:49 +0100</pubDate>
       
-      <guid>https://amber916young.github.io/posts/flarum-deploy-to-cloud/</guid>
+      <guid>https://hupochuanbird.github.io/posts/flarum-deploy-to-cloud/</guid>
       <description>关于如何部署Flarum这个论坛框架有多种方法，1）直接linux命令 2）Docker部署 3）宝塔。 本文选第一种方法，因为简单，省内存。另外，建议所有的版本号最好都做记录，便于未来迁移。
 此配置不包含SSL
 1️⃣ Deployment preparation 一台服务器，选择ubuntu系统。 域名（可选，如果没有域名可以直接用ip访问）。 2️⃣ Login to the server 不论用什么服务商，点击连接到服务器。请直接输入一下命令，如果出现permission deny错误，请用 sudo命令。

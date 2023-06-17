@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cloud on tothemoon&#39;s blog</title>
-    <link>https://amber916young.github.io/categories/cloud/</link>
+    <link>https://hupochuanbird.github.io/categories/cloud/</link>
     <description>Recent content in Cloud on tothemoon&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved</copyright>
-    <lastBuildDate>Wed, 14 Jun 2023 18:37:01 +0100</lastBuildDate><atom:link href="https://amber916young.github.io/categories/cloud/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Jun 2023 18:37:01 +0100</lastBuildDate><atom:link href="https://hupochuanbird.github.io/categories/cloud/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Flarum框架如何连接云端数据库，保证数据一致性</title>
-      <link>https://amber916young.github.io/posts/flarum-connect-to-clouddb/</link>
+      <link>https://hupochuanbird.github.io/posts/flarum-connect-to-clouddb/</link>
       <pubDate>Wed, 14 Jun 2023 18:37:01 +0100</pubDate>
       
-      <guid>https://amber916young.github.io/posts/flarum-connect-to-clouddb/</guid>
+      <guid>https://hupochuanbird.github.io/posts/flarum-connect-to-clouddb/</guid>
       <description>本文基于作者的理解，如有错误，欢迎指正
 考虑到未来数据量过大的情况下，数据迁移会很麻烦，本地部署每次都是重新创建。所以本地和云端必须要保持数据一致，并且定期做整个数据库的备份。
 简单的思路就是，在本地搭建一个新的框架并且运行起来 (本地搭建), 连接云端数据库或者吧云端数据库拷贝本地运行。并且需要把插件包本地安装一遍，来保证云端和本地的数据一致性。 连接云端数据库 同步插件库 云端数据库下载到本地运行 为了简化操作才直接连云端数据库的，实际上在开发环境不允许直接操作生产环境的数据。所以可以省略第一步。
