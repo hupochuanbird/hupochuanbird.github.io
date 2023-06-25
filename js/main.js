@@ -247,10 +247,12 @@ Array.prototype.forEach.call(highlightBlocks, addCopyButton);
     var scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
     if (rootElement.scrollTop / scrollTotal > 0.1) {
       scrollToTopBtn.classList.add("showBtn");
+      top.classList.remove("transparent");
       top.classList.add( "menu-shrink");
     } else {
       scrollToTopBtn.classList.remove("showBtn");
       top.classList.remove("menu-shrink");
+      top.classList.add( "transparent");
     }
   }
   

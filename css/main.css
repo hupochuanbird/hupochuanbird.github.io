@@ -52,6 +52,9 @@
     padding-bottom: 0.2rem;
 	border-bottom: 1px solid;
 }
+.transparent{
+	background:transparent;
+}
 #top-nav{
 	transition: all 0.3s ease-in-out; 
 }
