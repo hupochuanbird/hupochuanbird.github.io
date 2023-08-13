@@ -7,7 +7,7 @@
     <meta name="author" content="tothemoon">
     <meta name="keywords" content="blog,life,code,desgin,woman stem">
 
-    <title>Flarum框架如何连接云端数据库，保证数据一致性 | tothemoon&#39;s blog</title>
+    <title>Flarum Connects to AWS RDs | tothemoon&#39;s blog</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link rel="icon" type="image/png" href="/images/favicon.png" />
@@ -214,7 +214,7 @@
       <div class="flex flex-col sm:flex-row ">  
         <div class="w-full sm:w-10 sm:mt-10">
           <div class="page-title">
-            <h1>Flarum框架如何连接云端数据库，保证数据一致性</h1>
+            <h1>Flarum Connects to AWS RDs</h1>
           </div>
          
 
@@ -232,15 +232,13 @@
             <div class="article-meta-info">
                 <span class="article-date article-meta-item">
                     <i class="fa fa-pen"></i>&nbsp;
-                    <span class="pc">June 14, 2023</span>
+                    <span class="pc">August 13, 2023</span>
                 </span>
                 
                 <div class="article-categories article-meta-item">
                     <span class="fa fa-folder-open"></span>
                     
                     <a href="https://hupochuanbird.github.io/categories/flarum/">Flarum</a>&nbsp;
-                    
-                    <a href="https://hupochuanbird.github.io/categories/cloud/">Cloud</a>&nbsp;
                     
                 </div>
                 
@@ -250,17 +248,29 @@
                     <ul>
                         
                         <li>
-                        #<a href="https://hupochuanbird.github.io/tags/database/">database</a>&nbsp;
+                        #<a href="https://hupochuanbird.github.io/tags/tutorial/">Tutorial</a>&nbsp;
+                        </li>
+                        
+                        <li>
+                        #<a href="https://hupochuanbird.github.io/tags/cloud/">Cloud</a>&nbsp;
+                        </li>
+                        
+                        <li>
+                        #<a href="https://hupochuanbird.github.io/tags/aws/">AWS</a>&nbsp;
+                        </li>
+                        
+                        <li>
+                        #<a href="https://hupochuanbird.github.io/tags/rds/">RDs</a>&nbsp;
                         </li>
                         
                     </ul>
                 </span>
                 
                 <span class="article-wordcount article-meta-item">
-                    <i class="fa fa-book"></i>&nbsp;<span>1056 Words</span>
+                    <i class="fa fa-book"></i>&nbsp;<span>336 Words</span>
                 </span>
                 <span class="article-min2read article-meta-item">
-                    <i class="fa fa-clock"></i>&nbsp;<span>1 mins</span>
+                    <i class="fa fa-clock"></i>&nbsp;<span>2 mins</span>
                 </span>
                 <span class="article-pv article-meta-item">
                     <i class="fa-regular fa-eye"></i>&nbsp;
@@ -278,159 +288,146 @@
             
 
             <div class="page-content">
-              <p><strong>本文基于作者的理解，如有错误，欢迎指正</strong></p>
-<p>考虑到未来数据量过大的情况下，数据迁移会很麻烦，本地部署每次都是重新创建。所以本地和云端必须要保持数据一致，并且定期做整个数据库的备份。</p>
-<p>
-简单的思路就是，在本地搭建一个新的框架并且运行起来 (<a href="https://amber916young.github.io/posts/depoly-locally-macos-apache2/">本地搭建</a>), 连接云端数据库或者吧云端数据库拷贝本地运行。并且需要把插件包本地安装一遍，来保证云端和本地的数据一致性。
-</p>
+              <blockquote>
+<blockquote>
+<p>For the majority tutorial, the flarum always connects with the localhost db directly. However, base on my knowledge, once the server shutdown or reboot, the data could be lost, also it&rsquo;s not easy to debug(although flaurm has logs files to record all errors). So I suppose that separate db and flaurm server.</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>In this section, I use AWS EC2 and RDs to implement my solution.</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>For how to deploy the Flarum in EC2, I will write author article, but to be honest, it&rsquo;s the common way for deploying to any other Linux server.</p>
+</blockquote>
+</blockquote>
+<h2 id="preparation">Preparation</h2>
 <ol>
-<li>连接云端数据库</li>
-<li>同步插件库</li>
-<li>云端数据库下载到本地运行</li>
+<li>Creating a Database</li>
+<li>Setting the security group</li>
+<li>Testing locally(I use navicat)</li>
+<li>Updating the config.php in Flarum</li>
 </ol>
-<p>为了简化操作才直接连云端数据库的，实际上在开发环境不允许直接操作生产环境的数据。所以可以省略第一步。</p>
-<h2 id="1-connect-clouddb">1️⃣ Connect CloudDB</h2>
-<p>根据上文，在首页输入数据库信息，flarum框架会自动创建默认的所有表。在项目文件中，<strong>config.php</strong>就是存放数据库信息的配置文件。</p>
-<div class="polaroid" style="width:100%" >
-   <a data-fancybox="gallery" data-src="https://i.imgloc.com/2023/06/15/VOeN13.png">
-        <img src="https://i.imgloc.com/2023/06/15/VOeN13.png"/>
-    </a>
-    <div class="container">
-        <p> 默认生成的配置文件 </p>
-    </div>
-</div>
-<p>要连接Flarum到云数据库，你需要进行以下步骤：</p>
-<ol>
-<li>获取云数据库的连接信息，包括主机名（IP地址或域名）、端口号、数据库名称、用户名和密码。</li>
-<li>打开Flarum的配置文件。默认情况下，该文件位于Flarum根目录下的config.php文件。</li>
-<li>在配置文件中，找到数据库相关的配置部分。这是默认的结构：</li>
-</ol>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;database&#39;</span> <span style="color:#f92672">=&gt;</span> [
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;driver&#39;</span>    <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;mysql&#39;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;host&#39;</span>      <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;localhost&#39;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;database&#39;</span>  <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;flarum&#39;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;username&#39;</span>  <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;root&#39;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;password&#39;</span>  <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;&#39;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;charset&#39;</span>   <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;utf8mb4&#39;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;collation&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;utf8mb4_unicode_ci&#39;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;prefix&#39;</span>    <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;&#39;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;strict&#39;</span>    <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">false</span>,
-</span></span><span style="display:flex;"><span>    ],</span></span></code></pre></td></tr></table>
-</div>
-</div>
-<ol start="4">
-<li>根据云数据库提供的连接信息，将上述代码中的主机名、数据库名称、用户名和密码等信息进行相应的更改。</li>
-</ol>
-<p><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;database&#39;</span> <span style="color:#f92672">=&gt;</span> [
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;driver&#39;</span>    <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;mysql&#39;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;host&#39;</span>      <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;your-cloud-db-hostname&#39;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;database&#39;</span>  <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;your-cloud-db-name&#39;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;username&#39;</span>  <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;your-cloud-db-username&#39;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;password&#39;</span>  <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;your-cloud-db-password&#39;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;charset&#39;</span>   <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;utf8mb4&#39;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;collation&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;utf8mb4_unicode_ci&#39;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;prefix&#39;</span>    <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;&#39;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;strict&#39;</span>    <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">false</span>,
-</span></span><span style="display:flex;"><span>    ],</span></span></code></pre></td></tr></table>
-</div>
-</div>
-配置完成后重启apache本地服务器就能看到你在云端的一些修改。</p>
-<div class="polaroid" style="width:100%" >
-   <a data-fancybox="gallery" data-src="https://i.imgloc.com/2023/06/15/VOecK8.png">
-        <img src="https://i.imgloc.com/2023/06/15/VOecK8.png"/>
+<h2 id="creating-a-database">Creating a Database</h2>
+<p>Here I choose the free tier of RDs which only for the new register user in 12 months.</p>
+<h3 id="1-navigate-to-rds">1. Navigate to RDS</h3>
+<div class="polaroid" style="width:50%" >
+   <a data-fancybox="gallery" data-src="https://i.imgur.com/1fSpwbU.png">
+        <img src="https://i.imgur.com/1fSpwbU.png"/>
     </a>
 </div>
-<h2 id="2-sync-plugin">2️⃣ Sync plugin</h2>
-<p>光连接数据库访问主页也许会出错，特别是在项目已经很大的情况下，所以必须同步插件库。</p>
-<ol>
-<li>在云端Flarum根目录中，找到以下两个文件 ：<strong>composer.json &amp; composer.lock</strong></li>
-<li>将这两个文件复制到本地Flarum的根目录中。</li>
-</ol>
-<div class="polaroid" style="width:100%" >
-   <a data-fancybox="gallery" data-src="https://i.imgloc.com/2023/06/15/VOepUZ.png">
-        <img src="https://i.imgloc.com/2023/06/15/VOepUZ.png"/>
+<h3 id="2-create-a-db">2. Create a DB</h3>
+<p>Here is my choice, I use mysql and free tier type.</p>
+<div class="polaroid" style="width:50%" >
+   <a data-fancybox="gallery" data-src="https://i.imgur.com/P4nS2SC.png">
+        <img src="https://i.imgur.com/P4nS2SC.png"/>
     </a>
 </div>
-<ol start="3">
-<li>
-<p>打开命令行终端，进入本地Flarum的根目录。</p>
-</li>
-<li>
-<p>运行以下命令，以安装或更新本地Flarum所需的文件包：</p>
-</li>
-</ol>
+<div class="polaroid" style="width:50%" >
+   <a data-fancybox="gallery" data-src="https://i.imgur.com/lLpZXky.png">
+        <img src="https://i.imgur.com/lLpZXky.png"/>
+    </a>
+</div>
+<p>Here I select public access directly, because I need to test the connection and create flarum_db locally. (If you forget, just click [modify] button to select the option)</p>
+<div class="polaroid" style="width:50%" >
+   <a data-fancybox="gallery" data-src="https://i.imgur.com/OFb2cLD.png">
+        <img src="https://i.imgur.com/OFb2cLD.png"/>
+    </a>
+</div>
+<h3 id="3-waiting-for-initialization">3. Waiting for initialization</h3>
+<p>Then the new record has created now.</p>
+<div class="polaroid" style="width:80%" >
+   <a data-fancybox="gallery" data-src="https://i.imgur.com/IMpn41Y.png">
+        <img src="https://i.imgur.com/IMpn41Y.png"/>
+    </a>
+</div>
+<p>In the <strong>Connectivity &amp; security</strong> ,  Endpoint is the connection link.</p>
+<div class="polaroid" style="width:80%" >
+   <a data-fancybox="gallery" data-src="https://i.imgur.com/8z8FIL5.png">
+        <img src="https://i.imgur.com/8z8FIL5.png"/>
+    </a>
+</div>
+<h2 id="update-the-security-group">Update the security group</h2>
+<p>Although, It can be accessed publicly, but might show [1002 fail connect to db ] error.</p>
+<p>Click [VPC security groups] to navigate to the Security Groups panel. Edit the Inbound rule.</p>
+<p>Turn on 3360 port is necessary, and I allow all the traffic to access(In production env, need to delete)</p>
+<div class="polaroid" style="width:80%" >
+   <a data-fancybox="gallery" data-src="https://i.imgur.com/KDBZboG.png">
+        <img src="https://i.imgur.com/KDBZboG.png"/>
+    </a>
+</div>
+<h2 id="testing-locally">Testing locally</h2>
+<h3 id="1-create-a-new-connection">1. Create a new connection</h3>
+<div class="polaroid" style="width:80%" >
+   <a data-fancybox="gallery" data-src="https://i.imgur.com/1PQ9ECz.png">
+        <img src="https://i.imgur.com/1PQ9ECz.png"/>
+    </a>
+</div>
+<p>Paste the Endpoint and the username/password, and test connection. In my case, it connects to RDs expectly.</p>
+<div class="polaroid" style="width:80%" >
+   <a data-fancybox="gallery" data-src="https://i.imgur.com/vy51z0d.png">
+        <img src="https://i.imgur.com/vy51z0d.png"/>
+    </a>
+</div>
+<h2 id="flarum-part">Flarum part</h2>
+<p>If You have deployed Flarum before, just change the config.php.
+If You are in the initialization step, just directly fill in RDs.</p>
+<p>Here is the CLI to the folder I deploy the flarum.</p>
+<div class="polaroid" style="width:80%" >
+   <a data-fancybox="gallery" data-src="https://i.imgur.com/gWm8EXZ.png">
+        <img src="https://i.imgur.com/gWm8EXZ.png"/>
+    </a>
+</div>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer install</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /var/www/html/forum/
+</span></span><span style="display:flex;"><span>// admin role
+</span></span><span style="display:flex;"><span>sudo su
+</span></span><span style="display:flex;"><span>ls
+</span></span><span style="display:flex;"><span>vim config.php 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>//exist and save
+</span></span><span style="display:flex;"><span>:wq</span></span></code></pre></td></tr></table>
 </div>
 </div>
-<p>同步完成后刷新页面，此时云端和本地的数据保持一致。</p>
-<h2 id="3-download-cloud-db-and-run-locally">3️⃣ download cloud DB and run locally</h2>
-<p>直接在本地连接数据库是有风险的，比如端口暴露，防火墙关闭，不安全操作数据等。所以最好的办法就是把数据库下载下来。</p>
-<h3 id="-mysql-error-2002">❌ Mysql error 2002</h3>
-<p>不出意外，使用navicat连接云端失败。
-<strong>MySQL远程连接报错：ERROR 2002 (HY000): Can‘t connect to server on ‘ip‘</strong></p>
-<p>显然，访问被拦截。
-这篇<a href="https://blog.csdn.net/single_g_l/article/details/126216066">文章</a>可以完美的解决这个问题。</p>
-<h3 id="-sql-to-loacaldb">🍀 .sql to loacalDB</h3>
-<p>我用navicat来连接数据库，直接export数据和结构的sql文件。</p>
-<div class="polaroid" style="width:70%" >
-   <a data-fancybox="gallery" data-src="https://i.imgloc.com/2023/06/15/VOe7bE.png">
-        <img src="https://i.imgloc.com/2023/06/15/VOe7bE.png"/>
+<div class="polaroid" style="width:80%" >
+   <a data-fancybox="gallery" data-src="https://i.imgur.com/grEQyAW.png">
+        <img src="https://i.imgur.com/grEQyAW.png"/>
     </a>
 </div>
-<p>再在进入XMAPP数据库界面，运行即可。⚠️注意，别忘记修改conf.php数据库配置文件。</p>
-<div class="polaroid" style="width:70%" >
-   <a data-fancybox="gallery" data-src="https://i.imgloc.com/2023/06/15/VOeE6C.png">
-        <img src="https://i.imgloc.com/2023/06/15/VOeE6C.png"/>
-    </a>
-</div>
+<p>Thanks!</p>
 
             </div>
             <aside style=" width: 20%;position: fixed; right: 5%; top: 20%;">
               <nav id="TableOfContents">
   <ul>
-    <li><a href="#1-connect-clouddb">1️⃣ Connect CloudDB</a></li>
-    <li><a href="#2-sync-plugin">2️⃣ Sync plugin</a></li>
-    <li><a href="#3-download-cloud-db-and-run-locally">3️⃣ download cloud DB and run locally</a>
+    <li><a href="#preparation">Preparation</a></li>
+    <li><a href="#creating-a-database">Creating a Database</a>
       <ul>
-        <li><a href="#-mysql-error-2002">❌ Mysql error 2002</a></li>
-        <li><a href="#-sql-to-loacaldb">🍀 .sql to loacalDB</a></li>
+        <li><a href="#1-navigate-to-rds">1. Navigate to RDS</a></li>
+        <li><a href="#2-create-a-db">2. Create a DB</a></li>
+        <li><a href="#3-waiting-for-initialization">3. Waiting for initialization</a></li>
       </ul>
     </li>
+    <li><a href="#update-the-security-group">Update the security group</a></li>
+    <li><a href="#testing-locally">Testing locally</a>
+      <ul>
+        <li><a href="#1-create-a-new-connection">1. Create a new connection</a></li>
+      </ul>
+    </li>
+    <li><a href="#flarum-part">Flarum part</a></li>
   </ul>
 </nav>
             </aside>
@@ -752,7 +749,7 @@ background-color: #FF6600
 
 
 
-<a class="resp-sharing-button__link" href="mailto:?subject=Flarum%e6%a1%86%e6%9e%b6%e5%a6%82%e4%bd%95%e8%bf%9e%e6%8e%a5%e4%ba%91%e7%ab%af%e6%95%b0%e6%8d%ae%e5%ba%93%ef%bc%8c%e4%bf%9d%e8%af%81%e6%95%b0%e6%8d%ae%e4%b8%80%e8%87%b4%e6%80%a7&amp;body=https://hupochuanbird.github.io/posts/flarum-connect-to-clouddb/" target="_self" rel="noopener" aria-label="" title="E-Mail">
+<a class="resp-sharing-button__link" href="mailto:?subject=Flarum%20Connects%20to%20AWS%20RDs&amp;body=https://hupochuanbird.github.io/posts/flarum-connects-to-aws-rds/" target="_self" rel="noopener" aria-label="" title="E-Mail">
   <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z"/></svg>
@@ -767,7 +764,7 @@ background-color: #FF6600
 
 
 
-<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://hupochuanbird.github.io/posts/flarum-connect-to-clouddb/&amp;title=Flarum%e6%a1%86%e6%9e%b6%e5%a6%82%e4%bd%95%e8%bf%9e%e6%8e%a5%e4%ba%91%e7%ab%af%e6%95%b0%e6%8d%ae%e5%ba%93%ef%bc%8c%e4%bf%9d%e8%af%81%e6%95%b0%e6%8d%ae%e4%b8%80%e8%87%b4%e6%80%a7&amp;summary=Flarum%e6%a1%86%e6%9e%b6%e5%a6%82%e4%bd%95%e8%bf%9e%e6%8e%a5%e4%ba%91%e7%ab%af%e6%95%b0%e6%8d%ae%e5%ba%93%ef%bc%8c%e4%bf%9d%e8%af%81%e6%95%b0%e6%8d%ae%e4%b8%80%e8%87%b4%e6%80%a7&amp;https://hupochuanbird.github.io/posts/flarum-connect-to-clouddb/" target="_blank" rel="noopener" aria-label="">
+<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://hupochuanbird.github.io/posts/flarum-connects-to-aws-rds/&amp;title=Flarum%20Connects%20to%20AWS%20RDs&amp;summary=Flarum%20Connects%20to%20AWS%20RDs&amp;https://hupochuanbird.github.io/posts/flarum-connects-to-aws-rds/" target="_blank" rel="noopener" aria-label="">
   <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.5 21.5h-5v-13h5v13zM4 6.5C2.5 6.5 1.5 5.3 1.5 4s1-2.4 2.5-2.4c1.6 0 2.5 1 2.6 2.5 0 1.4-1 2.5-2.6 2.5zm11.5 6c-1 0-2 1-2 2v7h-5v-13h5V10s1.6-1.5 4-1.5c3 0 5 2.2 5 6.3v6.7h-5v-7c0-1-1-2-2-2z"/></svg>
@@ -780,7 +777,7 @@ background-color: #FF6600
 
 
 
-<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=https://hupochuanbird.github.io/posts/flarum-connect-to-clouddb/&amp;resubmit=true&amp;title=Flarum%e6%a1%86%e6%9e%b6%e5%a6%82%e4%bd%95%e8%bf%9e%e6%8e%a5%e4%ba%91%e7%ab%af%e6%95%b0%e6%8d%ae%e5%ba%93%ef%bc%8c%e4%bf%9d%e8%af%81%e6%95%b0%e6%8d%ae%e4%b8%80%e8%87%b4%e6%80%a7" target="_blank" rel="noopener" aria-label="" title="Reddit">
+<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=https://hupochuanbird.github.io/posts/flarum-connects-to-aws-rds/&amp;resubmit=true&amp;title=Flarum%20Connects%20to%20AWS%20RDs" target="_blank" rel="noopener" aria-label="" title="Reddit">
   <div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z"/></svg>
@@ -808,10 +805,8 @@ background-color: #FF6600
 
           <div class="pagination"><div class="paginator" >
     
-        <a class="prev btn" href="https://hupochuanbird.github.io/posts/flarum-connects-to-aws-rds/"><i class="fa-solid fa-arrow-left"></i>Flarum Connects to AWS RDs </a>
     
-    
-        <a class="next btn" href="https://hupochuanbird.github.io/posts/depoly-locally-macos-apache2/">使用XAMPP本地部署Flarum在MAC环境中 <i class="fa-solid fa-arrow-right"></i></a>
+        <a class="next btn" href="https://hupochuanbird.github.io/posts/flarum-connect-to-clouddb/">Flarum框架如何连接云端数据库，保证数据一致性 <i class="fa-solid fa-arrow-right"></i></a>
        
     
 </div></div>
