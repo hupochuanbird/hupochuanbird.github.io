@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>search-index on tothemoon&#39;s blog</title>
+    <link>https://hupochuanbird.github.io/tags/search-index/</link>
+    <description>Recent content in search-index on tothemoon&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>All rights reserved</copyright>
+    <lastBuildDate>Tue, 13 Feb 2024 19:57:17 +0000</lastBuildDate><atom:link href="https://hupochuanbird.github.io/tags/search-index/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setup Search in Hugo</title>
+      <link>https://hupochuanbird.github.io/posts/setup-search-in-hugo/</link>
+      <pubDate>Tue, 13 Feb 2024 19:57:17 +0000</pubDate>
+      
+      <guid>https://hupochuanbird.github.io/posts/setup-search-in-hugo/</guid>
+      <description>In this article, I will show you how to implement search in Hugo by using Lunr.js, a lightweight JavaScript search engine. Adding search functionality to your Hugo website enhances user experience and makes it easier for visitors to find relevant content. We will explore the steps involved in integrating Lunr.js, creating a search index from your Hugo content, and incorporating the search feature into your website.
+Refer link Every step I was following this useful article.</description>
+    </item>
+    
+  </channel>
+</rss>

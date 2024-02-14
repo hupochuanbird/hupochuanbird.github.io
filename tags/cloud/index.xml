@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cloud on tothemoon&#39;s blog</title>
+    <link>https://hupochuanbird.github.io/tags/cloud/</link>
+    <description>Recent content in Cloud on tothemoon&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>All rights reserved</copyright>
+    <lastBuildDate>Sun, 11 Feb 2024 19:24:37 +0000</lastBuildDate><atom:link href="https://hupochuanbird.github.io/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu 22.04.3: Chinese Search in Flarum and How to fix &#39;PHP Notice: fwrite(): send failed with errno=32 Broken pipe&#39; error in my case</title>
+      <link>https://hupochuanbird.github.io/posts/chinese-search-in-flarum/</link>
+      <pubDate>Sun, 11 Feb 2024 19:24:37 +0000</pubDate>
+      
+      <guid>https://hupochuanbird.github.io/posts/chinese-search-in-flarum/</guid>
+      <description>The main content of this article is to use the Sonic engine to enable Flarum to search Chinese as well.
+In my Flarum, the search module isn&amp;rsquo;t perfect enough so far, almost all the discussions are using Chinese, so the default search module doesn&amp;rsquo;t work. Here, in this section, I primarily focus on utilizing the Sonic extension to implement Chinese text search. In my case, the server-side encounters some errors.</description>
+    </item>
+    
+    <item>
+      <title>Flarum Connects to AWS RDs</title>
+      <link>https://hupochuanbird.github.io/posts/flarum-connects-to-aws-rds/</link>
+      <pubDate>Sun, 13 Aug 2023 17:06:05 +0100</pubDate>
+      
+      <guid>https://hupochuanbird.github.io/posts/flarum-connects-to-aws-rds/</guid>
+      <description>For the majority tutorial, the flarum always connects with the localhost db directly. However, base on my knowledge, once the server shutdown or reboot, the data could be lost, also it&amp;rsquo;s not easy to debug(although flaurm has logs files to record all errors). So I suppose that separate db and flaurm server.
+In this section, I use AWS EC2 and RDs to implement my solution.
+For how to deploy the Flarum in EC2, I will write author article, but to be honest, it&amp;rsquo;s the common way for deploying to any other Linux server.</description>
+    </item>
+    
+    <item>
+      <title>Flarum:部署到云端(ubuntu 22.04)</title>
+      <link>https://hupochuanbird.github.io/posts/flarum-deploy-to-cloud/</link>
+      <pubDate>Sat, 10 Jun 2023 19:31:49 +0100</pubDate>
+      
+      <guid>https://hupochuanbird.github.io/posts/flarum-deploy-to-cloud/</guid>
+      <description>关于如何部署Flarum这个论坛框架有多种方法，1）直接linux命令 2）Docker部署 3）宝塔。 本文选第一种方法，因为简单，省内存。另外，建议所有的版本号最好都做记录，便于未来迁移。
+此配置不包含SSL
+1️⃣ Deployment preparation 一台服务器，选择ubuntu系统。 域名（可选，如果没有域名可以直接用ip访问）。 2️⃣ Login to the server 不论用什么服务商，点击连接到服务器。请直接输入一下命令，如果出现permission deny错误，请用 sudo命令。
+👉 Environment configuration 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 sudo apt update sudo apt upgrade -y sudo apt install wget unzip curl nano git -y sudo apt install apache2 -y sudo systemctl enable --now apache2 sudo a2enmod rewrite sudo systemctl restart apache2 # php 环境 sudo apt install php php-curl sudo apt install php php-dom sudo apt install php php-gd sudo apt install php php-json sudo apt install php php-mbstring sudo apt install php php-mysql sudo apt install php php-tokenizer sudo apt install php php-zip # 数据库， 当然也可以安装mysql sudo apt install mariadb-server -y sudo systemctl enable --now mariadb sudo mysql_secure_installation # 登陆数据库，创建schema，数据库名flarum_db，可以自定义 sudo mysql # 以下 是数据库sql CREATE DATABASE flarum_db; CREATE USER &amp;#39;flarum_user&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED BY &amp;#39;flarum_pass&amp;#39;; GRANT ALL PRIVILEGES ON flarum_db.</description>
+    </item>
+    
+    <item>
+      <title>How to Deploy to Github</title>
+      <link>https://hupochuanbird.github.io/posts/how-to-deploy-to-github/</link>
+      <pubDate>Sun, 19 Mar 2023 20:19:30 +0000</pubDate>
+      
+      <guid>https://hupochuanbird.github.io/posts/how-to-deploy-to-github/</guid>
+      <description>How to Deploy to Github To deploy your Hugo site to GitHub Pages, you can follow these steps:
+First update baseURL in config.yaml baseURL: https://www.username.github.io Then compile with hugo 1 hugo Go to public folder 1 cd piblic Second, create a new repository on GitHub that will hold your website files. Make sure to name the repository in the format yourusername.github.io, where yourusername is your GitHub username. Don&amp;rsquo;t forget add github.</description>
+    </item>
+    
+  </channel>
+</rss>
