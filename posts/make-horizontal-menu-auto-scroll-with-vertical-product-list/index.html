@@ -7,7 +7,7 @@
     <meta name="author" content="tothemoon">
     <meta name="keywords" content="blog,life,code,desgin,woman stem">
 
-    <title>lunr.js | tothemoon&#39;s blog</title>
+    <title>Make Horizontal Menu Auto Scroll With Vertical Product List in flutter | tothemoon&#39;s blog</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link rel="icon" type="image/png" href="/images/favicon.png" />
@@ -83,7 +83,7 @@
 
 
 <a href="/posts/"  title="My Blog">
-    <li class="hover  ">
+    <li class="hover    active ">
       <i class="fa-solid fa-paper-plane"></i>
       My Blog
     </li>
@@ -101,7 +101,7 @@
 
 
 <a href="/tags/"  title="Tags">
-    <li class="hover    active ">
+    <li class="hover  ">
       <i class="fa-solid fa-tag"></i>
       Tags
     </li>
@@ -166,7 +166,7 @@
 
 
 <a href="/posts/"  title="My Blog">
-    <li class="hover  ">
+    <li class="hover    active ">
       <i class="fa-solid fa-paper-plane"></i>
       My Blog
     </li>
@@ -184,7 +184,7 @@
 
 
 <a href="/tags/"  title="Tags">
-    <li class="hover    active ">
+    <li class="hover  ">
       <i class="fa-solid fa-tag"></i>
       Tags
     </li>
@@ -213,80 +213,1255 @@
     </nav>
   </header>
              <main class="min-h-full"  >
+
+<style>
+  
+  html {
+  scroll-behavior: smooth;
+}
+html, body {
+    scroll-padding-top: 100px;
+}
+#page-section {
+    display: block
+}
+
+
+.blog-content {
+    padding-bottom: 3rem;
+}
+
+@media(min-width: 1024px) {
+    #page-section>aside {
+        margin-left:1rem;
+        border-left-width: 4px;
+        border-color: #ffb703
+    }
+
+    #page-section>aside.tableOfContentContainer {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 79px;
+        align-self: start
+    }
+
+    #page-section>aside>h3 {
+        font-size: 1rem;
+        padding-left: .5rem;
+        color: #1a202c;
+        font-weight: 700;
+        padding-bottom: .5rem;
+        padding-top: 1rem
+    }
+
+    #page-section {
+        display: grid;
+        grid-template-columns: 100% 12em;
+        width: 80%
+    }
+
+    #TableOfContents {
+        display: block;
+        padding-left: .5rem;
+        padding-bottom: 1rem;
+        font-size: 1rem;
+        color: #1a202c
+    }
+
+    #TableOfContents li {
+        padding-top: .25rem;
+        padding-bottom: .25rem;
+        list-style: none;
+        font-size: small;
+    }
+
+    #TableOfContents li.active {
+        padding-left: 0
+    }
+
+    #TableOfContents li.active:before {
+        content: "→";
+        display: inline-block;
+        margin-left: -20px;
+        width: 20px
+    }
+
+    .cronweekly #TableOfContents ul {
+        margin-left: 1rem!important
+    }
+
+    #TableOfContents li {
+        margin-left: 1rem
+    }
+
+    #TableOfContents li.active>a {
+        color: #1a202c;
+        font-weight: 700
+    }
+
+    #TableOfContents a {
+        text-decoration: none;
+        padding: .125rem 0;
+        color: rgb(142, 142, 142);
+        -webkit-transition: all 50ms ease-in-out;
+        transition: all 50ms ease-in-out
+    }
+
+    #TableOfContents a:hover,#TableOfContents a:focus,#TableOfContents a:active {
+        color: rgb(20, 20, 20)
+    }
+
+    #tableOfContentContainer ol,ul {
+      list-style: none;
+      margin: 0;
+      padding: 0
+    }
+}
+
+
+
+.content blockquote {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-left-width: 4px;
+    border-color: #ffb703;
+    font-style: italic;
+}
+
+.content a,.homepage-intro a,.link-dark {
+    border-bottom-width: 2px;
+    padding-bottom: .1rem;
+    padding-top: .1rem;
+    border-color: #ffb703
+}
+
+.link-talks-meta {
+    padding-bottom: .3rem!important;
+    margin-right: 1rem;
+    color: #718096;
+    font-size: 1rem
+}
+
+.link-dark {
+    border-color: #744210
+}
+
+.content a:hover,.homepage-intro a:hover,footer a:hover,.link-dark a:hover {
+    background-color: #f6e05e
+}
+
+.comments svg {
+    height: 2rem;
+    width: 2rem;
+    fill: currentColor;
+    display: inline-block;
+    margin: .5rem
+}
+
+.comments .share-links a {
+    border-width: 0;
+    background-color: #f7fafc;
+    display: inline-block;
+    border-color: #cbd5e0;
+    border-width: 1px;
+    margin-right: 1rem
+}
+
+.comments .share-links a:hover {
+    background-color: #edf2f7
+}
+
+.comments h3 {
+    border-bottom-width: 0!important;
+    display: block!important;
+    font-size: 1.875rem!important
+}
+
+.content h1,.content h2,.content h3 {
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+    border-bottom-width: 2px;
+    padding-bottom: 0;
+    border-color: #e2e8f0;
+    line-height: 2
+}
+
+.content h2 {
+    margin-bottom: .25rem
+}
+
+.content h3 {
+    font-size: 1.25rem
+}
+.polaroid{
+    display: flex;
+    justify-content: center;
+}
+
+.content img {
+    max-height: 500px;
+    width: 100%;
+    height: inherit;
+    display: block;
+    object-fit: cover;
+    border-radius: .25rem;
+    border-width: 1px;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -2px rgba(0,0,0,.05);
+}
+
+</style>
 <section class="s:mt-10">
-  <div class="container sm:my-14">
-    <div class="flex flex-col sm:flex-row ">  
-      <div class="w-full sm:w-10 sm:mt-10">
-        <div class="result" role="group">
-          <h2 class="result__title">“lunr.js”</h2>
-            
-            
-
-    
-
-
-<a  href="https://hupochuanbird.github.io/posts/setup-search-in-hugo/"  class="result__item row-anchor " aria-label="Setup Search in Hugo">
-    
-    <div class="item_cover_container">
-        <picture class="viewport-picture">
-            <source media="(max-width: 734px)" srcset="https://i.imgur.com/mlDeikH.png">
-            <img class="viewport-image" src="https://i.imgur.com/mlDeikH.png" srcset="https://i.imgur.com/mlDeikH.png" aria-hidden="true" alt="">
-        </picture>
-    </div>
-   
-    
-   
-
-
-    <div class="item__content">
-        <p class="item__category category_update">
-            
-                
-                search-index
-                
-                hugo
-                
-                lunr.js
-                
-            
-        </p>
-        <h3 class="item__headline">
-            Setup Search in Hugo
-        </h3>
-        <h5 class="item__desc">
-            In this article, I will show you how to implement search in Hugo by using Lunr.js, a lightweight JavaScript search engine.
-        </h5>
-        <p class="item__date">February 13, 2024</p>
-    </div>
-</a>
-            
+  <div class="w-screen max-w-full pt-20 header-curved  ">
+    <div class="container w-full md:max-w-4xl px-4 md:px-6 text-xl text-gray-800 leading-normal mx-auto">
+        <div class="pb-8">
+            <h1 class="font-thin break-normal leading-tight text-gray-900 pt-6 pb-4 text-4xl md:text-5xl">
+              Make Horizontal Menu Auto Scroll With Vertical Product List in flutter
+            </h1>
         </div>
       </div>
     </div>
-  </div>
-  
-<nav class="pagination-ctrl" aria-label="myproject">
-  <div class="pagination-ctrl__content">
-    
-    <a role="button" href="#" class="pagination-ctrl__btn pagination-ctrl__btn--previous pagination-ctrl__btn--disabled" aria-disabled="true" aria-label="prev" tabindex="0">
-    
-    <i class="fa-solid fa-chevron-left fa-2xs"></i>
-    </a>
-    <div class="pagination-ctrl__info">
-      <span class="pagination-ctrl__info__text pagination-ctrl__info--current">1</span>
-      <span class="pagination-ctrl__info__text"> page </span>
-      <span class="pagination-ctrl__info__text pagination-ctrl__info--total">1</span>
+        <div class="container w-full md:max-w-4xl mx-auto mt-8 ">
+          <div class="w-full px-4 md:px-6  text-gray-800 leading-normal">
+            <div class="page-metadata">
+<div class="article-header">
+    <div class="avatar">
+        <img src="https://i.imgur.com/e7UVoOQ.png">
     </div>
-    
-    <a role="button" href="#" class="pagination-ctrl__btn  pagination-ctrl__btn--next  pagination-ctrl__btn--disabled" aria-label="next" aria-disabled="true">
-    
-    <i class="fa-solid fa-chevron-right fa-2xs" ></i>
-      </a>
-  </div>
+    <div class="info">
+        <div class="author">
+            <span class="name">tothemoon</span>
+            <span class="author-label"></span>
+        </div>
+        <div class="meta-info">
+            <div class="article-meta-info">
+                <span class="article-date article-meta-item">
+                    <i class="fa fa-pen"></i>&nbsp;
+                    <span class="pc">February 15, 2024</span>
+                </span>
+                
+                <div class="article-categories article-meta-item">
+                    <span class="fa fa-folder-open"></span>
+                    
+                    <a href="https://hupochuanbird.github.io/categories/flutter/">Flutter</a>&nbsp;
+                    
+                </div>
+                
+                
+                <span class="article-tags article-meta-item">
+                    <i class="fa fa-tag"></i>&nbsp;
+                    <ul>
+                        
+                        <li>
+                        #<a href="https://hupochuanbird.github.io/tags/tag1/">tag1</a>&nbsp;
+                        </li>
+                        
+                    </ul>
+                </span>
+                
+                <span class="article-wordcount article-meta-item">
+                    <i class="fa fa-book"></i>&nbsp;<span>1097 Words</span>
+                </span>
+                <span class="article-min2read article-meta-item">
+                    <i class="fa fa-clock"></i>&nbsp;<span>6 mins</span>
+                </span>
+                <span class="article-pv article-meta-item">
+                    <i class="fa-regular fa-eye"></i>&nbsp;
+                    <span id="busuanzi_value_page_pv">
+                    </span>
+                </span>
+
+            </div>
+        </div>
+    </div>
+</div></div>
+            <mian id="page-section">
+              <div class="content blog-content">
+                <blockquote>
+<p>My article is referencing <a href="https://stackoverflow.com/questions/67195205/how-to-make-horizontal-menu-auto-scroll-with-vertical-product-list-in-flutter">https://stackoverflow.com/questions/67195205/how-to-make-horizontal-menu-auto-scroll-with-vertical-product-list-in-flutter</a>. However, in my case, the width of each category&rsquo;s name and the height of each product card are dynamic and subject to slight changes. Now, let&rsquo;s proceed.</p>
+</blockquote>
+<h2 id="the-final-result">The final result</h2>
+<div class="polaroid">
+  <a data-fancybox="gallery" data-src="https://i.imgur.com/N1L4jL5.gif">
+      <img src="https://i.imgur.com/N1L4jL5.gif"/>
+  </a>
+</div>
+<h2 id="my-logic">My Logic</h2>
+<p>Well, based on that article, I came up with some innovations. In order to explain easily, I have drawn a draft below:</p>
+<p><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>category1 | category2 | category3 ....
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>category1-section (section1 --&gt; height: 300) 
+</span></span><span style="display:flex;"><span> ---product1-1
+</span></span><span style="display:flex;"><span> ---product1-2
+</span></span><span style="display:flex;"><span> ---product1-3
+</span></span><span style="display:flex;"><span> ---product1-4
+</span></span><span style="display:flex;"><span>category2-section (section2 --&gt; height: 120)
+</span></span><span style="display:flex;"><span> ---product2-1
+</span></span><span style="display:flex;"><span> ---product2-2
+</span></span><span style="display:flex;"><span>category3-section (section4 --&gt; height: 250)
+</span></span><span style="display:flex;"><span> ---product3-1
+</span></span><span style="display:flex;"><span> ---product3-2
+</span></span><span style="display:flex;"><span> ---product3-3
+</span></span><span style="display:flex;"><span>.
+</span></span><span style="display:flex;"><span>.
+</span></span><span style="display:flex;"><span>.</span></span></code></pre></td></tr></table>
+</div>
+</div>
+The UI looks like this. The basic logic involves calculating the height of each category and its products using the <code>scrollController.addListener</code> function to monitor the current scroll offset. For instance, if the height of the section for category1 is 300 and the height of the section for category2 is 120, when the offset reaches 300, it implies that the currentIndex is 1, and the interface should jump to the position of category2. The currentIndex indicates horizontal menu.</p>
+<p>The challenge lies in calculating the height of each section. I have set up a unique key for each category-section and know the number of products in each section. The formula is <code>height of category1-section + height of product card * count</code>, the name of each menu is <code>width of text</code>.</p>
+<h2 id="code-part">Code Part</h2>
+<h3 id="initialize">Initialize</h3>
+<p>Initialize variables
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">final</span> ScrollController _scrollController <span style="color:#f92672">=</span> ScrollController<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">final</span> ScrollController _scrollControllerCategory <span style="color:#f92672">=</span> ScrollController<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">final</span> List<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">double</span><span style="color:#f92672">&gt;</span> _categoryOffsets <span style="color:#f92672">=</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">double</span><span style="color:#f92672">&gt;[];</span>
+</span></span><span style="display:flex;"><span>late List<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">double</span><span style="color:#f92672">&gt;</span> _productOffsets <span style="color:#f92672">=</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">double</span><span style="color:#f92672">&gt;[];</span></span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<h3 id="add-listener-to-know-the-offset">Add Listener to know the offset</h3>
+<p>Because horizontal and vertical scrolling need to be synchronized with each other. So there are two ScrollController, one is for horizontal list(product), another is for vertical list(menu)</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@override</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">initState</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">super</span><span style="color:#f92672">.</span><span style="color:#a6e22e">initState</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    WidgetsBinding<span style="color:#f92672">.</span><span style="color:#a6e22e">instance</span><span style="color:#f92672">.</span><span style="color:#a6e22e">addPostFrameCallback</span><span style="color:#f92672">((</span>_<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>mounted<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        currentIndex <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        _scrollController<span style="color:#f92672">.</span><span style="color:#a6e22e">addListener</span><span style="color:#f92672">(()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>          setCategoryOffsets<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>          setProductOffsets<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">double</span> offset <span style="color:#f92672">=</span> _scrollController<span style="color:#f92672">.</span><span style="color:#a6e22e">offset</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> _productOffsets<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>offset <span style="color:#f92672">&lt;=</span> _productOffsets<span style="color:#f92672">[</span>i<span style="color:#f92672">])</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>currentIndex <span style="color:#f92672">!=</span> i<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>i <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#66d9ef">double</span> diff1 <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>offset <span style="color:#f92672">-</span> _productOffsets<span style="color:#f92672">[</span>i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">]).</span><span style="color:#a6e22e">abs</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#66d9ef">double</span> diff2 <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>offset <span style="color:#f92672">-</span> _productOffsets<span style="color:#f92672">[</span>i<span style="color:#f92672">]).</span><span style="color:#a6e22e">abs</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>diff1 <span style="color:#f92672">&gt;</span> diff2<span style="color:#f92672">)</span> <span style="color:#66d9ef">return</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">double</span> maxOffset <span style="color:#f92672">=</span> _scrollControllerCategory<span style="color:#f92672">.</span><span style="color:#a6e22e">position</span><span style="color:#f92672">.</span><span style="color:#a6e22e">maxScrollExtent</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">100</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>_categoryOffsets<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">&lt;=</span> maxOffset<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                  _scrollControllerCategory<span style="color:#f92672">.</span><span style="color:#a6e22e">animateTo</span><span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">(</span>_categoryOffsets<span style="color:#f92672">[</span>i<span style="color:#f92672">]).</span><span style="color:#a6e22e">toDouble</span><span style="color:#f92672">(),</span>
+</span></span><span style="display:flex;"><span>                    duration<span style="color:#f92672">:</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Duration</span><span style="color:#f92672">(</span>milliseconds<span style="color:#f92672">:</span> <span style="color:#ae81ff">500</span><span style="color:#f92672">),</span>
+</span></span><span style="display:flex;"><span>                    curve<span style="color:#f92672">:</span> Curves<span style="color:#f92672">.</span><span style="color:#a6e22e">easeInOut</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>                setState<span style="color:#f92672">(()</span> <span style="color:#f92672">=&gt;</span> currentIndex <span style="color:#f92672">=</span> i<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">});</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">});</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="calculate-offsetheight-of-each-products-section">Calculate offset(height) of each product&rsquo;s section</h3>
+<p>Here the format of cateProductList roughly looks like
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;category 1&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;GlobalKeykey1&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;product&#34;</span>: [
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;product name1&#34;</span>
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#ae81ff">2</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;product name2&#34;</span>
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#ae81ff">3</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;product name3&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        ]
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#ae81ff">2</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;category 2&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;GlobalKeykey2&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;product&#34;</span>: [
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#ae81ff">4</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;product name4&#34;</span>
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#ae81ff">5</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;product name5&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        ]
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>]</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<p>The first offset is 0, the second is first + itself.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>  <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">double</span> _productItemExtent <span style="color:#f92672">=</span> <span style="color:#ae81ff">122</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  late <span style="color:#66d9ef">double</span> _productItemHeight <span style="color:#f92672">=</span> <span style="color:#ae81ff">120</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setProductOffsets</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">double</span> tmp <span style="color:#f92672">=</span> <span style="color:#f92672">!</span>ResponsiveHelper<span style="color:#f92672">.</span><span style="color:#a6e22e">isMobile</span><span style="color:#f92672">()</span> <span style="color:#f92672">?</span> <span style="color:#ae81ff">150</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">120</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>_productOffsets<span style="color:#f92672">.</span><span style="color:#a6e22e">isNotEmpty</span> <span style="color:#f92672">&amp;&amp;</span> _productItemHeight <span style="color:#f92672">==</span> tmp<span style="color:#f92672">)</span> <span style="color:#66d9ef">return</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    _productItemHeight <span style="color:#f92672">=</span> tmp<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    _productOffsets <span style="color:#f92672">=</span> <span style="color:#f92672">[];</span>
+</span></span><span style="display:flex;"><span>    WidgetsBinding<span style="color:#f92672">.</span><span style="color:#a6e22e">instance</span><span style="color:#f92672">.</span><span style="color:#a6e22e">addPostFrameCallback</span><span style="color:#f92672">((</span>_<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>      List<span style="color:#f92672">&lt;</span>CategoryProductsModel<span style="color:#f92672">&gt;</span> cateProductList <span style="color:#f92672">=</span> getCateProductList<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;=</span> <span style="color:#f92672">(</span>cateProductList<span style="color:#f92672">).</span><span style="color:#a6e22e">length</span><span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        CategoryProductsModel categoryProductsModel <span style="color:#f92672">=</span> cateProductList<span style="color:#f92672">[</span>i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">];</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">double</span> prevOffset <span style="color:#f92672">=</span> i <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">?</span> _productItemExtent <span style="color:#f92672">:</span> _productOffsets<span style="color:#f92672">[</span>i <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">];</span>
+</span></span><span style="display:flex;"><span>        _productOffsets<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>prevOffset <span style="color:#f92672">+</span> <span style="color:#f92672">(</span>Dimensions<span style="color:#f92672">.</span><span style="color:#a6e22e">paddingSizeSmall</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> Dimensions<span style="color:#f92672">.</span><span style="color:#a6e22e">paddingSizeLarge</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">+</span> getHeightOfContainer<span style="color:#f92672">(</span>GlobalObjectKey<span style="color:#f92672">(</span>categoryProductsModel<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">!))</span> <span style="color:#f92672">+</span> <span style="color:#f92672">(</span>_productItemHeight<span style="color:#f92672">)</span> <span style="color:#f92672">*</span> <span style="color:#f92672">(</span>categoryProductsModel<span style="color:#f92672">.</span><span style="color:#a6e22e">products</span> <span style="color:#f92672">??</span> <span style="color:#f92672">[]).</span><span style="color:#a6e22e">length</span><span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">});</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">double</span> <span style="color:#a6e22e">getHeightOfContainer</span><span style="color:#f92672">(</span>GlobalKey key<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    RenderBox renderBox <span style="color:#f92672">=</span> key<span style="color:#f92672">.</span><span style="color:#a6e22e">currentContext</span><span style="color:#f92672">!.</span><span style="color:#a6e22e">findRenderObject</span><span style="color:#f92672">()</span> as RenderBox<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> renderBox<span style="color:#f92672">.</span><span style="color:#a6e22e">size</span><span style="color:#f92672">.</span><span style="color:#a6e22e">height</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="calculate-offsetheight-of-each-category">Calculate offset(height) of each category</h3>
+<p>Becasue of GlobalKey, It&rsquo;s easier to know category&rsquo; width.
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>  <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setCategoryOffsets</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>_categoryOffsets<span style="color:#f92672">.</span><span style="color:#a6e22e">isNotEmpty</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">return</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    List<span style="color:#f92672">&lt;</span>CategoryProductsModel<span style="color:#f92672">&gt;</span> cateProductList <span style="color:#f92672">=</span> Provider<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">&lt;</span>ProductProvider<span style="color:#f92672">&gt;(</span>context<span style="color:#f92672">,</span> listen<span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">).</span><span style="color:#a6e22e">cateProductList</span> <span style="color:#f92672">??</span> <span style="color:#f92672">[];</span>
+</span></span><span style="display:flex;"><span>    _categoryOffsets<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#ae81ff">0</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;=</span> <span style="color:#f92672">(</span>cateProductList<span style="color:#f92672">).</span><span style="color:#a6e22e">length</span><span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>      CategoryProductsModel categoryProductsModel <span style="color:#f92672">=</span> cateProductList<span style="color:#f92672">[</span>i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">];</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">double</span> cateWidth <span style="color:#f92672">=</span> getWidthOfContainer<span style="color:#f92672">(</span>categoryProductsModel<span style="color:#f92672">.</span><span style="color:#a6e22e">key</span><span style="color:#f92672">!);</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">double</span> prevOffset <span style="color:#f92672">=</span> _categoryOffsets<span style="color:#f92672">[</span>i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">];</span>
+</span></span><span style="display:flex;"><span>      _categoryOffsets<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>prevOffset <span style="color:#f92672">+</span> cateWidth<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">double</span> <span style="color:#a6e22e">getWidthOfContainer</span><span style="color:#f92672">(</span>GlobalKey key<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    RenderBox renderBox <span style="color:#f92672">=</span> key<span style="color:#f92672">.</span><span style="color:#a6e22e">currentContext</span><span style="color:#f92672">!.</span><span style="color:#a6e22e">findRenderObject</span><span style="color:#f92672">()</span> as RenderBox<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> renderBox<span style="color:#f92672">.</span><span style="color:#a6e22e">size</span><span style="color:#f92672">.</span><span style="color:#a6e22e">width</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<h2 id="part-of-ui">Part of UI</h2>
+<p>I delete some not important part, like styles, padding&hellip;.</p>
+<h3 id="category-list-horizontal-scroll">Category List, Horizontal Scroll</h3>
+<p>Just remind:
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>currentIndex <span style="color:#f92672">=</span> index<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">final</span> context <span style="color:#f92672">=</span> GlobalObjectKey<span style="color:#f92672">(</span>categoryProductsModel<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">!).</span><span style="color:#a6e22e">currentContext</span><span style="color:#f92672">!;</span>
+</span></span><span style="display:flex;"><span>Scrollable<span style="color:#f92672">.</span><span style="color:#a6e22e">ensureVisible</span><span style="color:#f92672">(</span>context<span style="color:#f92672">,</span> duration<span style="color:#f92672">:</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Duration</span><span style="color:#f92672">(</span>milliseconds<span style="color:#f92672">:</span> <span style="color:#ae81ff">800</span><span style="color:#f92672">),</span> curve<span style="color:#f92672">:</span> Curves<span style="color:#f92672">.</span><span style="color:#a6e22e">ease</span><span style="color:#f92672">);</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+The code above indicates that clicking the category name will result in jumping to the corresponding product list section.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// category view
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span> SingleChildScrollView<span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>    scrollDirection<span style="color:#f92672">:</span> Axis<span style="color:#f92672">.</span><span style="color:#a6e22e">horizontal</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>    controller<span style="color:#f92672">:</span> scrollController<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>    physics<span style="color:#f92672">:</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ScrollPhysics</span><span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>        parent<span style="color:#f92672">:</span> AlwaysScrollableScrollPhysics<span style="color:#f92672">(),</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">),</span>
+</span></span><span style="display:flex;"><span>    child<span style="color:#f92672">:</span> Row<span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>        mainAxisSize<span style="color:#f92672">:</span> MainAxisSize<span style="color:#f92672">.</span><span style="color:#a6e22e">min</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>        mainAxisAlignment<span style="color:#f92672">:</span> MainAxisAlignment<span style="color:#f92672">.</span><span style="color:#a6e22e">spaceEvenly</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>        children<span style="color:#f92672">:</span> List<span style="color:#f92672">.</span><span style="color:#a6e22e">generate</span><span style="color:#f92672">(</span>categories<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">,</span> <span style="color:#f92672">(</span>index<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        CategoryProductsModel categoryProductsModel <span style="color:#f92672">=</span> categories<span style="color:#f92672">[</span>index<span style="color:#f92672">];</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> Padding<span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>            key<span style="color:#f92672">:</span> categories<span style="color:#f92672">[</span>index<span style="color:#f92672">].</span><span style="color:#a6e22e">key</span><span style="color:#f92672">!,</span>
+</span></span><span style="display:flex;"><span>            child<span style="color:#f92672">:</span> Container<span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>                height<span style="color:#f92672">:</span> <span style="color:#ae81ff">35</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                padding<span style="color:#f92672">:</span> <span style="color:#66d9ef">const</span> EdgeInsets<span style="color:#f92672">.</span><span style="color:#a6e22e">all</span><span style="color:#f92672">(</span><span style="color:#ae81ff">8.0</span><span style="color:#f92672">),</span>
+</span></span><span style="display:flex;"><span>                decoration<span style="color:#f92672">:</span> BoxDecoration<span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>                borderRadius<span style="color:#f92672">:</span> BorderRadius<span style="color:#f92672">.</span><span style="color:#a6e22e">circular</span><span style="color:#f92672">(</span><span style="color:#ae81ff">12.0</span><span style="color:#f92672">),</span>
+</span></span><span style="display:flex;"><span>                color<span style="color:#f92672">:</span> currentIndex <span style="color:#f92672">==</span> index <span style="color:#f92672">?</span> Theme<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span>context<span style="color:#f92672">).</span><span style="color:#a6e22e">primaryColor</span> <span style="color:#f92672">:</span> Colors<span style="color:#f92672">.</span><span style="color:#a6e22e">transparent</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">),</span>
+</span></span><span style="display:flex;"><span>                child<span style="color:#f92672">:</span> InkWell<span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>                onTap<span style="color:#f92672">:</span> <span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                    currentIndex <span style="color:#f92672">=</span> index<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">final</span> context <span style="color:#f92672">=</span> GlobalObjectKey<span style="color:#f92672">(</span>categoryProductsModel<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">!).</span><span style="color:#a6e22e">currentContext</span><span style="color:#f92672">!;</span>
+</span></span><span style="display:flex;"><span>                    Scrollable<span style="color:#f92672">.</span><span style="color:#a6e22e">ensureVisible</span><span style="color:#f92672">(</span>context<span style="color:#f92672">,</span> duration<span style="color:#f92672">:</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Duration</span><span style="color:#f92672">(</span>milliseconds<span style="color:#f92672">:</span> <span style="color:#ae81ff">800</span><span style="color:#f92672">),</span> curve<span style="color:#f92672">:</span> Curves<span style="color:#f92672">.</span><span style="color:#a6e22e">ease</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">},</span>
+</span></span><span style="display:flex;"><span>                child<span style="color:#f92672">:</span> Text<span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>                    categories<span style="color:#f92672">[</span>index<span style="color:#f92672">].</span><span style="color:#a6e22e">name</span><span style="color:#f92672">!,</span>
+</span></span><span style="display:flex;"><span>                    style<span style="color:#f92672">:</span> textMedium<span style="color:#f92672">.</span><span style="color:#a6e22e">copyWith</span><span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>                    color<span style="color:#f92672">:</span> currentIndex <span style="color:#f92672">==</span> index <span style="color:#f92672">?</span> Colors<span style="color:#f92672">.</span><span style="color:#a6e22e">white</span> <span style="color:#f92672">:</span> Colors<span style="color:#f92672">.</span><span style="color:#a6e22e">black</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">),</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">),</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">)),</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}),</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">),</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">)</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="product-list-vertical-scroll">Product List Vertical Scroll</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span> Column<span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>    children<span style="color:#f92672">:</span> List<span style="color:#f92672">.</span><span style="color:#a6e22e">generate</span><span style="color:#f92672">(</span>categories<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">,</span> <span style="color:#f92672">(</span>index<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    CategoryProductsModel categoryProductsModel <span style="color:#f92672">=</span> categories<span style="color:#f92672">[</span>index<span style="color:#f92672">];</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> productLen <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>categoryProductsModel<span style="color:#f92672">.</span><span style="color:#a6e22e">products</span> <span style="color:#f92672">??</span> <span style="color:#f92672">[]).</span><span style="color:#a6e22e">length</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> Column<span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>    children<span style="color:#f92672">:</span> <span style="color:#f92672">[</span>
+</span></span><span style="display:flex;"><span>        Container<span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>        alignment<span style="color:#f92672">:</span> Alignment<span style="color:#f92672">.</span><span style="color:#a6e22e">topLeft</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>        child<span style="color:#f92672">:</span> Column<span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>            crossAxisAlignment<span style="color:#f92672">:</span> CrossAxisAlignment<span style="color:#f92672">.</span><span style="color:#a6e22e">start</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>            children<span style="color:#f92672">:</span> <span style="color:#f92672">[</span>
+</span></span><span style="display:flex;"><span>            Container<span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>                key<span style="color:#f92672">:</span> GlobalObjectKey<span style="color:#f92672">(</span>categoryProductsModel<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">!),</span>
+</span></span><span style="display:flex;"><span>                alignment<span style="color:#f92672">:</span> Alignment<span style="color:#f92672">.</span><span style="color:#a6e22e">centerLeft</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                child<span style="color:#f92672">:</span> Column<span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>                mainAxisAlignment<span style="color:#f92672">:</span> MainAxisAlignment<span style="color:#f92672">.</span><span style="color:#a6e22e">start</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                crossAxisAlignment<span style="color:#f92672">:</span> CrossAxisAlignment<span style="color:#f92672">.</span><span style="color:#a6e22e">start</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                children<span style="color:#f92672">:</span> <span style="color:#f92672">[</span>
+</span></span><span style="display:flex;"><span>                    Text<span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>                    categoryProductsModel<span style="color:#f92672">.</span><span style="color:#a6e22e">name</span> 
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">),</span>
+</span></span><span style="display:flex;"><span>                    Text<span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>                    categoryProductsModel<span style="color:#f92672">.</span><span style="color:#a6e22e">description</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">),</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">],</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">),</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">),</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// product listview
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            ListView<span style="color:#f92672">.</span><span style="color:#a6e22e">builder</span><span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>                controller<span style="color:#f92672">:</span> ScrollController<span style="color:#f92672">(),</span>
+</span></span><span style="display:flex;"><span>                physics<span style="color:#f92672">:</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">NeverScrollableScrollPhysics</span><span style="color:#f92672">(),</span>
+</span></span><span style="display:flex;"><span>                shrinkWrap<span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                itemCount<span style="color:#f92672">:</span> productLen<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                itemBuilder<span style="color:#f92672">:</span> <span style="color:#f92672">(</span>BuildContext context<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> indexProduct<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                Product product <span style="color:#f92672">=</span> categoryProductsModel<span style="color:#f92672">.</span><span style="color:#a6e22e">products</span><span style="color:#f92672">![</span>indexProduct<span style="color:#f92672">];</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> ProductWidget<span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>                    product<span style="color:#f92672">:</span> product<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">},</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">),</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">],</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">),</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">),</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">],</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}));</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Okay, everything has done.</p>
+
+              </div>
+             <aside class="hidden lg:block tableOfContentContainer" id="tableOfContentContainer">
+              <h3>Table of contents</h3>
+                
+              <nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-final-result">The final result</a></li>
+    <li><a href="#my-logic">My Logic</a></li>
+    <li><a href="#code-part">Code Part</a>
+      <ul>
+        <li><a href="#initialize">Initialize</a></li>
+        <li><a href="#add-listener-to-know-the-offset">Add Listener to know the offset</a></li>
+        <li><a href="#calculate-offsetheight-of-each-products-section">Calculate offset(height) of each product&rsquo;s section</a></li>
+        <li><a href="#calculate-offsetheight-of-each-category">Calculate offset(height) of each category</a></li>
+      </ul>
+    </li>
+    <li><a href="#part-of-ui">Part of UI</a>
+      <ul>
+        <li><a href="#category-list-horizontal-scroll">Category List, Horizontal Scroll</a></li>
+        <li><a href="#product-list-vertical-scroll">Product List Vertical Scroll</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
+              </aside>
+            </mian>
+          </div>
+            
+      
 
-</section>
 
+          <div class="my-14">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+ 
+
+
+
+
+  
+
+
+
+<style>
+.resp-sharing-button__link,
+.resp-sharing-button__icon {
+  display: inline-block
+}
+
+.resp-sharing-button__link {
+  text-decoration: none;
+  color: #fff !important;
+  margin: 0.2em
+}
+
+.resp-sharing-button {
+  border-radius: 5px;
+  transition: 25ms ease-out;
+  padding: 0.5em 0.75em;
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+  
+}
+
+.resp-sharing-button__icon svg {
+  width: 1em;
+  height: 1em;
+  margin-right: 0.4em;
+  vertical-align: middle
+}
+
+.resp-sharing-button--small svg {
+  margin: 0;
+  vertical-align: middle
+}
+
+ 
+.resp-sharing-button__icon {
+  stroke: #fff;
+  fill: none
+}
+
+ 
+.resp-sharing-button__icon--solid,
+.resp-sharing-button__icon--solidcircle {
+  fill: #fff;
+  stroke: none
+}
+
+.resp-sharing-button--twitter {
+  background-color: #55acee
+}
+
+.resp-sharing-button--twitter:hover {
+  background-color: #2795e9
+}
+
+.resp-sharing-button--pinterest {
+  background-color: #bd081c
+}
+
+.resp-sharing-button--pinterest:hover {
+  background-color: #8c0615
+}
+
+.resp-sharing-button--facebook {
+  background-color: #3b5998
+}
+
+.resp-sharing-button--facebook:hover {
+  background-color: #2d4373
+}
+
+.resp-sharing-button--tumblr {
+  background-color: #35465C
+}
+
+.resp-sharing-button--tumblr:hover {
+  background-color: #222d3c
+}
+
+.resp-sharing-button--reddit {
+  background-color: #ff4500
+}
+
+.resp-sharing-button--reddit:hover {
+  background-color: #3a80c1
+}
+
+.resp-sharing-button--google {
+  background-color: #dd4b39
+}
+
+.resp-sharing-button--google:hover {
+  background-color: #c23321
+}
+
+.resp-sharing-button--linkedin {
+  background-color: #0077b5
+}
+
+.resp-sharing-button--linkedin:hover {
+  background-color: #046293
+}
+
+.resp-sharing-button--email {
+  background-color: #777
+}
+
+.resp-sharing-button--email:hover {
+  background-color: #5e5e5e
+}
+
+.resp-sharing-button--xing {
+  background-color: #1a7576
+}
+
+.resp-sharing-button--xing:hover {
+  background-color: #114c4c
+}
+
+.resp-sharing-button--whatsapp {
+  background-color: #25D366
+}
+
+.resp-sharing-button--whatsapp:hover {
+  background-color: #1da851
+}
+
+.resp-sharing-button--hackernews {
+background-color: #FF6600
+}
+.resp-sharing-button--hackernews:hover, .resp-sharing-button--hackernews:focus {   background-color: #FB6200 }
+
+.resp-sharing-button--vk {
+  background-color: #507299
+}
+
+.resp-sharing-button--vk:hover {
+  background-color: #43648c
+}
+
+.resp-sharing-button--facebook {
+  background-color: #3b5998;
+  border-color: #3b5998;
+}
+
+.resp-sharing-button--facebook:hover,
+.resp-sharing-button--facebook:active {
+  background-color: #2d4373;
+  border-color: #2d4373;
+}
+
+.resp-sharing-button--twitter {
+  background-color: #55acee;
+  border-color: #55acee;
+}
+
+.resp-sharing-button--twitter:hover,
+.resp-sharing-button--twitter:active {
+  background-color: #2795e9;
+  border-color: #2795e9;
+}
+
+.resp-sharing-button--tumblr {
+  background-color: #35465C;
+  border-color: #35465C;
+}
+
+.resp-sharing-button--tumblr:hover,
+.resp-sharing-button--tumblr:active {
+  background-color: #222d3c;
+  border-color: #222d3c;
+}
+
+.resp-sharing-button--email {
+  background-color: #777777;
+  border-color: #777777;
+}
+
+.resp-sharing-button--email:hover,
+.resp-sharing-button--email:active {
+  background-color: #5e5e5e;
+  border-color: #5e5e5e;
+}
+
+.resp-sharing-button--pinterest {
+  background-color: #bd081c;
+  border-color: #bd081c;
+}
+
+.resp-sharing-button--pinterest:hover,
+.resp-sharing-button--pinterest:active {
+  background-color: #8c0615;
+  border-color: #8c0615;
+}
+
+.resp-sharing-button--linkedin {
+  background-color: #0077b5;
+  border-color: #0077b5;
+}
+
+.resp-sharing-button--linkedin:hover,
+.resp-sharing-button--linkedin:active {
+  background-color: #046293;
+  border-color: #046293;
+}
+
+.resp-sharing-button--reddit {
+  background-color: #ff4500;
+  border-color: #ff4500;
+}
+
+.resp-sharing-button--reddit:hover,
+.resp-sharing-button--reddit:active {
+  background-color: #ff5700;
+  border-color: #ff5700;
+}
+
+.resp-sharing-button--xing {
+  background-color: #1a7576;
+  border-color: #1a7576;
+}
+
+.resp-sharing-button--xing:hover
+.resp-sharing-button--xing:active {
+  background-color: #114C4C;
+  border-color: #114C4C;
+}
+
+.resp-sharing-button--whatsapp {
+  background-color: #25D366;
+  border-color: #25D366;
+}
+
+.resp-sharing-button--whatsapp:hover,
+.resp-sharing-button--whatsapp:active {
+  background-color: #1DA851;
+  border-color: #1DA851;
+}
+
+.resp-sharing-button--hackernews {
+  background-color: #FF6600;
+  border-color: #FF6600;
+}
+
+.resp-sharing-button--hackernews:hover
+.resp-sharing-button--hackernews:active {
+  background-color: #FB6200;
+  border-color: #FB6200;
+}
+
+.resp-sharing-button--vk {
+  background-color: #507299;
+  border-color: #507299;
+}
+
+.resp-sharing-button--vk:hover
+.resp-sharing-button--vk:active {
+  background-color: #43648c;
+  border-color: #43648c;
+}
+
+.resp-sharing-button--telegram {
+  background-color: #54A9EB;
+}
+
+.resp-sharing-button--telegram:hover {
+  background-color: #4B97D1;
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+<a class="resp-sharing-button__link" href="mailto:?subject=Make%20Horizontal%20Menu%20Auto%20Scroll%20With%20Vertical%20Product%20List%20in%20flutter&amp;body=https://hupochuanbird.github.io/posts/make-horizontal-menu-auto-scroll-with-vertical-product-list/" target="_self" rel="noopener" aria-label="" title="E-Mail">
+  <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z"/></svg>
+
+    
+    </div>
+  </div>
+</a>
+
+
+
+
+
+
+<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://hupochuanbird.github.io/posts/make-horizontal-menu-auto-scroll-with-vertical-product-list/&amp;title=Make%20Horizontal%20Menu%20Auto%20Scroll%20With%20Vertical%20Product%20List%20in%20flutter&amp;summary=Make%20Horizontal%20Menu%20Auto%20Scroll%20With%20Vertical%20Product%20List%20in%20flutter&amp;https://hupochuanbird.github.io/posts/make-horizontal-menu-auto-scroll-with-vertical-product-list/" target="_blank" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.5 21.5h-5v-13h5v13zM4 6.5C2.5 6.5 1.5 5.3 1.5 4s1-2.4 2.5-2.4c1.6 0 2.5 1 2.6 2.5 0 1.4-1 2.5-2.6 2.5zm11.5 6c-1 0-2 1-2 2v7h-5v-13h5V10s1.6-1.5 4-1.5c3 0 5 2.2 5 6.3v6.7h-5v-7c0-1-1-2-2-2z"/></svg>
+
+    
+    </div>
+  </div>
+</a>
+
+
+
+
+<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=https://hupochuanbird.github.io/posts/make-horizontal-menu-auto-scroll-with-vertical-product-list/&amp;resubmit=true&amp;title=Make%20Horizontal%20Menu%20Auto%20Scroll%20With%20Vertical%20Product%20List%20in%20flutter" target="_blank" rel="noopener" aria-label="" title="Reddit">
+  <div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z"/></svg>
+
+    
+    </div>
+  </div>
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+
+          <div class="pagination"><div class="paginator" >
+    
+    
+        <a class="next btn" style="font-size: small;" href="https://hupochuanbird.github.io/posts/setup-search-in-hugo/">Setup Search in Hugo <i class="fa-solid fa-arrow-right"></i></a>
+       
+    
+</div></div>
+          <div class="comment-block">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+    (function() {
+        
+        
+        if (window.location.hostname == "localhost")
+            return;
+    
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = '';
+        dsq.src = 'https://hupochuanbird-github-io.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></div>
+        </div>
+
+    
+  </section>
+
+  <script>
+
+
+window.addEventListener('DOMContentLoaded', () => {
+        const observerForTableOfContentActiveState = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                const id = entry.target.getAttribute('id');
+                if (entry.intersectionRatio > 0) {
+                  clearActiveStatesInTableOfContents();
+                  document.querySelector(`aside nav li a[href="#${id}"]`).parentElement.classList.add('active');
+              }
+          });
+      });
+      document.querySelectorAll('h1[id],h2[id],h3[id],h4[id]').forEach((section) => {
+          observerForTableOfContentActiveState.observe(section);
+      });
+
+    });
+
+    function clearActiveStatesInTableOfContents() {
+        document.querySelectorAll('aside nav li').forEach((section) => {
+            section.classList.remove('active');
+        });
+    }
+
+  </script>
             </main>
              <footer class="bg-portfolio-bg-darker-gray">
     <div class="container flex flex-col sm:flex-row justify-between gap-y-10 sm:gap-4 py-14">
@@ -346,7 +1521,7 @@
 
 
 <a href="/posts/"  title="My Blog">
-    <li class="hover  ">
+    <li class="hover    active ">
       <i class="fa-solid fa-paper-plane"></i>
       My Blog
     </li>
@@ -364,7 +1539,7 @@
 
 
 <a href="/tags/"  title="Tags">
-    <li class="hover    active ">
+    <li class="hover  ">
       <i class="fa-solid fa-tag"></i>
       Tags
     </li>

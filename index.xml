@@ -9,6 +9,17 @@
     <copyright>All rights reserved</copyright>
     <lastBuildDate>Tue, 07 Mar 2023 22:54:08 +0000</lastBuildDate><atom:link href="https://hupochuanbird.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Make Horizontal Menu Auto Scroll With Vertical Product List in flutter</title>
+      <link>https://hupochuanbird.github.io/posts/make-horizontal-menu-auto-scroll-with-vertical-product-list/</link>
+      <pubDate>Thu, 15 Feb 2024 14:46:55 +0000</pubDate>
+      
+      <guid>https://hupochuanbird.github.io/posts/make-horizontal-menu-auto-scroll-with-vertical-product-list/</guid>
+      <description>My article is referencing https://stackoverflow.com/questions/67195205/how-to-make-horizontal-menu-auto-scroll-with-vertical-product-list-in-flutter. However, in my case, the width of each category&amp;rsquo;s name and the height of each product card are dynamic and subject to slight changes. Now, let&amp;rsquo;s proceed.
+The final result My Logic Well, based on that article, I came up with some innovations. In order to explain easily, I have drawn a draft below:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 category1 | category2 | category3 .</description>
+    </item>
+    
+    <item>
       <title>Setup Search in Hugo</title>
       <link>https://hupochuanbird.github.io/posts/setup-search-in-hugo/</link>
       <pubDate>Tue, 13 Feb 2024 19:57:17 +0000</pubDate>
