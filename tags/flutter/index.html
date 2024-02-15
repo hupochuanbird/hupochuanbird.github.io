@@ -7,7 +7,7 @@
     <meta name="author" content="tothemoon">
     <meta name="keywords" content="blog,life,code,desgin,woman stem">
 
-    <title>How to Deploy to Github | tothemoon&#39;s blog</title>
+    <title>flutter | tothemoon&#39;s blog</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link rel="icon" type="image/png" href="/images/favicon.png" />
@@ -83,7 +83,7 @@
 
 
 <a href="/posts/"  title="My Blog">
-    <li class="hover    active ">
+    <li class="hover  ">
       <i class="fa-solid fa-paper-plane"></i>
       My Blog
     </li>
@@ -101,7 +101,7 @@
 
 
 <a href="/tags/"  title="Tags">
-    <li class="hover  ">
+    <li class="hover    active ">
       <i class="fa-solid fa-tag"></i>
       Tags
     </li>
@@ -166,7 +166,7 @@
 
 
 <a href="/posts/"  title="My Blog">
-    <li class="hover    active ">
+    <li class="hover  ">
       <i class="fa-solid fa-paper-plane"></i>
       My Blog
     </li>
@@ -184,7 +184,7 @@
 
 
 <a href="/tags/"  title="Tags">
-    <li class="hover  ">
+    <li class="hover    active ">
       <i class="fa-solid fa-tag"></i>
       Tags
     </li>
@@ -213,939 +213,76 @@
     </nav>
   </header>
              <main class="min-h-full"  >
-
-<style>
-  
-  html {
-  scroll-behavior: smooth;
-}
-html, body {
-    scroll-padding-top: 100px;
-}
-#page-section {
-    display: block
-}
-
-
-.blog-content {
-    padding-bottom: 3rem;
-}
-
-@media(min-width: 1024px) {
-    #page-section>aside {
-        margin-left:1rem;
-        border-left-width: 4px;
-        border-color: #ffb703
-    }
-
-    #page-section>aside.tableOfContentContainer {
-        position: -webkit-sticky;
-        position: sticky;
-        top: 79px;
-        align-self: start
-    }
-
-    #page-section>aside>h3 {
-        font-size: 1rem;
-        padding-left: .5rem;
-        color: #1a202c;
-        font-weight: 700;
-        padding-bottom: .5rem;
-        padding-top: 1rem
-    }
-
-    #page-section {
-        display: grid;
-        grid-template-columns: 100% 12em;
-        width: 80%
-    }
-
-    #TableOfContents {
-        display: block;
-        padding-left: .5rem;
-        padding-bottom: 1rem;
-        font-size: 1rem;
-        color: #1a202c
-    }
-
-    #TableOfContents li {
-        padding-top: .25rem;
-        padding-bottom: .25rem;
-        list-style: none;
-        font-size: small;
-    }
-
-    #TableOfContents li.active {
-        padding-left: 0
-    }
-
-    #TableOfContents li.active:before {
-        content: "→";
-        display: inline-block;
-        margin-left: -20px;
-        width: 20px
-    }
-
-    .cronweekly #TableOfContents ul {
-        margin-left: 1rem!important
-    }
-
-    #TableOfContents li {
-        margin-left: 1rem
-    }
-
-    #TableOfContents li.active>a {
-        color: #1a202c;
-        font-weight: 700
-    }
-
-    #TableOfContents a {
-        text-decoration: none;
-        padding: .125rem 0;
-        color: rgb(142, 142, 142);
-        -webkit-transition: all 50ms ease-in-out;
-        transition: all 50ms ease-in-out
-    }
-
-    #TableOfContents a:hover,#TableOfContents a:focus,#TableOfContents a:active {
-        color: rgb(20, 20, 20)
-    }
-
-    #tableOfContentContainer ol,ul {
-      list-style: none;
-      margin: 0;
-      padding: 0
-    }
-}
-
-
-
-.content blockquote {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    border-left-width: 4px;
-    border-color: #ffb703;
-    font-style: italic;
-}
-
-.content a,.homepage-intro a,.link-dark {
-    border-bottom-width: 2px;
-    padding-bottom: .1rem;
-    padding-top: .1rem;
-    border-color: #ffb703
-}
-
-.link-talks-meta {
-    padding-bottom: .3rem!important;
-    margin-right: 1rem;
-    color: #718096;
-    font-size: 1rem
-}
-
-.link-dark {
-    border-color: #744210
-}
-
-.content a:hover,.homepage-intro a:hover,footer a:hover,.link-dark a:hover {
-    background-color: #f6e05e
-}
-
-.comments svg {
-    height: 2rem;
-    width: 2rem;
-    fill: currentColor;
-    display: inline-block;
-    margin: .5rem
-}
-
-.comments .share-links a {
-    border-width: 0;
-    background-color: #f7fafc;
-    display: inline-block;
-    border-color: #cbd5e0;
-    border-width: 1px;
-    margin-right: 1rem
-}
-
-.comments .share-links a:hover {
-    background-color: #edf2f7
-}
-
-.comments h3 {
-    border-bottom-width: 0!important;
-    display: block!important;
-    font-size: 1.875rem!important
-}
-
-.content h1,.content h2,.content h3 {
-    display: inline-block;
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    margin-top: 1.5rem;
-    border-bottom-width: 2px;
-    padding-bottom: 0;
-    border-color: #e2e8f0;
-    line-height: 2
-}
-
-.content h2 {
-    margin-bottom: .25rem
-}
-
-.content h3 {
-    font-size: 1.25rem
-}
-.polaroid{
-    display: flex;
-    justify-content: center;
-}
-
-.content img {
-    max-height: 500px;
-    width: 100%;
-    height: inherit;
-    display: block;
-    object-fit: cover;
-    border-radius: .25rem;
-    border-width: 1px;
-    box-shadow: 0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -2px rgba(0,0,0,.05);
-}
-
-</style>
 <section class="s:mt-10">
-  <div class="w-screen max-w-full pt-20 header-curved  ">
-    <div class="container w-full md:max-w-4xl px-4 md:px-6 text-xl text-gray-800 leading-normal mx-auto">
-        <div class="pb-8">
-            <h1 class="font-thin break-normal leading-tight text-gray-900 pt-6 pb-4 text-4xl md:text-5xl">
-              How to Deploy to Github
-            </h1>
+  <div class="container sm:my-14">
+    <div class="flex flex-col sm:flex-row ">  
+      <div class="w-full sm:w-10 sm:mt-10">
+        <div class="result" role="group">
+          <h2 class="result__title">“flutter”</h2>
+            
+            
+
+    
+
+
+<a  href="https://hupochuanbird.github.io/posts/make-horizontal-menu-auto-scroll-with-vertical-product-list/"  class="result__item row-anchor " aria-label="Make Horizontal Menu Auto Scroll With Vertical Product List in flutter">
+    
+    <div class="item_cover_container">
+        <picture class="viewport-picture">
+            <source media="(max-width: 734px)" srcset="https://i.imgur.com/kx6kzD0.png">
+            <img class="viewport-image" src="https://i.imgur.com/kx6kzD0.png" srcset="https://i.imgur.com/kx6kzD0.png" aria-hidden="true" alt="">
+        </picture>
+    </div>
+   
+    
+   
+
+
+    <div class="item__content">
+        <p class="item__category category_update">
+            
+                
+                flutter
+                
+            
+        </p>
+        <h3 class="item__headline">
+            Make Horizontal Menu Auto Scroll With Vertical Product List in flutter
+        </h3>
+        <h5 class="item__desc">
+            
+        </h5>
+        <p class="item__date">February 15, 2024</p>
+    </div>
+</a>
+            
         </div>
       </div>
     </div>
-        <div class="container w-full md:max-w-4xl mx-auto mt-8 ">
-          <div class="w-full px-4 md:px-6  text-gray-800 leading-normal">
-            <div class="page-metadata">
-<div class="article-header">
-    <div class="avatar">
-        <img src="https://i.imgur.com/e7UVoOQ.png">
+  </div>
+  
+<nav class="pagination-ctrl" aria-label="myproject">
+  <div class="pagination-ctrl__content">
+    
+    <a role="button" href="#" class="pagination-ctrl__btn pagination-ctrl__btn--previous pagination-ctrl__btn--disabled" aria-disabled="true" aria-label="prev" tabindex="0">
+    
+    <i class="fa-solid fa-chevron-left fa-2xs"></i>
+    </a>
+    <div class="pagination-ctrl__info">
+      <span class="pagination-ctrl__info__text pagination-ctrl__info--current">1</span>
+      <span class="pagination-ctrl__info__text"> page </span>
+      <span class="pagination-ctrl__info__text pagination-ctrl__info--total">1</span>
     </div>
-    <div class="info">
-        <div class="author">
-            <span class="name">tothemoon</span>
-            <span class="author-label"></span>
-        </div>
-        <div class="meta-info">
-            <div class="article-meta-info">
-                <span class="article-date article-meta-item">
-                    <i class="fa fa-pen"></i>&nbsp;
-                    <span class="pc">March 19, 2023</span>
-                </span>
-                
-                <div class="article-categories article-meta-item">
-                    <span class="fa fa-folder-open"></span>
-                    
-                    <a href="https://hupochuanbird.github.io/categories/tutorial/">tutorial</a>&nbsp;
-                    
-                    <a href="https://hupochuanbird.github.io/categories/hugo/">hugo</a>&nbsp;
-                    
-                    <a href="https://hupochuanbird.github.io/categories/github/">github</a>&nbsp;
-                    
-                </div>
-                
-                
-                <span class="article-tags article-meta-item">
-                    <i class="fa fa-tag"></i>&nbsp;
-                    <ul>
-                        
-                        <li>
-                        #<a href="https://hupochuanbird.github.io/tags/github/">github</a>&nbsp;
-                        </li>
-                        
-                        <li>
-                        #<a href="https://hupochuanbird.github.io/tags/cloud/">cloud</a>&nbsp;
-                        </li>
-                        
-                    </ul>
-                </span>
-                
-                <span class="article-wordcount article-meta-item">
-                    <i class="fa fa-book"></i>&nbsp;<span>681 Words</span>
-                </span>
-                <span class="article-min2read article-meta-item">
-                    <i class="fa fa-clock"></i>&nbsp;<span>4 mins</span>
-                </span>
-                <span class="article-pv article-meta-item">
-                    <i class="fa-regular fa-eye"></i>&nbsp;
-                    <span id="busuanzi_value_page_pv">
-                    </span>
-                </span>
-
-            </div>
-        </div>
-    </div>
-</div></div>
-            <mian id="page-section">
-              <div class="content blog-content">
-                <h2 id="how-to-deploy-to-github">How to Deploy to Github</h2>
-<p>To deploy your Hugo site to GitHub Pages, you can follow these steps:</p>
-<ol>
-<li>First update baseURL in config.yaml
-baseURL: <a href="https://www.username.github.io">https://www.username.github.io</a>
-Then compile with hugo
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo</span></span></code></pre></td></tr></table>
-</div>
-</div></li>
-</ol>
-<div class="polaroid"  >
-   <a data-fancybox="gallery" data-src="https://i.328888.xyz/2023/03/20/PtUud.png">
-        <img src="https://i.328888.xyz/2023/03/20/PtUud.png"/>
-    </a>
-</div>
-Go to public folder
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd piblic</span></span></code></pre></td></tr></table>
-</div>
-</div>
-<ol start="2">
-<li>Second, create a new repository on GitHub that will hold your website files. Make sure to name the repository in the format yourusername.github.io, where yourusername is your GitHub username.
-Don&rsquo;t forget add <strong>github.io</strong></li>
-</ol>
-<div class="polaroid"  >
-   <a data-fancybox="gallery" data-src="https://i.328888.xyz/2023/03/20/PtiWJ.png">
-        <img src="https://i.328888.xyz/2023/03/20/PtiWJ.png"/>
-    </a>
-    <div class="container">
-        <p>create a new repo for your personal website</P>
-    </div>
-</div>
-<div class="polaroid"  >
-   <a data-fancybox="gallery" data-src="https://i.328888.xyz/2023/03/20/PnqEX.png">
-        <img src="https://i.328888.xyz/2023/03/20/PnqEX.png"/>
-    </a>
-    <div class="container">
-        <p>Setting: GitHub Pages site to master branch</P>
-    </div>
-</div>
-<ol start="3">
-<li>Next, navigate to the root of your Hugo project directory in a terminal window or command prompt. (we already in public folder)</li>
-<li>Initialize a new Git repository by running the command:</li>
-</ol>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git init</span></span></code></pre></td></tr></table>
-</div>
-</div>
-<ol start="5">
-<li>Add all the files in your Hugo project directory to the new Git repository by running the command:</li>
-</ol>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git add ./</span></span></code></pre></td></tr></table>
-</div>
-</div>
-<ol start="6">
-<li>Commit the changes to the Git repository by running the command:</li>
-</ol>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;Initial commit&#34;</span></span></span></code></pre></td></tr></table>
-</div>
-</div>
-<ol start="7">
-<li>Set the remote repository to your new GitHub Pages repository by running the command:</li>
-</ol>
-<p><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git remote add origin 
-</span></span><span style="display:flex;"><span>https://github.com/yourusername/yourusername.github.io.git</span></span></code></pre></td></tr></table>
-</div>
-</div>
-Replace &lsquo;yourusername&rsquo; with your actual GitHub username.</p>
-<ol start="8">
-<li>Here we need to notice, if the default branch is not the master, please use this command first:</li>
-</ol>
-<div class="polaroid"  >
-   <a data-fancybox="gallery" data-src="https://i.328888.xyz/2023/03/20/PnP4H.png">
-        <img src="https://i.328888.xyz/2023/03/20/PnP4H.png"/>
-    </a>
-</div>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git checkout -b master</span></span></code></pre></td></tr></table>
-</div>
-</div>
-<p>Finally, push the changes to the remote repository by running the command:
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git push -u origin master</span></span></code></pre></td></tr></table>
-</div>
-</div></p>
-<p>This will push the changes in your local Git repository to the remote repository on GitHub. You should now see your website files in the GitHub repository.</p>
-<ol start="9">
-<li>To make your website live, go to your repository settings on GitHub and scroll down to the GitHub Pages section. Select the master branch as your source and click on Save. Your website should now be accessible at <a href="https://yourusername.github.io">https://yourusername.github.io</a>.</li>
-</ol>
-<p>Note that it may take a few minutes for GitHub Pages to update and display your website after you have deployed it.</p>
-<h2 id="the-full-command">The full command</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git init
-</span></span><span style="display:flex;"><span>git checkout -b master
-</span></span><span style="display:flex;"><span>git add ./
-</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;Initial commit&#34;</span>
-</span></span><span style="display:flex;"><span>git branch -M master
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>git remote add origin
-</span></span><span style="display:flex;"><span> https://github.com/yourusername/yourusername.github.io.git
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>git push -u origin master</span></span></code></pre></td></tr></table>
-</div>
-</div>
-<h2 id="visit-your-site">Visit your site</h2>
-<div class="polaroid"  >
-   <a data-fancybox="gallery" data-src="https://i.328888.xyz/2023/03/20/PtVpc.png">
-        <img src="https://i.328888.xyz/2023/03/20/PtVpc.png"/>
-    </a>
-</div>
-<div class="polaroid"  >
-   <a data-fancybox="gallery" data-src="https://i.328888.xyz/2023/03/20/PtDhV.png">
-        <img src="https://i.328888.xyz/2023/03/20/PtDhV.png"/>
-    </a>
-</div>
-<h2 id="update-your-website">Update your website</h2>
-<p>When you change some files or write a new blog, you need push your change to github, the command is:
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git add ./
-</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;commentxxxx&#34;</span>
-</span></span><span style="display:flex;"><span>git push </span></span></code></pre></td></tr></table>
-</div>
-</div></p>
-<h2 id="problem-you-might-meet">Problem you might meet</h2>
-<h3 id="yournamegithubio-is-404">yourname.github.io is 404</h3>
-<p>If you&rsquo;re experiencing a 404 error after deploying your Hugo site to GitHub Pages, there are a few things you can try:</p>
-<ul>
-<li>
-<p>Check the spelling and capitalization of your repository name. Make sure it matches the URL you&rsquo;re using to access your site. For example, if your repository is named my-hugo-site, your site should be accessible at <a href="https://yourusername.github.io/my-hugo-site/">https://yourusername.github.io/my-hugo-site/</a>.</p>
-</li>
-<li>
-<p>Verify that you have set the correct repository source in your GitHub Pages settings. If you have multiple branches in your repository, make sure you&rsquo;ve selected the correct one as the source for your GitHub Pages site. You can check this in your repository settings under the &ldquo;GitHub Pages&rdquo; section.</p>
-</li>
-<li>
-<p>Check that you&rsquo;ve pushed your Hugo site&rsquo;s content to the correct branch. By default, GitHub Pages serves content from the gh-pages branch, so make sure you&rsquo;ve pushed your site&rsquo;s files to that branch. Alternatively, you can configure GitHub Pages to use a different branch or directory by changing the settings in your repository.</p>
-</li>
-<li>
-<p>Verify that your site&rsquo;s content has been built correctly by running the hugo command locally and checking the generated files in the public/ directory. If the files are missing or incomplete, you may need to troubleshoot your Hugo configuration.</p>
-</li>
-<li>
-<p>If you&rsquo;re using a custom domain, make sure it&rsquo;s set up correctly and that your DNS settings are configured properly. This can sometimes cause issues with GitHub Pages sites.</p>
-</li>
-<li>
-<p>Wait a few minutes and try accessing your site again. It can sometimes take a few minutes for changes to propagate through GitHub Pages.</p>
-</li>
-</ul>
-<p>If none of these solutions work, you may need to consult the Hugo documentation or reach out to the GitHub support team for further assistance.</p>
-
-              </div>
-             <aside class="hidden lg:block tableOfContentContainer" id="tableOfContentContainer">
-              <h3>Table of contents</h3>
-                
-              <nav id="TableOfContents">
-  <ul>
-    <li><a href="#how-to-deploy-to-github">How to Deploy to Github</a></li>
-    <li><a href="#the-full-command">The full command</a></li>
-    <li><a href="#visit-your-site">Visit your site</a></li>
-    <li><a href="#update-your-website">Update your website</a></li>
-    <li><a href="#problem-you-might-meet">Problem you might meet</a>
-      <ul>
-        <li><a href="#yournamegithubio-is-404">yourname.github.io is 404</a></li>
-      </ul>
-    </li>
-  </ul>
+    
+    <a role="button" href="#" class="pagination-ctrl__btn  pagination-ctrl__btn--next  pagination-ctrl__btn--disabled" aria-label="next" aria-disabled="true">
+    
+    <i class="fa-solid fa-chevron-right fa-2xs" ></i>
+      </a>
+  </div>
 </nav>
-              </aside>
-            </mian>
-          </div>
-            
-      
 
+</section>
 
-          <div class="my-14">
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-  
-
-
-
-
-
-
-
-
-  
-
-
- 
-
-
-
-
-  
-
-
-
-<style>
-.resp-sharing-button__link,
-.resp-sharing-button__icon {
-  display: inline-block
-}
-
-.resp-sharing-button__link {
-  text-decoration: none;
-  color: #fff !important;
-  margin: 0.2em
-}
-
-.resp-sharing-button {
-  border-radius: 5px;
-  transition: 25ms ease-out;
-  padding: 0.5em 0.75em;
-  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
-  
-}
-
-.resp-sharing-button__icon svg {
-  width: 1em;
-  height: 1em;
-  margin-right: 0.4em;
-  vertical-align: middle
-}
-
-.resp-sharing-button--small svg {
-  margin: 0;
-  vertical-align: middle
-}
-
- 
-.resp-sharing-button__icon {
-  stroke: #fff;
-  fill: none
-}
-
- 
-.resp-sharing-button__icon--solid,
-.resp-sharing-button__icon--solidcircle {
-  fill: #fff;
-  stroke: none
-}
-
-.resp-sharing-button--twitter {
-  background-color: #55acee
-}
-
-.resp-sharing-button--twitter:hover {
-  background-color: #2795e9
-}
-
-.resp-sharing-button--pinterest {
-  background-color: #bd081c
-}
-
-.resp-sharing-button--pinterest:hover {
-  background-color: #8c0615
-}
-
-.resp-sharing-button--facebook {
-  background-color: #3b5998
-}
-
-.resp-sharing-button--facebook:hover {
-  background-color: #2d4373
-}
-
-.resp-sharing-button--tumblr {
-  background-color: #35465C
-}
-
-.resp-sharing-button--tumblr:hover {
-  background-color: #222d3c
-}
-
-.resp-sharing-button--reddit {
-  background-color: #ff4500
-}
-
-.resp-sharing-button--reddit:hover {
-  background-color: #3a80c1
-}
-
-.resp-sharing-button--google {
-  background-color: #dd4b39
-}
-
-.resp-sharing-button--google:hover {
-  background-color: #c23321
-}
-
-.resp-sharing-button--linkedin {
-  background-color: #0077b5
-}
-
-.resp-sharing-button--linkedin:hover {
-  background-color: #046293
-}
-
-.resp-sharing-button--email {
-  background-color: #777
-}
-
-.resp-sharing-button--email:hover {
-  background-color: #5e5e5e
-}
-
-.resp-sharing-button--xing {
-  background-color: #1a7576
-}
-
-.resp-sharing-button--xing:hover {
-  background-color: #114c4c
-}
-
-.resp-sharing-button--whatsapp {
-  background-color: #25D366
-}
-
-.resp-sharing-button--whatsapp:hover {
-  background-color: #1da851
-}
-
-.resp-sharing-button--hackernews {
-background-color: #FF6600
-}
-.resp-sharing-button--hackernews:hover, .resp-sharing-button--hackernews:focus {   background-color: #FB6200 }
-
-.resp-sharing-button--vk {
-  background-color: #507299
-}
-
-.resp-sharing-button--vk:hover {
-  background-color: #43648c
-}
-
-.resp-sharing-button--facebook {
-  background-color: #3b5998;
-  border-color: #3b5998;
-}
-
-.resp-sharing-button--facebook:hover,
-.resp-sharing-button--facebook:active {
-  background-color: #2d4373;
-  border-color: #2d4373;
-}
-
-.resp-sharing-button--twitter {
-  background-color: #55acee;
-  border-color: #55acee;
-}
-
-.resp-sharing-button--twitter:hover,
-.resp-sharing-button--twitter:active {
-  background-color: #2795e9;
-  border-color: #2795e9;
-}
-
-.resp-sharing-button--tumblr {
-  background-color: #35465C;
-  border-color: #35465C;
-}
-
-.resp-sharing-button--tumblr:hover,
-.resp-sharing-button--tumblr:active {
-  background-color: #222d3c;
-  border-color: #222d3c;
-}
-
-.resp-sharing-button--email {
-  background-color: #777777;
-  border-color: #777777;
-}
-
-.resp-sharing-button--email:hover,
-.resp-sharing-button--email:active {
-  background-color: #5e5e5e;
-  border-color: #5e5e5e;
-}
-
-.resp-sharing-button--pinterest {
-  background-color: #bd081c;
-  border-color: #bd081c;
-}
-
-.resp-sharing-button--pinterest:hover,
-.resp-sharing-button--pinterest:active {
-  background-color: #8c0615;
-  border-color: #8c0615;
-}
-
-.resp-sharing-button--linkedin {
-  background-color: #0077b5;
-  border-color: #0077b5;
-}
-
-.resp-sharing-button--linkedin:hover,
-.resp-sharing-button--linkedin:active {
-  background-color: #046293;
-  border-color: #046293;
-}
-
-.resp-sharing-button--reddit {
-  background-color: #ff4500;
-  border-color: #ff4500;
-}
-
-.resp-sharing-button--reddit:hover,
-.resp-sharing-button--reddit:active {
-  background-color: #ff5700;
-  border-color: #ff5700;
-}
-
-.resp-sharing-button--xing {
-  background-color: #1a7576;
-  border-color: #1a7576;
-}
-
-.resp-sharing-button--xing:hover
-.resp-sharing-button--xing:active {
-  background-color: #114C4C;
-  border-color: #114C4C;
-}
-
-.resp-sharing-button--whatsapp {
-  background-color: #25D366;
-  border-color: #25D366;
-}
-
-.resp-sharing-button--whatsapp:hover,
-.resp-sharing-button--whatsapp:active {
-  background-color: #1DA851;
-  border-color: #1DA851;
-}
-
-.resp-sharing-button--hackernews {
-  background-color: #FF6600;
-  border-color: #FF6600;
-}
-
-.resp-sharing-button--hackernews:hover
-.resp-sharing-button--hackernews:active {
-  background-color: #FB6200;
-  border-color: #FB6200;
-}
-
-.resp-sharing-button--vk {
-  background-color: #507299;
-  border-color: #507299;
-}
-
-.resp-sharing-button--vk:hover
-.resp-sharing-button--vk:active {
-  background-color: #43648c;
-  border-color: #43648c;
-}
-
-.resp-sharing-button--telegram {
-  background-color: #54A9EB;
-}
-
-.resp-sharing-button--telegram:hover {
-  background-color: #4B97D1;
-}
-</style>
-
-
-
-
-
-
-
-
-
-
-<a class="resp-sharing-button__link" href="mailto:?subject=How%20to%20Deploy%20to%20Github&amp;body=https://hupochuanbird.github.io/posts/how-to-deploy-to-github/" target="_self" rel="noopener" aria-label="" title="E-Mail">
-  <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
-
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z"/></svg>
-
-    
-    </div>
-  </div>
-</a>
-
-
-
-
-
-
-<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://hupochuanbird.github.io/posts/how-to-deploy-to-github/&amp;title=How%20to%20Deploy%20to%20Github&amp;summary=How%20to%20Deploy%20to%20Github&amp;https://hupochuanbird.github.io/posts/how-to-deploy-to-github/" target="_blank" rel="noopener" aria-label="">
-  <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
-
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.5 21.5h-5v-13h5v13zM4 6.5C2.5 6.5 1.5 5.3 1.5 4s1-2.4 2.5-2.4c1.6 0 2.5 1 2.6 2.5 0 1.4-1 2.5-2.6 2.5zm11.5 6c-1 0-2 1-2 2v7h-5v-13h5V10s1.6-1.5 4-1.5c3 0 5 2.2 5 6.3v6.7h-5v-7c0-1-1-2-2-2z"/></svg>
-
-    
-    </div>
-  </div>
-</a>
-
-
-
-
-<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=https://hupochuanbird.github.io/posts/how-to-deploy-to-github/&amp;resubmit=true&amp;title=How%20to%20Deploy%20to%20Github" target="_blank" rel="noopener" aria-label="" title="Reddit">
-  <div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
-
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z"/></svg>
-
-    
-    </div>
-  </div>
-</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          </div>
-
-          <div class="pagination"><div class="paginator" >
-    
-        <a class="prev btn" style="font-size: small;"  href="https://hupochuanbird.github.io/posts/how-to-use-this-theme-in-your-project/"><i class="fa-solid fa-arrow-left"></i>How to Use This Theme in Your … </a>
-    
-    
-        <a class="next btn" style="font-size: small;" href="https://hupochuanbird.github.io/posts/how-to-calculate-the-number-of-views/">How to Calculate the Number of … <i class="fa-solid fa-arrow-right"></i></a>
-       
-    
-</div></div>
-          <div class="comment-block">
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-
-    (function() {
-        
-        
-        if (window.location.hostname == "localhost")
-            return;
-    
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        var disqus_shortname = '';
-        dsq.src = 'https://hupochuanbird-github-io.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></div>
-        </div>
-
-    
-  </section>
-
-  <script>
-
-
-window.addEventListener('DOMContentLoaded', () => {
-        const observerForTableOfContentActiveState = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                const id = entry.target.getAttribute('id');
-                if (entry.intersectionRatio > 0) {
-                  clearActiveStatesInTableOfContents();
-                  document.querySelector(`aside nav li a[href="#${id}"]`).parentElement.classList.add('active');
-              }
-          });
-      });
-      document.querySelectorAll('h1[id],h2[id],h3[id],h4[id]').forEach((section) => {
-          observerForTableOfContentActiveState.observe(section);
-      });
-
-    });
-
-    function clearActiveStatesInTableOfContents() {
-        document.querySelectorAll('aside nav li').forEach((section) => {
-            section.classList.remove('active');
-        });
-    }
-
-  </script>
             </main>
              <footer class="bg-portfolio-bg-darker-gray">
     <div class="container flex flex-col sm:flex-row justify-between gap-y-10 sm:gap-4 py-14">
@@ -1205,7 +342,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 <a href="/posts/"  title="My Blog">
-    <li class="hover    active ">
+    <li class="hover  ">
       <i class="fa-solid fa-paper-plane"></i>
       My Blog
     </li>
@@ -1223,7 +360,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 <a href="/tags/"  title="Tags">
-    <li class="hover  ">
+    <li class="hover    active ">
       <i class="fa-solid fa-tag"></i>
       Tags
     </li>
