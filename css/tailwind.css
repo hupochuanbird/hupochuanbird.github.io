@@ -689,10 +689,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: #fdfffc;
 }
 
-.bg-portfolio-bg-darker-gray{
-  color: #edf2f4;
-  background-color: #011627;
-}
 
 .bg-transparent{
   background-color: transparent;
@@ -1175,12 +1171,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 #about  h4 {
   margin: 2px 0;
 }
-#about h5{
-  padding: 4px;
-  margin: 2px 0;
 
-  background: #2ec4b6;
-}
 #about  ul strong {
   margin-right: 10px;
 }

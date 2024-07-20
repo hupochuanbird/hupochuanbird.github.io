@@ -1,4 +1,5 @@
 
+
 (function() {
   "use strict";
   /**
@@ -361,4 +362,7 @@ function closePassBox(type){
     window.location.replace("/posts");
   }
  
+
+
+
 }
