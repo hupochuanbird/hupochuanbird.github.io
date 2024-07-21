@@ -86,6 +86,18 @@ p {
 	width: 0;
 	height: 0;
   }
+  .theme-icon {
+	width: 18px;
+	height: 18px;
+	transition: opacity 0.2s;
+  }
+  .sun-icon {
+	opacity: 1;
+  }
+  
+  .moon-icon {
+	opacity: 0;
+  }
   
   .theme-switch-label {
 	position: absolute;
@@ -99,7 +111,26 @@ p {
 	transition: background-color 0.2s, border 0.2s;
     border: 2px solid var(--first-text-color);
   }
-
+  blockquote {
+	font-size: 1em;
+	font-style: italic;
+	color: var(--copyright-info-color);
+	border-left: 10px solid var(--copyright-info-color);
+	margin: 20px 0;
+	padding: 10px 20px;
+	background-color: var(--background-color);
+}
+blockquote::before {
+	content: open-quote;
+	font-size: 4em;
+	line-height: 0.1em;
+	margin-right: 10px;
+	vertical-align: -0.4em;
+	color: var(--copyright-info-color);
+}
+blockquote p {
+	display: inline;
+}
 .aboutImage{
 	border: 1px none #2ec4b6;
 	border-radius: 50%;
@@ -133,6 +164,11 @@ p {
 	z-index: 100;
 	transition: opacity 0.25s ease;
 	color: var(--first-text-color);
+  }
+  .theme-icon {
+	width: 18px;
+	height: 18px;
+	transition: opacity 0.2s;
   }
   .theme-switch-icon i {
 	position: absolute;
