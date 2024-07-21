@@ -197,6 +197,43 @@ blockquote p {
 	opacity: 1;
   }
   
+  table{
+	width: 100%;
+	border-collapse: collapse;
+	margin: 25px 0;
+	font-size: 18px;
+	font-family: 'Arial', sans-serif;
+	text-align: left;
+  }
+  table thead tr {
+	background-color: var(--primary-color);
+	color: #ffffff;
+	text-align: left;
+	font-weight: bold;
+  }
+  table thead tr  th{
+	color: #ffffff;
+  }
+/* Border and padding for cells */
+table th, table td {
+	padding: 12px 15px;
+	border: 1px solid #dddddd;
+	color: var(--first-text-color);
+  }
+  
+  
+ 
+  /* Responsive styles */
+  @media screen and (max-width: 600px) {
+	table {
+	  font-size: 14px;
+	}
+  
+	table  th, table td {
+	  padding: 10px;
+	}
+  }
+
 
 :root {
 	--banner-color:#2ec4b6;
