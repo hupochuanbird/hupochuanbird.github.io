@@ -130,13 +130,6 @@
 </a>
 
 
-
-<button id="theme-toggle" onclick="toggleTheme()">
-  <i id="theme-icon" class="fas fa-moon"></i>
-</button>
-
-
-
 </ul>
         
         <div class="flex sm:hidden flex-1 justify-end">
@@ -144,6 +137,18 @@
             <i class="fa-solid fa-bars"></i>           
           </button>
         </div>
+
+
+        <div class="theme-toggle">
+          <input type="checkbox" id="theme-switch" class="theme-switch-input" onclick="toggleTheme()">
+          <label for="theme-switch" class="theme-switch-label">
+            <span class="theme-switch-icon">
+              <i class="fas fa-sun"></i>
+              <i class="fas fa-moon"></i>
+            </span>
+          </label>
+        </div>
+
       </div>
       <div class="overlay" id="overlay">
         <nav class="overlay-menu">
@@ -225,16 +230,14 @@
 </a>
 
 
-
-<button id="theme-toggle" onclick="toggleTheme()">
-  <i id="theme-icon" class="fas fa-moon"></i>
-</button>
-
-
-
 </ul>
         </nav>
       </div>
+    
+      
+      
+
+
     </nav>
   </header>
              <main class="min-h-full"  >
@@ -427,13 +430,6 @@
       About
     </li>
 </a>
-
-
-
-<button id="theme-toggle" onclick="toggleTheme()">
-  <i id="theme-icon" class="fas fa-moon"></i>
-</button>
-
 
 
 </ul>
@@ -996,7 +992,7 @@
         "https:\/\/hupochuanbird.github.io\/": {
             "title": "Home",
             "tags": [],
-            "content": "Hello, I\u0026rsquo;m tothemoon I\u0026rsquo;m a backend developer I like learning something new.\n", 
+            "content": "Hello, I\u0026rsquo;m yejia Yang\nI\u0026rsquo;m a backend developer, currently work for a startup company\nI like learning something new.\n", 
             "url": "https:\/\/hupochuanbird.github.io\/"
         },
         
@@ -1035,6 +1031,7 @@
 <script src="/js/testdd.js?v=1"></script>
 
 
+
 <script>
     function toggleTheme() {
       const currentTheme = localStorage.getItem('theme') || 'light';
@@ -1045,13 +1042,11 @@
     }
   
     function updateIcon(theme) {
-      const icon = document.getElementById('theme-icon');
+      const themeSwitch = document.getElementById('theme-switch');
       if (theme === 'dark') {
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-sun');
+        themeSwitch.checked = true;
       } else {
-        icon.classList.remove('fa-sun');
-        icon.classList.add('fa-moon');
+        themeSwitch.checked = false;
       }
     }
   

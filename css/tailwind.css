@@ -608,7 +608,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .flex-col{
   flex-direction: column;
 }
-
+.sm\:flex-col{
+  flex-direction: column;
+}
+.md\:flex{
+  display:  flex;
+}
 .flex-col-reverse{
   flex-direction: column-reverse;
 }
@@ -833,9 +838,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
-.text-bakery-subheading{
-  color: #ee6c4d;
-}
+
 
 .text-portfolio-bg-lighter-gray{
   --tw-text-opacity: 1;
@@ -1031,7 +1034,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .scrollToTopBtn {
-  background-color: black;
+  background-color: var(--copyright-info-color);
   border: none;
   bottom: 20px;
   color: white;
@@ -1053,20 +1056,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   border: 1px solid;
 }
 
-.button_container {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  height: 24px;
-  width: 24px;
-  cursor: pointer;
-  z-index: 100;
-  transition: opacity 0.25s ease;
-}
 
-.button_container:hover {
-  color: #fff;
-}
+
+
 
 .overlay {
   background: #fdfffc;
@@ -1293,6 +1285,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   .sm\:mt-4{
     margin-top: 1rem;
   }
+  .sm\:ml-2{
+    margin-left: 2rem;
+
+  }
 
   .sm\:block{
     display: block;
@@ -1450,14 +1446,3 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 
-
-.aboutImage{
-  border: 1px none #2ec4b6;
-  border-radius: 50%;
-  box-shadow: 2px 2px 8px 0 #ff9f1c;
-  opacity: 1;
-  width: 80%;
-  cursor: pointer;
-  -o-object-fit: fill;
-  object-fit: fill;
-}

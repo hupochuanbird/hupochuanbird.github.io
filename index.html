@@ -131,13 +131,6 @@
 </a>
 
 
-
-<button id="theme-toggle" onclick="toggleTheme()">
-  <i id="theme-icon" class="fas fa-moon"></i>
-</button>
-
-
-
 </ul>
         
         <div class="flex sm:hidden flex-1 justify-end">
@@ -145,6 +138,18 @@
             <i class="fa-solid fa-bars"></i>           
           </button>
         </div>
+
+
+        <div class="theme-toggle">
+          <input type="checkbox" id="theme-switch" class="theme-switch-input" onclick="toggleTheme()">
+          <label for="theme-switch" class="theme-switch-label">
+            <span class="theme-switch-icon">
+              <i class="fas fa-sun"></i>
+              <i class="fas fa-moon"></i>
+            </span>
+          </label>
+        </div>
+
       </div>
       <div class="overlay" id="overlay">
         <nav class="overlay-menu">
@@ -226,16 +231,14 @@
 </a>
 
 
-
-<button id="theme-toggle" onclick="toggleTheme()">
-  <i id="theme-icon" class="fas fa-moon"></i>
-</button>
-
-
-
 </ul>
         </nav>
       </div>
+    
+      
+      
+
+
     </nav>
   </header> 
 
@@ -245,12 +248,24 @@
 <section style="background-image: url(/images/hero-bg.jpg); background-repeat: no-repeat; background-attachment: fixed ">
     <div class="container flex flex-col gap-12 justify-center items-center h-screen">
       
-      <div class="flex flex-col justify-center items-center gap-2 sm:gap-7">
-        <h1 class="text-portfolio-bg-lighter-gray displaytitle font-bold text-6xl leading-tight md:text-8xl lg:leading-none lg:text-9xl text-center">
-          tothemoon
-        </h1>
-        
-        <h2 style="color: white;">I'm a <span class="typed" style="color: #00cab5;" data-typed-items="Java Developer, Flutter Developer, Photographer"></span></h2>
+      <div class="block md:flex flex-col justify-center items-center gap-2 md:gap-7">
+        <div  class=" sm:flex  justify-center items-center">
+          <img class="aboutImage" src="https://i.imgur.com/W0FUuPX.jpeg">
+          <div class="sm:ml-2"></div>
+
+          <div class="flex flex-col" style="  align-items:flex-start">
+            <h1 style=" margin: 0;" class=" text-portfolio-bg-lighter-gray displaytitle font-bold text-6xl leading-tight lg:leading-none text-center">
+              tothemoon
+            </h1>
+            <h2 style="color: white;">I'm a <span class="typed" style="color: #00cab5;" data-typed-items="Java Developer, Flutter Developer, Photographer"></span></h2>
+            <div>
+              <p>Hello, I&rsquo;m yejia Yang</p>
+<p>I&rsquo;m a backend developer, currently work for a startup company</p>
+<p>I like learning something new.</p>
+
+            </div>
+          </div>
+        </div>
       </div>
       
         <a href="#mywork">
@@ -263,12 +278,7 @@
   <section id="mywork" class="mt-10">
     <div class="container">
       <div class="sm:flex  justify-between ">
-        <div>
-          <h1 id="hello-im-tothemoon">Hello, I&rsquo;m tothemoon</h1>
-<h2 id="im-a-backend-developer">I&rsquo;m a backend developer</h2>
-<p>I like learning something new.</p>
-
-        </div>
+      
         <div class=" sm:w-3/5">
           <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/03m03OVQGPuzt8Rw2r0a7t?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
@@ -286,7 +296,7 @@
 
         
 
-          <div class="text-base text-bakery-subheading mb-2">
+          <div class="text-base subheading mb-2">
             My article is referencing &lt;link&gt;. However, in my case, the width of each …
           </div>
 
@@ -320,7 +330,7 @@
 
         
 
-          <div class="text-base text-bakery-subheading mb-2">
+          <div class="text-base subheading mb-2">
             In this article, I will show you how to implement search in Hugo by using …
           </div>
 
@@ -354,7 +364,7 @@
 
         
 
-          <div class="text-base text-bakery-subheading mb-2">
+          <div class="text-base subheading mb-2">
             In this section, I primarily focus on utilizing the Sonic extension to implement …
           </div>
 
@@ -484,13 +494,6 @@
       About
     </li>
 </a>
-
-
-
-<button id="theme-toggle" onclick="toggleTheme()">
-  <i id="theme-icon" class="fas fa-moon"></i>
-</button>
-
 
 
 </ul>
@@ -1053,7 +1056,7 @@
         "https:\/\/hupochuanbird.github.io\/": {
             "title": "Home",
             "tags": [],
-            "content": "Hello, I\u0026rsquo;m tothemoon I\u0026rsquo;m a backend developer I like learning something new.\n", 
+            "content": "Hello, I\u0026rsquo;m yejia Yang\nI\u0026rsquo;m a backend developer, currently work for a startup company\nI like learning something new.\n", 
             "url": "https:\/\/hupochuanbird.github.io\/"
         },
         
@@ -1092,6 +1095,7 @@
 <script src="/js/testdd.js?v=1"></script>
 
 
+
 <script>
     function toggleTheme() {
       const currentTheme = localStorage.getItem('theme') || 'light';
@@ -1102,13 +1106,11 @@
     }
   
     function updateIcon(theme) {
-      const icon = document.getElementById('theme-icon');
+      const themeSwitch = document.getElementById('theme-switch');
       if (theme === 'dark') {
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-sun');
+        themeSwitch.checked = true;
       } else {
-        icon.classList.remove('fa-sun');
-        icon.classList.add('fa-moon');
+        themeSwitch.checked = false;
       }
     }
   

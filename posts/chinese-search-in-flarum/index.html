@@ -130,13 +130,6 @@
 </a>
 
 
-
-<button id="theme-toggle" onclick="toggleTheme()">
-  <i id="theme-icon" class="fas fa-moon"></i>
-</button>
-
-
-
 </ul>
         
         <div class="flex sm:hidden flex-1 justify-end">
@@ -144,6 +137,18 @@
             <i class="fa-solid fa-bars"></i>           
           </button>
         </div>
+
+
+        <div class="theme-toggle">
+          <input type="checkbox" id="theme-switch" class="theme-switch-input" onclick="toggleTheme()">
+          <label for="theme-switch" class="theme-switch-label">
+            <span class="theme-switch-icon">
+              <i class="fas fa-sun"></i>
+              <i class="fas fa-moon"></i>
+            </span>
+          </label>
+        </div>
+
       </div>
       <div class="overlay" id="overlay">
         <nav class="overlay-menu">
@@ -225,16 +230,14 @@
 </a>
 
 
-
-<button id="theme-toggle" onclick="toggleTheme()">
-  <i id="theme-icon" class="fas fa-moon"></i>
-</button>
-
-
-
 </ul>
         </nav>
       </div>
+    
+      
+      
+
+
     </nav>
   </header>
              <main class="min-h-full"  >
@@ -273,7 +276,6 @@ html, body {
     #page-section>aside>h3 {
         font-size: 1rem;
         padding-left: .5rem;
-        color: #1a202c;
         font-weight: 700;
         padding-bottom: .5rem;
         padding-top: 1rem
@@ -290,7 +292,7 @@ html, body {
         padding-left: .5rem;
         padding-bottom: 1rem;
         font-size: 1rem;
-        color: #1a202c
+        color: var(--copyright-info-color)
     }
 
     #TableOfContents li {
@@ -320,7 +322,7 @@ html, body {
     }
 
     #TableOfContents li.active>a {
-        color: #1a202c;
+        color: var(--copyright-info-color);
         font-weight: 700
     }
 
@@ -333,7 +335,7 @@ html, body {
     }
 
     #TableOfContents a:hover,#TableOfContents a:focus,#TableOfContents a:active {
-        color: rgb(20, 20, 20)
+        color: var(--primary-color)
     }
 
     #tableOfContentContainer ol,ul {
@@ -1536,13 +1538,6 @@ window.addEventListener('DOMContentLoaded', () => {
 </a>
 
 
-
-<button id="theme-toggle" onclick="toggleTheme()">
-  <i id="theme-icon" class="fas fa-moon"></i>
-</button>
-
-
-
 </ul>
     </div>
     
@@ -2103,7 +2098,7 @@ window.addEventListener('DOMContentLoaded', () => {
         "https:\/\/hupochuanbird.github.io\/": {
             "title": "Home",
             "tags": [],
-            "content": "Hello, I\u0026rsquo;m tothemoon I\u0026rsquo;m a backend developer I like learning something new.\n", 
+            "content": "Hello, I\u0026rsquo;m yejia Yang\nI\u0026rsquo;m a backend developer, currently work for a startup company\nI like learning something new.\n", 
             "url": "https:\/\/hupochuanbird.github.io\/"
         },
         
@@ -2142,6 +2137,7 @@ window.addEventListener('DOMContentLoaded', () => {
 <script src="/js/testdd.js?v=1"></script>
 
 
+
 <script>
     function toggleTheme() {
       const currentTheme = localStorage.getItem('theme') || 'light';
@@ -2152,13 +2148,11 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   
     function updateIcon(theme) {
-      const icon = document.getElementById('theme-icon');
+      const themeSwitch = document.getElementById('theme-switch');
       if (theme === 'dark') {
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-sun');
+        themeSwitch.checked = true;
       } else {
-        icon.classList.remove('fa-sun');
-        icon.classList.add('fa-moon');
+        themeSwitch.checked = false;
       }
     }
   
