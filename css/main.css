@@ -142,7 +142,19 @@ blockquote p {
 	-o-object-fit: cover;
 	object-fit: cover;
   }
-  
+  .homeContent{
+		text-shadow: 1px 1px 2px  var(--background-color);
+		/* font-weight: bold;
+		background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+		-webkit-background-clip: text;
+		color: transparent; */
+		/* text-shadow: 0 0 5px #E40303,
+		0 0 10px #FF8C00,
+		0 0 15px #FFED00,
+		0 0 20px #008026,
+		0 0 30px #004CFF,
+		0 0 40px #732982; */
+  }
   .theme-switch-icon {
 	position: absolute;
 	height: 26px;
@@ -223,7 +235,7 @@ table th, table td {
   
   
  
-  /* Responsive styles */
+
   @media screen and (max-width: 600px) {
 	table {
 	  font-size: 14px;
@@ -548,6 +560,18 @@ header{
 	  margin-top:13px;
 	  margin-bottom: 45px
 	}
+	.aboutImage{
+		width: 150px;
+		height: 150px;
+		margin: auto;
+	}
+	.article-header{
+		display: block;
+	}
+	.comment-block{
+		margin-top: 10rem;
+		width: 100%;
+	  }
   }
   
   .pagination-ctrl__content {
@@ -646,6 +670,14 @@ header{
 	#top-nav{
 		height: 70px;
 	}
+	.article-header{
+		margin-top: 16px;
+		display: flex;
+	}
+	.comment-block{
+		margin-top: 10rem;
+		width: 80%;
+	  }
   }
   
   @media only screen and (min-width: 1441px) {
@@ -1012,10 +1044,7 @@ header{
 .page-metadata{
 	margin: 10px;
 }
-.article-header {
-    margin-top: 16px;
-	display: flex;
-}
+
 .article-header .avatar {
     width: 80px;
     height: 80px;
@@ -1028,6 +1057,7 @@ header{
     border-radius: 12.18px;
     width: 100%;
     height: 100%;
+	object-fit: cover;
 }
 .article-header .info {
     padding: 2px 0;
@@ -1189,10 +1219,7 @@ header{
 	100% { transform: translate(1px, -2px) rotate(-1deg); }
   }
 
-  .comment-block{
-	margin-top: 10rem;
-	width: 80%;
-  }
+ 
 
   .pagination{
 	width: 80%;
