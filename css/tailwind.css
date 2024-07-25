@@ -1138,6 +1138,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   text-decoration: none;
   overflow: hidden;
 }
+
 #about{
   margin-top: 5em;
 }

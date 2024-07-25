@@ -103,6 +103,25 @@
 
 
 
+<a href="/gallery/"  title="My Life">
+    <li class="hover  ">
+      <i class="fa-solid  fa-mountain-sun"></i>
+      My Life
+    </li>
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <a href="/tags/"  title="Tags">
     <li class="hover    active ">
       <i class="fa-solid fa-tag"></i>
@@ -205,6 +224,25 @@
 
 
 
+<a href="/gallery/"  title="My Life">
+    <li class="hover  ">
+      <i class="fa-solid  fa-mountain-sun"></i>
+      My Life
+    </li>
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <a href="/tags/"  title="Tags">
     <li class="hover    active ">
       <i class="fa-solid fa-tag"></i>
@@ -254,8 +292,8 @@
 
     
 
-
-<a  href="https://hupochuanbird.github.io/posts/flarum-connects-to-aws-rds/"  class="result__item row-anchor " aria-label="Flarum Connects to AWS RDs">
+<div   class="result__item row-anchor " >
+   
     
    
 
@@ -272,15 +310,19 @@
                 
             
         </p>
-        <h3 class="item__headline">
-            Flarum Connects to AWS RDs
-        </h3>
-        <h5 class="item__desc">
-            In this section, I mainly focus on create a database/ configuration of security group/ connect RDs in local navicat/ update flaurm config file to connect to RDs
-        </h5>
+
+        <a  href="https://hupochuanbird.github.io/posts/flarum-connects-to-aws-rds/"  aria-label="Flarum Connects to AWS RDs">
+            <h3 class="item__headline">
+                Flarum Connects to AWS RDs
+            </h3>
+            <h5 class="item__desc">
+                In this section, I mainly focus on create a database/ configuration of security group/ connect RDs in local navicat/ update flaurm config file to connect to RDs
+            </h5>
+        </a>
+
         <p class="item__date">August 13, 2023</p>
     </div>
-</a>
+</div>
             
         </div>
       </div>
@@ -372,6 +414,25 @@
     <li class="hover  ">
       <i class="fa-solid fa-paper-plane"></i>
       My Blog
+    </li>
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="/gallery/"  title="My Life">
+    <li class="hover  ">
+      <i class="fa-solid  fa-mountain-sun"></i>
+      My Life
     </li>
 </a>
 
@@ -500,6 +561,48 @@
             "tags": ["flutter","tencent","IM(Instant messaging)",],
             "content": " Recently, I have been fully focused on IM (instant messaging) in Flutter. It\u0026rsquo;s quite a huge functionality. This article will include initialization, conversation management, message management (text, image, voice, video), and loading progress display. In my project, I use my own UI design, which I find more flexible and prettier (in my perspective 😉).\nHere is the message module folder. A little bit ambitious, I have to say. Don\u0026rsquo;t worry, let\u0026rsquo;s dig into this interesting module in Flutter.\nView post on imgur.com A quick bit of background on IM: In the official document, IM stands for instant messaging, which you probably use every single day in products like WhatsApp, Instagram, Slack, WeChat, and so on. Instant Messaging (IM) provides applications with the ability to support single chat, group chat, pop-ups, and other chat modes. It supports text, pictures, voice, short video, and other types of messages for social communication.\nPreparation(Need to register tencent account) Here is the offical document you can refer to https://cloud.tencent.com/document/product/269/75286\nPlatform Version Flutter Above 2.2.0 Android Android Studio 3.5 and above, App requires Android 4.1 and above devices. iOS Xcode 11.0 and above, for real machine debugging please make sure your project has a valid developer signature. IM Initialization The reference link for this section is ❤️ https://cloud.tencent.com/document/product/269/75293\nBefore you can use the features of the IM SDK, you must initialize it. In most scenarios, you will only need to initialize the IM SDK once during the application lifecycle. Here is the link to register account https://www.tencentcloud.com/?lang=en\u0026amp;pg=\nThe following steps are required to initialize the SDK:\nPrepare the SDKAppID. Set the LogLevelEnum. Set the SDK event listener. Call initSDK to initialize the SDK. You must have the correct SDKAppID for initialization. SDKAppID is a unique identifier used by Tencent Cloud IM service to distinguish customer accounts. We recommend that each individual App apply for a new SDKAppID. messages between different SDKAppIDs are naturally segregated and cannot be interchanged.\nView post on imgur.com Setting up SDK event listeners 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 class IMHelper { static V2TIMManager v2TIMManager = V2TIMManager(); static V2TimAdvancedMsgListener messageListener = V2TimAdvancedMsgListener(); static V2TimGroupListener groupListener = V2TimGroupListener(); static V2TimConversationListener conversationListener = V2TimConversationListener(); static V2TimFriendshipListener friendshipListener = V2TimFriendshipListener(); static V2TIMFriendshipManager friendshipManager = V2TIMFriendshipManager(); static V2TIMConversationManager conversationManager = V2TIMConversationManager(); static Future\u0026lt;void\u0026gt; initSDK() async { V2TimSDKListener sdkListener = V2TimSDKListener( onConnectFailed: (int code, String error) { // 连接失败的回调函数 // code 错误码 // error 错误信息 print(\u0026#34;code $code error $error\u0026#34;); }, onConnectSuccess: () { // SDK 已经成功连接到腾讯云服务器 }, onConnecting: () { // SDK 正在连接到腾讯云服务器 }, onKickedOffline: () { // 当前用户被踢下线，此时可以 UI 提示用户，并再次调用 V2TIMManager 的 login() 函数重新登录。 }, onSelfInfoUpdated: (V2TimUserFullInfo info) { // 登录用户的资料发生了更新 // info登录用户的资料 print(\u0026#34;info登录用户资料\u0026#34;); }, onUserSigExpired: () { // 在线时票据过期：此时您需要生成新的 userSig 并再次调用 V2TIMManager 的 login() 函数重新登录。 // login(IMConfig.userid); }, onUserStatusChanged: (List\u0026lt;V2TimUserStatus\u0026gt; userStatusList) { //用户状态变更通知 //userStatusList 用户状态变化的用户列表 //收到通知的情况：订阅过的用户发生了状态变更（包括在线状态和自定义状态），会触发该回调 //在 IM 控制台打开了好友状态通知开关，即使未主动订阅，当好友状态发生变更时，也会触发该回调 //同一个账号多设备登录，当其中一台设备修改了自定义状态，所有设备都会收到该回调 }, ); V2TimValueCallback\u0026lt;bool\u0026gt; initSDKRes = await v2TIMManager.initSDK( sdkAppID: int.parse(IMConfig.sdkappid), loglevel: LogLevelEnum.V2TIM_LOG_ALL, // Log listener: sdkListener, ); if (initSDKRes.code == 0) { //初始化成功 // login(IMConfig.userid); } } ...... } login/ logout The first time you log in to an IM account, you do not need to register the account first. IM automatically completes the registration of the account after a successful login. You can call the login (click to view details) interface to log in.\nTo incorporate the business logic of my project, I\u0026rsquo;ve handled the registration or login when the user logs into my app.\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 static Future\u0026lt;void\u0026gt; login(MemberInfoModel? memberInfoModel) async { String key = IMConfig.key; String userId = memberInfoModel!.id.toString(); UserSigGenerateUtils generateTestUserSig = UserSigGenerateUtils(sdkappid: int.parse(IMConfig.sdkappid), key: key); String userSig = generateTestUserSig.genSig(identifier: userId, expire: 99999); V2TimCallback res = await v2TIMManager.login( userID: userId, userSig: userSig, ); if (res.code == 0) { // 登录成功逻辑 IMHelper.getLoginUser(memberInfoModel); print(\u0026#34;登录成功逻辑 ${res.desc}\u0026#34;); } else { print(\u0026#34;登录失败 ${res.code}\u0026#34;); } } The getLoginUser method is used to set up user information, such as avatar and username.\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 static Future\u0026lt;void\u0026gt; getLoginUser(MemberInfoModel memberInfoModel) async { V2TimValueCallback\u0026lt;String\u0026gt; getLoginUserRes = await v2TIMManager.getLoginUser(); if (getLoginUserRes.code == 0) { //获取成功 V2TimUserFullInfo defaultUserInfo = V2TimUserFullInfo( nickName: memberInfoModel.userName, allowType: 0, role: 0, faceUrl: memberInfoModel.userPhoto, gender: 2, selfSignature: memberInfoModel.introduction, ); v2TIMManager.setSelfInfo(userFullInfo: defaultUserInfo); } } Conversation Management This is the parameter description of Conversation class https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Class/Message/V2TimConversation.html\nWhen a user creates a single or group chat, the corresponding session is created. In Tencent Cloud IM SDK, the session class is TencentImSDKPlugin.v2TIMManager.getConversationManager(). You can use the APIs in the conversation manager class to realize the functions of conversation list display/update, conversation unread count update, top conversation, conversation draft, conversation do not disturb and so on.\nIn my project, I need to get all the conversations and display them, including the username, user avatar, number of unread messages, whether it is pinned or not, and whether it is in do-not-disturb mode.\nView post on imgur.com Get all Conversations You can get the conversations by using pagination. Because I need to use conversations on other screens, I define this value in the message provider.\nHere is the code in Message provider\n1 2 3 4 5 6 7 8 List\u0026lt;V2TimConversation?\u0026gt;? _allConversations = []; List\u0026lt;V2TimConversation?\u0026gt;? get allConversations =\u0026gt; _allConversations; Future\u0026lt;void\u0026gt; getAllConversations() async { _allConversations = []; _allConversations = await IMHelper.getConversationList(); notifyListeners(); } In the IMHelper class, there is a recursive function to get all conversations at once.\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 static Future\u0026lt;V2TimValueCallback\u0026lt;V2TimConversationResult\u0026gt;\u0026gt; getConversations(String nextSeq) async { return await v2TIMManager.getConversationManager().getConversationList( count: 100, // Number of conversations to fetch per request nextSeq: nextSeq // Cursor for pagination ); } static Future\u0026lt;List\u0026lt;V2TimConversation?\u0026gt;\u0026gt; getConversationList( {String nextSeq = \u0026#34;0\u0026#34;, List\u0026lt;V2TimConversation?\u0026gt;? accumulatedList}) async { // Initialize the accumulated list if it\u0026#39;s null accumulatedList ??= []; // Fetch conversations V2TimValueCallback\u0026lt;V2TimConversationResult\u0026gt; getConversationListRes = await getConversations(nextSeq); if (getConversationListRes.code == 0) { // If fetching is successful, accumulate the conversation list accumulatedList.addAll(getConversationListRes.data?.conversationList ?? []); // Check if the fetching is finished bool? isFinished = getConversationListRes.data?.isFinished; String? nextSeq = getConversationListRes.data?.nextSeq; // If not finished, recursively fetch the next set of conversations if (isFinished != true) { return getConversationList(nextSeq: nextSeq ?? \u0026#34;0\u0026#34;, accumulatedList: accumulatedList); } } // Return the accumulated list of conversations return accumulatedList; } Pin Conversation You can add the callback to handle the next logic action after success.\n1 2 3 4 5 6 7 8 9 10 11 static Future\u0026lt;bool\u0026gt; pinConversation(bool isPinned, String conversationID) async { V2TimCallback callback = await conversationManager.pinConversation(conversationID: conversationID, isPinned: isPinned); if (callback.code == 0) { ToastUtils.showSuccessToast(\u0026#34;success\u0026#34;); return true; } else { ToastUtils.showErrorToast(\u0026#34;fail\u0026#34;); return false; } } Delete Conversation 1 2 3 4 5 6 static Future\u0026lt;void\u0026gt; deleteConversation(String conversationID) async { V2TimCallback deleteConversationRes = await conversationManager.deleteConversation(conversationID: conversationID); if (deleteConversationRes.code == 0) { ToastUtils.showSuccessToast(\u0026#34;delete success\u0026#34;); } } Message Management This is the description of Message https://cloud.tencent.com/document/product/269/75674\nIt provides text messages, image messages, voice messages, video messages, emoji messages, and custom messages.\nIn my project requirements, I need to display these messages using different UIs based on the message type. Another tricky aspect is displaying the sending time. If some messages are sent within one minute of each other, only one timestamp should be displayed. This is similar to how WeChat handles message timestamps.\nView post on imgur.com Send a text Message It\u0026rsquo;s very easy.\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 static Future\u0026lt;void\u0026gt; sendTextMessage(String message, Function(V2TimMessage) onMessageSent, {String? receiverId, String? groupId}) async { V2TimValueCallback\u0026lt;V2TimMsgCreateInfoResult\u0026gt; createTextMessageRes = await v2TIMManager.getMessageManager().createTextMessage(text: message); if (createTextMessageRes.code == 0) { // 文本信息创建成功 String? id = createTextMessageRes.data?.id; // 发送文本消息 // 在sendMessage时，若只填写receiver则发个人用户单聊消息 // 若只填写groupID则发群组消息 // 若填写了receiver与groupID则发群内的个人用户，消息在群聊中显示，只有指定receiver能看见 V2TimValueCallback\u0026lt;V2TimMessage\u0026gt; sendMessageRes = await v2TIMManager.getMessageManager().sendMessage( id: id!, // 创建的messageid receiver: receiverId ?? \u0026#34;\u0026#34;, // 接收人id groupID: groupId ?? \u0026#34;\u0026#34;, // 接收群组id priority: MessagePriorityEnum.V2TIM_PRIORITY_DEFAULT, // 消息优先级 onlineUserOnly: false, // 是否只有在线用户才能收到，如果设置为 true ，接收方历史消息拉取不到，常被用于实现“对方正在输入”或群组里的非重要提示等弱提示功能，该字段不支持 AVChatRoom。 isExcludedFromUnreadCount: false, // 发送消息是否计入会话未读数 isExcludedFromLastMessage: false, // 发送消息是否计入会话 lastMessage needReadReceipt: false, // 消息是否需要已读回执（只有 Group 消息有效，6.1 及以上版本支持，需要您购买旗舰版套餐） offlinePushInfo: OfflinePushInfo(), // 离线推送时携带的标题和内容 cloudCustomData: \u0026#34;\u0026#34;, // 消息云端数据，消息附带的额外的数据，存云端，消息的接收者可以访问到 localCustomData: \u0026#34;\u0026#34; // 消息本地数据，消息附带的额外的数据，存本地，消息的接收者不可以访问到，App 卸载后数据丢失 ); print(\u0026#34;sendMessageRes.code ${sendMessageRes.code} ${sendMessageRes.desc}\u0026#34;); if (sendMessageRes.code == 0) { onMessageSent(sendMessageRes.data!); } } } Here is the chat_single_screen calling this method\n1 2 3 4 5 6 void sendMessage(String text) async { await IMHelper.sendTextMessage(text, receiverId: userId, (sentMessage) { Provider.of\u0026lt;MessageProvider\u0026gt;(context, listen: false).clearSearchSection(); insertMessage(sentMessage); }); } Send an image Message In this method, picking an image or taking a photo requires another plugin called image_picker.\nPick image/take photo in chat_single_screen.dart 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 Future\u0026lt;void\u0026gt; openAlbum() async { final pickedFile = await FileHelper.pickImageFromGalleryPath(_picker); if (pickedFile != null) { String path = pickedFile.path; if (FileHelper.isImage(path) == true) { await IMHelper.sendImageMessage(path, (sentMessage) { insertMessage(sentMessage); }, receiverId: userId); } } } Future\u0026lt;void\u0026gt; openCamera() async { String? path = await FileHelper.pickImageFromCameraPath(_picker); if (path != null) { await IMHelper.sendImageMessage(path, (sentMessage) { insertMessage(sentMessage); }, receiverId: userId); } } pickImageFromGalleryPath and pickImageFromCameraPath are two methods I encapsulated for taking a photo or opening the album.\nIMhelper.dart\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 static Future\u0026lt;void\u0026gt; sendImageMessage(String imagePath, Function(V2TimMessage) onMessageSent, {String? receiverId, String? groupId}) async { V2TimValueCallback\u0026lt;V2TimMsgCreateInfoResult\u0026gt; createImageMessageRes = await v2TIMManager.getMessageManager().createImageMessage( imagePath: imagePath, ); if (createImageMessageRes.code == 0) { String? id = createImageMessageRes.data?.id; V2TimValueCallback\u0026lt;V2TimMessage\u0026gt; sendMessageRes = await v2TIMManager .getMessageManager() .sendMessage(id: id!, receiver: receiverId ?? \u0026#34;\u0026#34;, groupID: groupId ?? \u0026#34;\u0026#34;); if (sendMessageRes.code == 0) { onMessageSent(sendMessageRes.data!); } } } Send a voice Message This requirement should take a little time to figure out. Plugins needed for the voice recorder: audioplayers, record\nGenerally, press the button to start the voice recording, release the button to save the voice recording, and get the path to send the voice message.\nIn Flutter, the method to monitor gestures I use is Listener (I have more details when implementing this feature. For example, to imitate WeChat voice recording, also need to monitor the cancel gesture.), but the easiest way is to use GestureDetector.\nIt provides two methods that can be used: onLongPress and onLongPressUp.\nMessageProvider.dart 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 final AudioRecorder _audioRecorder = AudioRecorder(); late int _recordDuration = 0; Timer? _timer; //record voice void startTimer() { _timer?.cancel(); _timer = Timer.periodic(const Duration(seconds: 1), (Timer t) { _recordDuration++; }); notifyListeners(); } // record voice sound ===========start============== Future\u0026lt;void\u0026gt; startRecord() async { _timer?.cancel(); _recordDuration = 0; try { if (await _audioRecorder.hasPermission()) { const encoder = AudioEncoder.aacLc; if (!await AudioHelper.isEncoderSupported(encoder, _audioRecorder)) { return; } const config = RecordConfig(encoder: encoder, numChannels: 1); await AudioHelper.recordFile(_audioRecorder, config); _recordDuration = 0; startTimer(); } } catch (e) { print(\u0026#34;error $e\u0026#34;); } } Future\u0026lt;void\u0026gt; cancelRecord() async { ToastUtils.showSuccessToast(\u0026#34;cancel\u0026#34;); await _audioRecorder.stop(); _timer?.cancel(); _recordDuration = 0; notifyListeners(); } Future\u0026lt;void\u0026gt; stopRecord(Function(String path, int duration) sendVoiceMessage) async { final path = await _audioRecorder.stop(); if (_recordDuration \u0026lt; 1) { ToastUtils.showErrorToast(\u0026#34;too short\u0026#34;); _timer?.cancel(); _recordDuration = 0; return; } if (path != null) { sendVoiceMessage(path, _recordDuration); } _timer?.cancel(); _recordDuration = 0; } // record voice sound ============end=============== After stop recording, then send the voice message.\nchat_single_screen.dart 1 2 3 4 5 6 7 8 Future\u0026lt;void\u0026gt; sendVoiceMessage(String path, int duration) async { ToastUtils.showLoading(); await IMHelper.sendVoiceMessage(path, (sentMessage) { insertMessage(sentMessage); ToastUtils.closeLoading(); }, duration, receiverId: userId); } IMhelper.dart 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 static Future\u0026lt;void\u0026gt; sendVoiceMessage(String soundPath, Function(V2TimMessage) onMessageSent, int duration, {String? receiverId, String? groupId}) async { V2TimValueCallback\u0026lt;V2TimMsgCreateInfoResult\u0026gt; createSoundMessageRes = await v2TIMManager.getMessageManager().createSoundMessage(soundPath: soundPath, duration: duration); if (createSoundMessageRes.code == 0) { String? id = createSoundMessageRes.data?.id; V2TimValueCallback\u0026lt;V2TimMessage\u0026gt; sendMessageRes = await v2TIMManager .getMessageManager() .sendMessage(id: id!, receiver: receiverId ?? \u0026#34;\u0026#34;, groupID: groupId ?? \u0026#34;\u0026#34;); if (sendMessageRes.code == 0) { onMessageSent(sendMessageRes.data!); } } } Send a video Message The video picker also requires the image_picker plugin, and you should choose pickMedia (otherwise, you can only pick images). Another plugin needed is mime, which can get all the information about the video, and video_thumbnail to generate a snapshot that can be used as a preview image.\nFor video messages, need to get the file extension, duration, snapshot path, and video file path.\nfile_helper.dart 1 2 3 4 5 6 7 8 9 10 11 12 static Future\u0026lt;XFile?\u0026gt; pickImageFromGalleryPath(ImagePicker picker) async { // final pickedFile = await picker.pickImage(source: ImageSource.gallery); final pickedFile = await picker.pickMedia( maxWidth: 1920, maxHeight: 1080, ); if (pickedFile != null) { return pickedFile; } else { return null; } } chat_single_screen.dart 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 Future\u0026lt;void\u0026gt; openAlbum() async { final pickedFile = await FileHelper.pickImageFromGalleryPath(_picker); if (pickedFile != null) { String path = pickedFile.path; if (FileHelper.isImage(path) == true) { // send image } else { String? thumbnailPath = await FileHelper.generateSnapshot(path); // get preview image double? duration = await FileHelper.getVideoDuration(path); String? mineType = await FileHelper.getVideoMimetype(path); int intDuration = (duration ?? 0).toInt(); if (thumbnailPath != null) { await IMHelper.sendVideoMessage(path, mineType ?? \u0026#34;mov\u0026#34;, intDuration, thumbnailPath, (sentMessage) { insertMessage(sentMessage); }, receiverId: userId); } } } } IMhelper.dart 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 // video message static Future\u0026lt;void\u0026gt; sendVideoMessage( String videoFilePath, String type, int duration, String snapshotPath, Function(V2TimMessage) onMessageSent, {String? receiverId, String? groupId}) async { V2TimValueCallback\u0026lt;V2TimMsgCreateInfoResult\u0026gt; createVideoMessageRes = await v2TIMManager.getMessageManager().createVideoMessage( videoFilePath: videoFilePath, type: type, duration: duration, snapshotPath: snapshotPath, ); if (createVideoMessageRes.code == 0) { String? id = createVideoMessageRes.data?.id; V2TimValueCallback\u0026lt;V2TimMessage\u0026gt; sendMessageRes = await v2TIMManager .getMessageManager() .sendMessage(id: id!, receiver: receiverId ?? \u0026#34;\u0026#34;, groupID: groupId ?? \u0026#34;\u0026#34;); if (sendMessageRes.code == 0) { onMessageSent(sendMessageRes.data!); } } } Monitor the uploading progress In the Message class, there is a MessageListener. Within this class, onSendMessageProgress will monitor the progress of uploading. This is very useful when uploading videos, as you can use the snapshot and progress to display the uploading progress on the chat screen. Many chat apps do this to inform users about the progress of media uploads.\nMaybe my method is not a perfect solution. I created a custom message type and inserted it into the message list. Once the progress is 100, need to delete this custom message.\nchat_single_screen.dart 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 void setupMessageListener() async { await IMHelper.createMessageListener( .... onSendMessageProgress: (V2TimMessage message, int progress) { print(\u0026#34;文件上传进度回调 $progress\u0026#34;); String messageId = message.msgID!; String path = \u0026#34;\u0026#34;; if (message.elemType == MessageElemType.V2TIM_ELEM_TYPE_VIDEO) { path = message.videoElem!.snapshotPath!; } else if (message.elemType == MessageElemType.V2TIM_ELEM_TYPE_SOUND) { } else if (message.elemType == MessageElemType.V2TIM_ELEM_TYPE_IMAGE) { path = message.imageElem!.path!; } if (path == \u0026#34;\u0026#34;) return; if (progress == 100) { // delete removeMessage(messageId); return; } V2TimCustomElem progressMessage = V2TimCustomElem(data: messageId, desc: path, extension: progress.toString()); V2TimMessage newItem = V2TimMessage( msgID: messageId, sender: message.sender, elemType: MessageElemType.V2TIM_ELEM_TYPE_CUSTOM, customElem: progressMessage, timestamp: message.timestamp); insertMessage(newItem, isUpload: true); }, ); } Handle Time If some messages are sent within the same minute, the time needs to be displayed only once.\nMessage_helper.dart 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 static Future\u0026lt;List\u0026lt;V2TimMessage\u0026gt;\u0026gt; processMessages(List\u0026lt;V2TimMessage\u0026gt; messages) async { if (messages.isEmpty) return messages; List\u0026lt;V2TimMessage\u0026gt; processedMessages = []; for (var i = 0; i \u0026lt; messages.length; i++) { var orgMessage = messages[i]; var message = orgMessage; message = await handleDownloadNetworkMessage(message); processedMessages.add(message); bool isLastMessageInMinuteBlock = (i + 1 == messages.length) || !DateHelper.isSameMinute(message.timestamp!, messages[i + 1].timestamp!); if (isLastMessageInMinuteBlock) { String formatTime = DateHelper.formatTime(message.timestamp!); var timeMessage = V2TimMessage( msgID: \u0026#39;time_${message.msgID}\u0026#39;, timestamp: message.timestamp, sender: null, customElem: V2TimCustomElem(data: \u0026#34;time\u0026#34;, desc: formatTime), elemType: MessageElemType.V2TIM_ELEM_TYPE_CUSTOM, ); // Check if the last added message is a duplicate time message if (processedMessages.isNotEmpty \u0026amp;\u0026amp; processedMessages.last.customElem?.desc == timeMessage.customElem?.desc \u0026amp;\u0026amp; processedMessages.last.elemType == MessageElemType.V2TIM_ELEM_TYPE_CUSTOM) { processedMessages.removeLast(); } processedMessages.add(timeMessage); } } return processedMessages; } date_helper.dart 1 2 3 4 5 6 7 8 9 10 static bool isSameMinute(int a, int b) { DateTime dateTimeA = DateTime.fromMillisecondsSinceEpoch(a * 1000); DateTime dateTimeB = DateTime.fromMillisecondsSinceEpoch(b * 1000); return dateTimeA.year == dateTimeB.year \u0026amp;\u0026amp; dateTimeA.month == dateTimeB.month \u0026amp;\u0026amp; dateTimeA.day == dateTimeB.day \u0026amp;\u0026amp; dateTimeA.hour == dateTimeB.hour \u0026amp;\u0026amp; dateTimeA.minute == dateTimeB.minute; } Conclusion ✊ It\u0026rsquo;s quite a big task and still needs to be polished and improved in terms of performance, not only in functionality but also in UI. The next task is to support grop chat.\nIn this article, I didn\u0026rsquo;t include any UI code. If I have more time, I\u0026rsquo;ll probably write another article about custom UI.\n", 
             "url": "https:\/\/hupochuanbird.github.io\/posts\/tencentim-in-flutter\/"
+        },
+        
+        "https:\/\/hupochuanbird.github.io\/categories\/cate1\/": {
+            "title": "cate1",
+            "tags": [],
+            "content": "", 
+            "url": "https:\/\/hupochuanbird.github.io\/categories\/cate1\/"
+        },
+        
+        "https:\/\/hupochuanbird.github.io\/gallery\/dublin-mountain\/": {
+            "title": "Dublin Mountain",
+            "tags": ["tag1",],
+            "content": "", 
+            "url": "https:\/\/hupochuanbird.github.io\/gallery\/dublin-mountain\/"
+        },
+        
+        "https:\/\/hupochuanbird.github.io\/tags\/tag1\/": {
+            "title": "tag1",
+            "tags": [],
+            "content": "", 
+            "url": "https:\/\/hupochuanbird.github.io\/tags\/tag1\/"
+        },
+        
+        "https:\/\/hupochuanbird.github.io\/gallery\/pride-month-in-2024\/": {
+            "title": "Pride Month in 2024",
+            "tags": ["tag1",],
+            "content": "", 
+            "url": "https:\/\/hupochuanbird.github.io\/gallery\/pride-month-in-2024\/"
+        },
+        
+        "https:\/\/hupochuanbird.github.io\/gallery\/dublin-howth\/": {
+            "title": "Dublin Howth",
+            "tags": ["tag1",],
+            "content": "", 
+            "url": "https:\/\/hupochuanbird.github.io\/gallery\/dublin-howth\/"
+        },
+        
+        "https:\/\/hupochuanbird.github.io\/gallery\/": {
+            "title": "My Life",
+            "tags": [],
+            "content": "", 
+            "url": "https:\/\/hupochuanbird.github.io\/gallery\/"
         },
         
         "https:\/\/hupochuanbird.github.io\/posts\/make-horizontal-menu-auto-scroll-with-vertical-product-list\/": {
