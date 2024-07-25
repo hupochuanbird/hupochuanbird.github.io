@@ -302,5 +302,32 @@ Tags: A list of keywords or phrases that describe the content of a page. Tags ar
 Content folder: This folder contains all the content of your website, including pages, blog posts, images, and other media. The content is typically written in Markdown, which is a lightweight markup language.</description>
     </item>
     
+    <item>
+      <title>Dublin Christmas in 2021</title>
+      <link>https://hupochuanbird.github.io/gallery/dublin-christmas-2021/</link>
+      <pubDate>Sat, 01 Jan 2022 08:39:32 +0100</pubDate>
+      
+      <guid>https://hupochuanbird.github.io/gallery/dublin-christmas-2021/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Galway Christmas in 2021</title>
+      <link>https://hupochuanbird.github.io/gallery/galway-2021-christmas/</link>
+      <pubDate>Sat, 18 Dec 2021 09:04:28 +0100</pubDate>
+      
+      <guid>https://hupochuanbird.github.io/gallery/galway-2021-christmas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kinsale visit 2021</title>
+      <link>https://hupochuanbird.github.io/gallery/kinsale-2021/</link>
+      <pubDate>Thu, 02 Sep 2021 08:51:37 +0100</pubDate>
+      
+      <guid>https://hupochuanbird.github.io/gallery/kinsale-2021/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
