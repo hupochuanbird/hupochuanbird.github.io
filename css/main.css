@@ -1069,7 +1069,6 @@ header{
 	line-height: 1.16667;
 	font-weight: 700;
 	letter-spacing: .009em;
-	font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
 	margin-top: 8px
   }
   .item__desc {
@@ -1077,7 +1076,6 @@ header{
 	line-height: 1.16667;
 	font-weight: 700;
 	letter-spacing: .009em;
-	font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
 	margin-top: 8px
   }
   
@@ -1088,14 +1086,10 @@ header{
 	  line-height: 1.19048;
 	  font-weight: 700;
 	  letter-spacing: .011em;
-	  font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif
 	}
   
 	#passwordContent{
 		padding-top: 10%;
-	}
-	.item__headline:lang(zh-CN) {
-	  font-family: "SF Pro SC","SF Pro Display","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif
 	}
   }
   
@@ -1105,12 +1099,9 @@ header{
 	  line-height: 1.23536;
 	  font-weight: 700;
 	  letter-spacing: -.022em;
-	  font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif
 	}
   
-	.item__headline:lang(zh-CN) {
-	  font-family: "SF Pro SC","SF Pro Text","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif
-	}
+	
   }
   
   @media only screen and (max-width: 734px) {
