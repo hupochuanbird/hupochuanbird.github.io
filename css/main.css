@@ -517,7 +517,31 @@ figcaption {
 .align-items-center {
     align-items: center !important;
 }
+.categories-ul {
+    list-style-type: none;
+    padding: 0;
+}
 
+.category-li{
+    text-decoration: none;
+    color: var(--text-color);
+    display: inline-block;
+    transition: background-color 0.3s, color 0.3s;
+    height: 26px;
+    line-height: 26px;
+	font-size: 1.2em;
+    padding: 0 10px ;
+    position: relative;
+    margin: 0 10px 10px 0;
+    -webkit-transition: color 0.2s;
+}
+.categories-ul li {
+    float: left;
+}
+.category-li:hover{
+    background-color: #f0f0f0;
+    color: var(--copyright-info-color);
+}
 .tags-ul {
 	list-style: none;
 	margin: 0;
