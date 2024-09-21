@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>flutter on tothemoon&#39;s blog</title>
+    <link>https://hupochuanbird.github.io/categories/flutter/</link>
+    <description>Recent content in flutter on tothemoon&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>All rights reserved</copyright>
+    <lastBuildDate>Sun, 21 Jul 2024 13:17:31 +0100</lastBuildDate><atom:link href="https://hupochuanbird.github.io/categories/flutter/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TencentIM(Instant messaging) C2C chat in Flutter</title>
+      <link>https://hupochuanbird.github.io/posts/tencentim-in-flutter/</link>
+      <pubDate>Sun, 21 Jul 2024 13:17:31 +0100</pubDate>
+      
+      <guid>https://hupochuanbird.github.io/posts/tencentim-in-flutter/</guid>
+      <description>Recently, I have been fully focused on IM (instant messaging) in Flutter. It&amp;rsquo;s quite a huge functionality. This article will include initialization, conversation management, message management (text, image, voice, video), and loading progress display. In my project, I use my own UI design, which I find more flexible and prettier (in my perspective 😉).
+Here is the message module folder. A little bit ambitious, I have to say. Don&amp;rsquo;t worry, let&amp;rsquo;s dig into this interesting module in Flutter.</description>
+    </item>
+    
+    <item>
+      <title>Make Horizontal Menu Auto Scroll With Vertical Product List in flutter</title>
+      <link>https://hupochuanbird.github.io/posts/make-horizontal-menu-auto-scroll-with-vertical-product-list/</link>
+      <pubDate>Thu, 15 Feb 2024 14:46:55 +0000</pubDate>
+      
+      <guid>https://hupochuanbird.github.io/posts/make-horizontal-menu-auto-scroll-with-vertical-product-list/</guid>
+      <description>My article is referencing https://stackoverflow.com/questions/67195205/how-to-make-horizontal-menu-auto-scroll-with-vertical-product-list-in-flutter. However, in my case, the width of each category&amp;rsquo;s name and the height of each product card are dynamic and subject to slight changes. Now, let&amp;rsquo;s proceed.
+The final result My Logic Well, based on that article, I came up with some innovations. In order to explain easily, I have drawn a draft below:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 category1 | category2 | category3 .</description>
+    </item>
+    
+    <item>
+      <title>Format Dates in Flutter</title>
+      <link>https://hupochuanbird.github.io/posts/format-dates-in-flutter/</link>
+      <pubDate>Sun, 21 May 2023 09:59:17 +0100</pubDate>
+      
+      <guid>https://hupochuanbird.github.io/posts/format-dates-in-flutter/</guid>
+      <description>The article from geeksforgeeks
+The Dart in-built method, for formatting, dates in Flutter according to the requirements is very limited and restrictive. While dealing with dates it should be in human-readable format but unfortunately, there’s no way of formatting dates in flutter unless you make use of a third-party package.
+In this article, we will look into one such package known as the intl package.
+intl package Using intl package Add the following dependencies to your pubspec.</description>
+    </item>
+    
+    <item>
+      <title>Customize search bar in Flutter</title>
+      <link>https://hupochuanbird.github.io/posts/customize-search-in-flutter/</link>
+      <pubDate>Sun, 30 Apr 2023 13:47:34 +0100</pubDate>
+      
+      <guid>https://hupochuanbird.github.io/posts/customize-search-in-flutter/</guid>
+      <description>What&amp;rsquo;s effect we can realise? Custom search bar The search bar can be used in any listview page,when user texts something in different page should list the correct outcome. Customise text input ✨ Encapsulate TextFormField TextFormField widget is used to take input from the user in flutter. This is a simple and easy user input widget in flutter.
+We can perform any operation on that user input data using TextFormField. You can use that user input, can send and show that input.</description>
+    </item>
+    
+  </channel>
+</rss>
