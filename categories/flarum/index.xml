@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Flarum on tothemoon&#39;s blog</title>
+    <link>https://hupochuanbird.github.io/categories/flarum/</link>
+    <description>Recent content in Flarum on tothemoon&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>All rights reserved</copyright>
+    <lastBuildDate>Sun, 11 Feb 2024 19:24:37 +0000</lastBuildDate><atom:link href="https://hupochuanbird.github.io/categories/flarum/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu 22.04.3: Chinese Search in Flarum and How to fix &#39;PHP Notice: fwrite(): send failed with errno=32 Broken pipe&#39; error in my case</title>
+      <link>https://hupochuanbird.github.io/posts/chinese-search-in-flarum/</link>
+      <pubDate>Sun, 11 Feb 2024 19:24:37 +0000</pubDate>
+      
+      <guid>https://hupochuanbird.github.io/posts/chinese-search-in-flarum/</guid>
+      <description>The main content of this article is to use the Sonic engine to enable Flarum to search Chinese as well.
+In my Flarum, the search module isn&amp;rsquo;t perfect enough so far, almost all the discussions are using Chinese, so the default search module doesn&amp;rsquo;t work. Here, in this section, I primarily focus on utilizing the Sonic extension to implement Chinese text search. In my case, the server-side encounters some errors.</description>
+    </item>
+    
+    <item>
+      <title>Flarum Connects to AWS RDs</title>
+      <link>https://hupochuanbird.github.io/posts/flarum-connects-to-aws-rds/</link>
+      <pubDate>Sun, 13 Aug 2023 17:06:05 +0100</pubDate>
+      
+      <guid>https://hupochuanbird.github.io/posts/flarum-connects-to-aws-rds/</guid>
+      <description>For the majority tutorial, the flarum always connects with the localhost db directly. However, base on my knowledge, once the server shutdown or reboot, the data could be lost, also it&amp;rsquo;s not easy to debug(although flaurm has logs files to record all errors). So I suppose that separate db and flaurm server.
+In this section, I use AWS EC2 and RDs to implement my solution.
+For how to deploy the Flarum in EC2, I will write author article, but to be honest, it&amp;rsquo;s the common way for deploying to any other Linux server.</description>
+    </item>
+    
+    <item>
+      <title>Flarum框架如何连接云端数据库，保证数据一致性</title>
+      <link>https://hupochuanbird.github.io/posts/flarum-connect-to-clouddb/</link>
+      <pubDate>Wed, 14 Jun 2023 18:37:01 +0100</pubDate>
+      
+      <guid>https://hupochuanbird.github.io/posts/flarum-connect-to-clouddb/</guid>
+      <description>本文基于作者的理解，如有错误，欢迎指正
+考虑到未来数据量过大的情况下，数据迁移会很麻烦，本地部署每次都是重新创建。所以本地和云端必须要保持数据一致，并且定期做整个数据库的备份。
+简单的思路就是，在本地搭建一个新的框架并且运行起来 (本地搭建), 连接云端数据库或者吧云端数据库拷贝本地运行。并且需要把插件包本地安装一遍，来保证云端和本地的数据一致性。 连接云端数据库 同步插件库 云端数据库下载到本地运行 为了简化操作才直接连云端数据库的，实际上在开发环境不允许直接操作生产环境的数据。所以可以省略第一步。
+1️⃣ Connect CloudDB 根据上文，在首页输入数据库信息，flarum框架会自动创建默认的所有表。在项目文件中，config.php就是存放数据库信息的配置文件。
+默认生成的配置文件 要连接Flarum到云数据库，你需要进行以下步骤：
+获取云数据库的连接信息，包括主机名（IP地址或域名）、端口号、数据库名称、用户名和密码。 打开Flarum的配置文件。默认情况下，该文件位于Flarum根目录下的config.php文件。 在配置文件中，找到数据库相关的配置部分。这是默认的结构： 1 2 3 4 5 6 7 8 9 10 11 &amp;#39;database&amp;#39; =&amp;gt; [ &amp;#39;driver&amp;#39; =&amp;gt; &amp;#39;mysql&amp;#39;, &amp;#39;host&amp;#39; =&amp;gt; &amp;#39;localhost&amp;#39;, &amp;#39;database&amp;#39; =&amp;gt; &amp;#39;flarum&amp;#39;, &amp;#39;username&amp;#39; =&amp;gt; &amp;#39;root&amp;#39;, &amp;#39;password&amp;#39; =&amp;gt; &amp;#39;&amp;#39;, &amp;#39;charset&amp;#39; =&amp;gt; &amp;#39;utf8mb4&amp;#39;, &amp;#39;collation&amp;#39; =&amp;gt; &amp;#39;utf8mb4_unicode_ci&amp;#39;, &amp;#39;prefix&amp;#39; =&amp;gt; &amp;#39;&amp;#39;, &amp;#39;strict&amp;#39; =&amp;gt; false, ], 根据云数据库提供的连接信息，将上述代码中的主机名、数据库名称、用户名和密码等信息进行相应的更改。 1 2 3 4 5 6 7 8 9 10 11 &amp;#39;database&amp;#39; =&amp;gt; [ &amp;#39;driver&amp;#39; =&amp;gt; &amp;#39;mysql&amp;#39;, &amp;#39;host&amp;#39; =&amp;gt; &amp;#39;your-cloud-db-hostname&amp;#39;, &amp;#39;database&amp;#39; =&amp;gt; &amp;#39;your-cloud-db-name&amp;#39;, &amp;#39;username&amp;#39; =&amp;gt; &amp;#39;your-cloud-db-username&amp;#39;, &amp;#39;password&amp;#39; =&amp;gt; &amp;#39;your-cloud-db-password&amp;#39;, &amp;#39;charset&amp;#39; =&amp;gt; &amp;#39;utf8mb4&amp;#39;, &amp;#39;collation&amp;#39; =&amp;gt; &amp;#39;utf8mb4_unicode_ci&amp;#39;, &amp;#39;prefix&amp;#39; =&amp;gt; &amp;#39;&amp;#39;, &amp;#39;strict&amp;#39; =&amp;gt; false, ], 配置完成后重启apache本地服务器就能看到你在云端的一些修改。</description>
+    </item>
+    
+    <item>
+      <title>使用XAMPP本地部署Flarum在MAC环境中</title>
+      <link>https://hupochuanbird.github.io/posts/depoly-locally-macos-apache2/</link>
+      <pubDate>Tue, 13 Jun 2023 18:20:07 +0100</pubDate>
+      
+      <guid>https://hupochuanbird.github.io/posts/depoly-locally-macos-apache2/</guid>
+      <description>简单的流程只有三个，不过部署会遇到很多问题，mac自带apache的配置我实在是没弄好，还是下载了XAMPP来部署。
+下载XAMPP 下载composer 下载Flarum 1️⃣ Download XAMPP 进入官网，选择OS X操作系统。 双击dmg可能会出现不允许安装的情况。如果出现这种情况需要进入安全&amp;amp;隐私，输入密码点击同意就可以继续安装了。
+傻瓜安装，完成后运行。
+🌲Config in XAMPP 也许你的电脑已经运行了mysql，那么在XAMPP中，数据库就不会运行。
+如果出现这种情况，点击数据库的配置，把端口号修改为4306， 另外点击【Open Conf File】，修改端口号。 保存退出后，点击start即可。
+做完上面两个步骤，Apache和数据库都是运行状态，点击本地运行链接，如果能看到XAMPP主页说明目前没有问题。
+点击phpmyadmin，进入数据库配置。前一篇文章的数据库信息直接搬过来，直接运行sql语句创建数据库以及用户。 1 2 3 4 CREATE DATABASE flarum_db; CREATE USER &amp;#39;flarum_user&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED BY &amp;#39;flarum_pass&amp;#39;; GRANT ALL PRIVILEGES ON flarum_db.* TO &amp;#39;flarum_user&amp;#39;@&amp;#39;localhost&amp;#39;; FLUSH PRIVILEGES; 创建完成后可以在左侧看到相关的数据库，只不过这个时候，数据库是空的。 到目前为止，XAMPP基础部署已经完成，接下来需要下载Composer。如果已经下载过那么就跳过这一步。
+2️⃣ Download Composer 点击主页，直接跟着命令走一遍就可以了。 输入命令查看是否安装成功 1 composer -v 3️⃣ Download Flarum 首先，这个框架放在哪里，apache服务器怎么配置需要弄明白。找到XAMPP的安装路径，在MAC中，此路径是 /Applications/XAMPP
+命令pwd查看路径。
+👉 Download Flarum in correct path Flarum框架下载的位置在 /Applications/XAMPP/xamppfiles/htdocs/flarum，htdocs文件夹下没有flarum这个文件夹，所以需要创建一个。
+1 2 cd /Applications/XAMPP/xamppfiles/htdocs/ mkdir flarum 创建完成后，进入此文件夹，输入下载命令。 1 2 3 4 5 cd /flarum // 检查路径是否正确 pwd // 下载 composer create-project flarum/flarum .</description>
+    </item>
+    
+    <item>
+      <title>Flarum:部署到云端(ubuntu 22.04)</title>
+      <link>https://hupochuanbird.github.io/posts/flarum-deploy-to-cloud/</link>
+      <pubDate>Sat, 10 Jun 2023 19:31:49 +0100</pubDate>
+      
+      <guid>https://hupochuanbird.github.io/posts/flarum-deploy-to-cloud/</guid>
+      <description>关于如何部署Flarum这个论坛框架有多种方法，1）直接linux命令 2）Docker部署 3）宝塔。 本文选第一种方法，因为简单，省内存。另外，建议所有的版本号最好都做记录，便于未来迁移。此配置不包含SSL
+1️⃣ Deployment preparation 一台服务器，选择ubuntu系统。 域名（可选，如果没有域名可以直接用ip访问）。 2️⃣ Login to the server 不论用什么服务商，点击连接到服务器。请直接输入一下命令，如果出现permission deny错误，请用 sudo命令。
+👉 Environment configuration 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 sudo apt update sudo apt upgrade -y sudo apt install wget unzip curl nano git -y sudo apt install apache2 -y sudo systemctl enable --now apache2 sudo a2enmod rewrite sudo systemctl restart apache2 # php 环境 sudo apt install php php-curl sudo apt install php php-dom sudo apt install php php-gd sudo apt install php php-json sudo apt install php php-mbstring sudo apt install php php-mysql sudo apt install php php-tokenizer sudo apt install php php-zip # 数据库， 当然也可以安装mysql sudo apt install mariadb-server -y sudo systemctl enable --now mariadb sudo mysql_secure_installation # 登陆数据库，创建schema，数据库名flarum_db，可以自定义 sudo mysql # 以下 是数据库sql CREATE DATABASE flarum_db; CREATE USER &amp;#39;flarum_user&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED BY &amp;#39;flarum_pass&amp;#39;; GRANT ALL PRIVILEGES ON flarum_db.</description>
+    </item>
+    
+    <item>
+      <title>Flarum backup</title>
+      <link>https://hupochuanbird.github.io/posts/flarum-learn/</link>
+      <pubDate>Thu, 08 Jun 2023 20:16:58 +0100</pubDate>
+      
+      <guid>https://hupochuanbird.github.io/posts/flarum-learn/</guid>
+      <description>插件address https://extiverse.com/
+记录一下可能需要使用到的插件 https://extiverse.com/extension/acpl/mobile-tab
+https://extiverse.com/extension/fof/custom-footer
+https://extiverse.com/extension/askvortsov/flarum-categories
+https://extiverse.com/extension/fof/stopforumspam
+https://extiverse.com/extension/v17development/flarum-blog
+https://extiverse.com/extension/blomstra/usercard-stats
+https://extiverse.com/extension/justoverclock/custom-html-widget
+https://extiverse.com/extension/nearata/flarum-ext-signup-confirm-password
+https://extiverse.com/extension/sycho/flarum-advanced-extension-categories https://extiverse.com/extension/swaggymacro/only-starter
+https://extiverse.com/extension/datlechin/flarum-scroll-buttons
+https://extiverse.com/extension/pattinsonfuture/lang-traditional-chinese
+https://extiverse.com/extension/moerio/mixture
+https://extiverse.com/extension/askvortsov/flarum-categories
+https://extiverse.com/extension/fof/byobu https://extiverse.com/extension/v17development/flarum-user-badges
+测试地址 http://www.youngbird97.top/
+教程正在updating，此篇仅为备忘录</description>
+    </item>
+    
+  </channel>
+</rss>
