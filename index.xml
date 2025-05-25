@@ -9,6 +9,52 @@
     <copyright>All rights reserved</copyright>
     <lastBuildDate>Tue, 07 Mar 2023 22:54:08 +0000</lastBuildDate><atom:link href="https://hupochuanbird.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Galway 2024 Xmas</title>
+      <link>https://hupochuanbird.github.io/gallery/galway-2024-xmas/</link>
+      <pubDate>Fri, 10 Jan 2025 16:27:43 +0000</pubDate>
+      
+      <guid>https://hupochuanbird.github.io/gallery/galway-2024-xmas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Maximum Sum of an Hourglass</title>
+      <link>https://hupochuanbird.github.io/posts/maximum-sum-of-an-hourglass/</link>
+      <pubDate>Sun, 01 Dec 2024 19:58:00 +0000</pubDate>
+      
+      <guid>https://hupochuanbird.github.io/posts/maximum-sum-of-an-hourglass/</guid>
+      <description>【2428】Maximum Sum of an Hourglass Medium You are given an m x n integer matrix grid.
+We define an hourglass as a part of the matrix with the following form:
+Return the maximum sum of the elements of an hourglass.
+Note that an hourglass cannot be rotated and must be entirely contained within the matrix.
+Example 1:
+Input: grid = [[6,2,1,3],[4,2,1,5],[9,2,8,7],[4,1,2,9]] Output: 30 Explanation: The cells shown above represent the hourglass with the maximum sum: 6 &amp;#43; 2 &amp;#43; 1 &amp;#43; 2 &amp;#43; 9 &amp;#43; 2 &amp;#43; 8 = 30.</description>
+    </item>
+    
+    <item>
+      <title>Find Players With Zero or One Losses</title>
+      <link>https://hupochuanbird.github.io/posts/find-players-with-zero-or-one-losses/</link>
+      <pubDate>Sun, 01 Dec 2024 19:55:32 +0000</pubDate>
+      
+      <guid>https://hupochuanbird.github.io/posts/find-players-with-zero-or-one-losses/</guid>
+      <description>【2225】Find Players With Zero or One Losses Medium You are given an integer array matches where matches[i] = [winneri, loseri] indicates that the player winneri defeated player loseri in a match.
+Return a list answer of size 2 where:
+answer[0] is a list of all players that have not lost any matches. answer[1] is a list of all players that have lost exactly one match. The values in the two lists should be returned in increasing order.</description>
+    </item>
+    
+    <item>
+      <title>Check if Every Row and Column Contains All Numbers</title>
+      <link>https://hupochuanbird.github.io/posts/leetcode-checkifrccontainsallnumber/</link>
+      <pubDate>Sun, 01 Dec 2024 19:46:08 +0000</pubDate>
+      
+      <guid>https://hupochuanbird.github.io/posts/leetcode-checkifrccontainsallnumber/</guid>
+      <description>💙 【2133】Check if Every Row and Column Contains All Numbers easy An n x n matrix is valid if every row and every column contains all the integers from 1 to n (inclusive).
+Given an n x n integer matrix matrix, return true if the matrix is valid. Otherwise, return false.
+Example 1:
+Input: matrix = [[1,2,3],[3,1,2],[2,3,1]] Output: true Explanation: In this case, n = 3, and every row and column contains the numbers 1, 2, and 3.</description>
+    </item>
+    
+    <item>
       <title>Bitbucket Pipeline for Docker Image Deployment to AWS ECR</title>
       <link>https://hupochuanbird.github.io/posts/bitbucket-pipeline-docker-image-in-aws-ecr/</link>
       <pubDate>Fri, 01 Nov 2024 11:49:28 +0000</pubDate>
@@ -45,6 +91,15 @@ Here is the message module folder. A little bit ambitious, I have to say. Don&am
       <pubDate>Tue, 09 Jul 2024 10:01:42 +0100</pubDate>
       
       <guid>https://hupochuanbird.github.io/gallery/dublin-mountain/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pride Month in 2024</title>
+      <link>https://hupochuanbird.github.io/gallery/pride-month-in-2024/</link>
+      <pubDate>Sat, 29 Jun 2024 10:32:40 +0100</pubDate>
+      
+      <guid>https://hupochuanbird.github.io/gallery/pride-month-in-2024/</guid>
       <description></description>
     </item>
     

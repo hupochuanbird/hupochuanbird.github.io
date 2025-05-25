@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Medium on tothemoon&#39;s blog</title>
+    <link>https://hupochuanbird.github.io/tags/medium/</link>
+    <description>Recent content in Medium on tothemoon&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>All rights reserved</copyright>
+    <lastBuildDate>Sun, 01 Dec 2024 19:55:32 +0000</lastBuildDate><atom:link href="https://hupochuanbird.github.io/tags/medium/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Find Players With Zero or One Losses</title>
+      <link>https://hupochuanbird.github.io/posts/find-players-with-zero-or-one-losses/</link>
+      <pubDate>Sun, 01 Dec 2024 19:55:32 +0000</pubDate>
+      
+      <guid>https://hupochuanbird.github.io/posts/find-players-with-zero-or-one-losses/</guid>
+      <description>【2225】Find Players With Zero or One Losses Medium You are given an integer array matches where matches[i] = [winneri, loseri] indicates that the player winneri defeated player loseri in a match.
+Return a list answer of size 2 where:
+answer[0] is a list of all players that have not lost any matches. answer[1] is a list of all players that have lost exactly one match. The values in the two lists should be returned in increasing order.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -7,9 +7,27 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved</copyright>
-    <lastBuildDate>Fri, 01 Nov 2024 11:49:28 +0000</lastBuildDate><atom:link href="https://hupochuanbird.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Jan 2025 16:27:43 +0000</lastBuildDate><atom:link href="https://hupochuanbird.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>tutorial</title>
+      <title>Travel</title>
+      <link>https://hupochuanbird.github.io/categories/travel/</link>
+      <pubDate>Fri, 10 Jan 2025 16:27:43 +0000</pubDate>
+      
+      <guid>https://hupochuanbird.github.io/categories/travel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Leetcode</title>
+      <link>https://hupochuanbird.github.io/categories/leetcode/</link>
+      <pubDate>Sun, 01 Dec 2024 19:58:00 +0000</pubDate>
+      
+      <guid>https://hupochuanbird.github.io/categories/leetcode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tutorial</title>
       <link>https://hupochuanbird.github.io/categories/tutorial/</link>
       <pubDate>Fri, 01 Nov 2024 11:49:28 +0000</pubDate>
       
@@ -38,18 +56,18 @@
     <item>
       <title>Dublin</title>
       <link>https://hupochuanbird.github.io/categories/dublin/</link>
-      <pubDate>Tue, 09 Jul 2024 10:01:42 +0100</pubDate>
+      <pubDate>Sat, 29 Jun 2024 10:32:40 +0100</pubDate>
       
       <guid>https://hupochuanbird.github.io/categories/dublin/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Howth</title>
-      <link>https://hupochuanbird.github.io/categories/howth/</link>
-      <pubDate>Sun, 16 Jun 2024 10:13:14 +0100</pubDate>
+      <title>LGBTQ</title>
+      <link>https://hupochuanbird.github.io/categories/lgbtq/</link>
+      <pubDate>Sat, 29 Jun 2024 10:32:40 +0100</pubDate>
       
-      <guid>https://hupochuanbird.github.io/categories/howth/</guid>
+      <guid>https://hupochuanbird.github.io/categories/lgbtq/</guid>
       <description></description>
     </item>
     

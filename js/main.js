@@ -1,6 +1,6 @@
 
 
-(function() {
+(function () {
   "use strict";
   /**
    * Easy selector helper function
@@ -14,65 +14,65 @@
     }
   }
 
-let copyBTN = select('pre > code')
+  let copyBTN = select('pre > code')
 
-if(copyBTN){
-  function flashCopyMessage(el, msg) {
-    el.textContent = msg;
-    setTimeout(() => {
-      el.textContent = "Copy";
-    }, 1000);
-  }
-
-  function selectText(node) {
-    let selection = window.getSelection();
-    let range = document.createRange();
-    if (node.childElementCount === 2) {
-      // Skip the title.
-      range.selectNodeContents(node.children[1]);
-    } else {
-      range.selectNodeContents(node);
+  if (copyBTN) {
+    function flashCopyMessage(el, msg) {
+      el.textContent = msg;
+      setTimeout(() => {
+        el.textContent = "Copy";
+      }, 1000);
     }
-    selection.removeAllRanges();
-    selection.addRange(range);
-    return selection;
-  }
 
-  function addCopyButton(containerEl) {
-    let copyBtn = document.createElement("button");
-    copyBtn.className = "highlight-copy-btn";
-    copyBtn.textContent = "Copy";
-
-    let codeEl = containerEl.firstElementChild;
-    copyBtn.addEventListener('click', () => {
-      try {
-        let selection = selectText(codeEl);
-        document.execCommand('copy');
-        selection.removeAllRanges();
-
-        flashCopyMessage(copyBtn, 'Copied!')
-      } catch(e) {
-        console && console.log(e);
-      flashCopyMessage(copyBtn, 'Failed :\'(')
+    function selectText(node) {
+      let selection = window.getSelection();
+      let range = document.createRange();
+      if (node.childElementCount === 2) {
+        // Skip the title.
+        range.selectNodeContents(node.children[1]);
+      } else {
+        range.selectNodeContents(node);
+      }
+      selection.removeAllRanges();
+      selection.addRange(range);
+      return selection;
     }
-  });
 
-  containerEl.appendChild(copyBtn);
-}
+    function addCopyButton(containerEl) {
+      let copyBtn = document.createElement("button");
+      copyBtn.className = "highlight-copy-btn";
+      copyBtn.textContent = "Copy";
 
-// Add copy button to code blocks
-let highlightBlocks = document.getElementsByClassName('highlight');
-Array.prototype.forEach.call(highlightBlocks, addCopyButton);
+      let codeEl = containerEl.firstElementChild;
+      copyBtn.addEventListener('click', () => {
+        try {
+          let selection = selectText(codeEl);
+          document.execCommand('copy');
+          selection.removeAllRanges();
+
+          flashCopyMessage(copyBtn, 'Copied!')
+        } catch (e) {
+          console && console.log(e);
+          flashCopyMessage(copyBtn, 'Failed :\'(')
+        }
+      });
+
+      containerEl.appendChild(copyBtn);
+    }
+
+    // Add copy button to code blocks
+    let highlightBlocks = document.getElementsByClassName('highlight');
+    Array.prototype.forEach.call(highlightBlocks, addCopyButton);
 
 
-}
+  }
 
 
 
 
 
   let particles = select('#particles-js')
-  if(particles){
+  if (particles) {
     particlesJS("", {
       "particles": {
         "number": {
@@ -187,59 +187,59 @@ Array.prototype.forEach.call(highlightBlocks, addCopyButton);
 
 
 
-        // Define selector for selecting
-      // anchor links with the hash
-      let anchorSelector = 'a[href^="#"]';
-      $(anchorSelector).on("click", function (e) {
-        // Prevent scrolling if the
-        // hash value is blank
-        e.preventDefault();
+  // Define selector for selecting
+  // anchor links with the hash
+  let anchorSelector = 'a[href^="#"]';
+  $(anchorSelector).on("click", function (e) {
+    // Prevent scrolling if the
+    // hash value is blank
+    e.preventDefault();
 
-        // Get the destination to scroll to
-        // using the hash property
-        let destination = $(this.hash);
+    // Get the destination to scroll to
+    // using the hash property
+    let destination = $(this.hash);
 
-        // Get the position of the destination
-        // using the coordinates returned by
-        // offset() method and subtracting 50px
-        // from it.
-        let scrollPosition = destination.offset().top - 88;
+    // Get the position of the destination
+    // using the coordinates returned by
+    // offset() method and subtracting 50px
+    // from it.
+    let scrollPosition = destination.offset().top - 88;
 
-        // Specify animation duration
-        let animationDuration = 500;
+    // Specify animation duration
+    let animationDuration = 500;
 
-        // Animate the html/body with
-        // the scrollTop() method
-        $("html, body").animate(
-          {
-            scrollTop: scrollPosition,
-          },
-          animationDuration
-        );
-      });
+    // Animate the html/body with
+    // the scrollTop() method
+    $("html, body").animate(
+      {
+        scrollTop: scrollPosition,
+      },
+      animationDuration
+    );
+  });
   /**
    * Easy on scroll event listener 
    */
   const onscroll = (el, listener) => {
     el.addEventListener('scroll', listener)
   }
- 
+
   const jsyear = select('#js-year')
-  if(jsyear){
+  if (jsyear) {
     const date = new Date()
     $("#js-year").html(date.getFullYear())
   }
- 
- 
- 
+
+
+
 
   Fancybox.bind('[data-fancybox="gallery"]', {
     //
-  }); 
-  
+  });
+
   const scrollToTopBtn = select('.scrollToTopBtn')
   const top = select('#top-nav')
-  if(scrollToTopBtn){
+  if (scrollToTopBtn) {
     var rootElement = document.documentElement;
     handleScroll()
   }
@@ -248,15 +248,15 @@ Array.prototype.forEach.call(highlightBlocks, addCopyButton);
     var scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
     if (rootElement.scrollTop / scrollTotal > 0.1) {
       scrollToTopBtn.classList.add("showBtn");
-      top.classList.add( "menu-shrink");
+      top.classList.add("menu-shrink");
       top.classList.remove("trans-parent");
     } else {
-      scrollToTopBtn.classList.remove("showBtn");    
-      top.classList.add( "trans-parent");
+      scrollToTopBtn.classList.remove("showBtn");
+      top.classList.add("trans-parent");
       top.classList.remove("menu-shrink");
     }
   }
-  
+
 
   function scrollToTop() {
     rootElement.scrollTo({
@@ -266,9 +266,9 @@ Array.prototype.forEach.call(highlightBlocks, addCopyButton);
   }
   scrollToTopBtn.addEventListener("click", scrollToTop);
 
-  
+
   document.addEventListener("scroll", handleScroll);
-  $('#toggle').click(function() {
+  $('#toggle').click(function () {
     $(this).toggleClass('active');
     $('#overlay').toggleClass('open');
   });
@@ -294,51 +294,51 @@ const pass = "123"
 var PageUrl = ""
 
 
-function listenerUrl(){
-  var verifyUrl =  window.location.href
+function listenerUrl() {
+  var verifyUrl = window.location.href
   var myCookieValue = $.cookie("myPasswordToRead")
-  if(myCookieValue){
+  if (myCookieValue) {
     return
   }
   verifyUrlList = verifyUrl.split('/')
-  for(let i = 0;i <verifyUrlList.length;i++){
-    console.info(verifyUrlList[i] )
-    if(verifyUrlList[i] == "posts" ){
-      if(i === verifyUrlList.length - 2){
+  for (let i = 0; i < verifyUrlList.length; i++) {
+    console.info(verifyUrlList[i])
+    if (verifyUrlList[i] == "posts") {
+      if (i === verifyUrlList.length - 2) {
         break
       }
       this.PageUrl = verifyUrl
-      verifyPass(verifyUrl,2)
+      verifyPass(verifyUrl, 2)
       break
     }
   }
-}  
+}
 
 
-function enterPassword(){
+function enterPassword() {
   var userInputPass = $("#pass").val()
   if (userInputPass != null) {
-    if(userInputPass === pass){
-      $.cookie("myPasswordToRead",userInputPass, { expires: 7, path: "/" });
-    
+    if (userInputPass === pass) {
+      $.cookie("myPasswordToRead", userInputPass, { expires: 7, path: "/" });
+
       setTimeout(() => {
         window.location.replace(PageUrl);
         $("#popup").removeClass("z-index-9999");
         $("#normal").removeClass("display-none");
         $("body").removeClass("backgroundD9");
       }, "1000");
-    }else{
+    } else {
       // wrong pass
-      $("#passwordSec").addClass("shakePass",1000)
+      $("#passwordSec").addClass("shakePass", 1000)
       setTimeout(() => {
-      $("#passwordSec").removeClass("shakePass",1000)
-       
+        $("#passwordSec").removeClass("shakePass", 1000)
+
       }, "500");
     }
   }
 }
 
-function verifyPass(url,type){
+function verifyPass(url, type) {
   window.location.replace(url);
   return;
   // PageUrl = url
@@ -353,16 +353,37 @@ function verifyPass(url,type){
   // $("#popup").html('<section class="s:mt-10 backgroundD9" > <div class="closeIcon" onclick="closePassBox('+type+')"><i class="fa-solid fa-xmark fa-2xl" <i class="fa-solid fa-xmark fa-2xl" style="color: #0e1c34;"></i></i></div><div class="flex justify-center sm:flex-row "> <div class="h-screen text-center" id="passwordContent"> <img src="https://i.328888.xyz/2023/03/20/P9ilt.png" > <h1 >Please enter password  <br> to view my portfolio</h1> <p>To View, Please enter the Password</p> <div class=" ssm:mt-10 mt-4 mb-8 " id="passwordSec"> <input type="password" id="pass" name="password" minlength="8" required  placeholder="Enter Password"> <button  type="button" onclick="enterPassword()">Let\'s go</button> </input> </div> </div> </div> </section>')
 
 }
-function closePassBox(type){
+function closePassBox(type) {
   $("body").removeClass("backgroundD9");
   $("#popup").removeClass("z-index-9999");
   $("#normal").removeClass("display-none");
   $("#popup").html("");
-  if(type === 2){
+  if (type === 2) {
     window.location.replace("/posts");
   }
- 
 
 
 
 }
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const categoryTab = document.getElementById('categoryTab');
+  function scrollRight() {
+    categoryTab.scrollBy({
+      left: 200,
+      behavior: 'smooth'
+    });
+  }
+
+  function scrollToLeft() {
+    categoryTab.scrollBy({
+      left: -200,
+      behavior: 'smooth'
+    });
+  }
+
+  window.scrollRight = scrollRight; // Make it globally accessible
+  window.scrollToLeft = scrollToLeft; // Make it globally accessible
+});

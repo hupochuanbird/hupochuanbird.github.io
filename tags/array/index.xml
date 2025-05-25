@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Array on tothemoon&#39;s blog</title>
+    <link>https://hupochuanbird.github.io/tags/array/</link>
+    <description>Recent content in Array on tothemoon&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>All rights reserved</copyright>
+    <lastBuildDate>Sun, 01 Dec 2024 19:58:00 +0000</lastBuildDate><atom:link href="https://hupochuanbird.github.io/tags/array/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Maximum Sum of an Hourglass</title>
+      <link>https://hupochuanbird.github.io/posts/maximum-sum-of-an-hourglass/</link>
+      <pubDate>Sun, 01 Dec 2024 19:58:00 +0000</pubDate>
+      
+      <guid>https://hupochuanbird.github.io/posts/maximum-sum-of-an-hourglass/</guid>
+      <description>【2428】Maximum Sum of an Hourglass Medium You are given an m x n integer matrix grid.
+We define an hourglass as a part of the matrix with the following form:
+Return the maximum sum of the elements of an hourglass.
+Note that an hourglass cannot be rotated and must be entirely contained within the matrix.
+Example 1:
+Input: grid = [[6,2,1,3],[4,2,1,5],[9,2,8,7],[4,1,2,9]] Output: 30 Explanation: The cells shown above represent the hourglass with the maximum sum: 6 &amp;#43; 2 &amp;#43; 1 &amp;#43; 2 &amp;#43; 9 &amp;#43; 2 &amp;#43; 8 = 30.</description>
+    </item>
+    
+    <item>
+      <title>Find Players With Zero or One Losses</title>
+      <link>https://hupochuanbird.github.io/posts/find-players-with-zero-or-one-losses/</link>
+      <pubDate>Sun, 01 Dec 2024 19:55:32 +0000</pubDate>
+      
+      <guid>https://hupochuanbird.github.io/posts/find-players-with-zero-or-one-losses/</guid>
+      <description>【2225】Find Players With Zero or One Losses Medium You are given an integer array matches where matches[i] = [winneri, loseri] indicates that the player winneri defeated player loseri in a match.
+Return a list answer of size 2 where:
+answer[0] is a list of all players that have not lost any matches. answer[1] is a list of all players that have lost exactly one match. The values in the two lists should be returned in increasing order.</description>
+    </item>
+    
+    <item>
+      <title>Check if Every Row and Column Contains All Numbers</title>
+      <link>https://hupochuanbird.github.io/posts/leetcode-checkifrccontainsallnumber/</link>
+      <pubDate>Sun, 01 Dec 2024 19:46:08 +0000</pubDate>
+      
+      <guid>https://hupochuanbird.github.io/posts/leetcode-checkifrccontainsallnumber/</guid>
+      <description>💙 【2133】Check if Every Row and Column Contains All Numbers easy An n x n matrix is valid if every row and every column contains all the integers from 1 to n (inclusive).
+Given an n x n integer matrix matrix, return true if the matrix is valid. Otherwise, return false.
+Example 1:
+Input: matrix = [[1,2,3],[3,1,2],[2,3,1]] Output: true Explanation: In this case, n = 3, and every row and column contains the numbers 1, 2, and 3.</description>
+    </item>
+    
+  </channel>
+</rss>
