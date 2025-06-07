@@ -132,6 +132,25 @@
 </a>
 
 
+
+
+
+
+
+
+
+
+
+
+
+<a href="/about/"  title="About">
+    <li class="hover  ">
+      <i class="fa-solid fa-medal"></i>
+      About
+    </li>
+</a>
+
+
 </ul>
         
         <div class="flex sm:hidden flex-1 justify-end">
@@ -234,6 +253,25 @@
 </a>
 
 
+
+
+
+
+
+
+
+
+
+
+
+<a href="/about/"  title="About">
+    <li class="hover  ">
+      <i class="fa-solid fa-medal"></i>
+      About
+    </li>
+</a>
+
+
 </ul>
         </nav>
       </div>
@@ -248,85 +286,14 @@
 
             <main class="min-h-full" style=" margin-top: 0;" >
 <section>
-    
-    <div id="about">
-  <div class="sm:flex">
-    <div class="sm:w-2/5  resume-section"  >
-      <div class="flex justify-center">
+    <div id="background-carousel" class=" flex flex-col gap-12 justify-center items-center h-screen justify-center "
+         style="
+    background-size: cover; background-image: url('/images/bg/bg2.jpg');  background-repeat: no-repeat; background-attachment: fixed ">
 
-        <h2>I'm a <span class="typed" style="color: #00cab5;"
-            data-typed-items="Java Developer, Flutter Developer, Photographer,Orienteering Athlete"></span></h2>
-
-      </div>
-      <div class="row resume">
-        <div class="col-lg-12">
-
-
-          <div class="resume-item">
-            <h4>2024 - till now(2025)</h4>
-            <div class="flex justify-between">
-              <h5>Flutter Developer</h5>
-              <p><em> Dublin, Ireland</em></p>
-            </div>
-            <p>As an entry-level full-stack Developer</p>
-          </div>
-          <div class="resume-item">
-            <h4>2023 - 2024</h4>
-            <div class="flex justify-between">
-              <h5>Java Developer</h5>
-              <p><em> Dublin, Ireland</em></p>
-            </div>
-            <p>As a graduated Java Developer</p>
-          </div>
-          <div class="resume-item">
-            <h4>2021 - 2022</h4>
-            <div class="flex justify-between">
-              <h5>Master of Computer Science &amp; UCC</h5>
-              <p><em>Cork, Ireland</em></p>
-            </div>
-            <p>First class honours(1.1) </p>
-          </div>
-          <div class="resume-item">
-            <h4>2020 - 2021</h4>
-            <div class="flex justify-between">
-              <h5>Junior Full Stack Developer</h5>
-              <p><em>ShenZhen, China</em></p>
-            </div>
-            <p>IoT company</p>
-          </div>
-          <div class="resume-item">
-            <h4>2020</h4>
-            <div class="flex justify-between">
-              <h5>Network Engineering &amp; Bachelor degree</h5>
-              <p><em> China</em></p>
-            </div>
-          </div>
-          <div class="resume-item">
-            <h4>2017-2019</h4>
-            <p>Founded Sudoku Club and served as its first president</p>
-            <p>Sudoku Club website established (but now abandoned due to lack of maintenance)</p>
-            <p>Faculty of Computing Science Orienteering Team Leader</p>
-            <p>Orienteering Crew, Guangdong University Orienteering Tournament 1st</p>
-          </div>
-        </div>
-
-      </div>
-
-
-
-
-
-    </div>
-    <div id="background-carousel" class="sm:w-3/5 " style="
-    background-size: cover;
-
-    background-repeat: no-repeat; background-attachment: fixed ">
-      <div class="flex flex-col h-full justify-center items-center sm:flex-row gap-8 sm:my-14">
-        
         <div>
-          <img class="aboutImage" src="/images/about/my_profile.jpg">
-          <div class="mb-6"></div>
-          <div class="flex justify-center gap-4">
+            <img class="aboutImage" src="/images/about/my_profile.jpg">
+            <div class="mb-6"></div>
+            <div class="flex justify-center gap-4">
   
     <a href="https://www.instagram.com/tothemoonbird/"  target="_blank">
       <i class="fa-brands fa-instagram fa-lg"></i>
@@ -345,146 +312,29 @@
     </a>
   
 </div>
+            <h2>I'm a <span class="typed" style="color: #00cab5;"
+                            data-typed-items="Java Developer, Flutter Developer, Photographer,Orienteering Athlete"></span></h2>
 
-          <div class="mb-6"></div>
-          <div class="flex justify-center">
-            <a href="#mywork">
-              <button type="button" class="brutalist-card__button brutalist-card__button--mark">
-                See my work <i class="fa-solid fa-arrow-right"></i>
-              </button>
-            </a>
+            <div class="mb-6"></div>
+            <div class="flex justify-center">
+                <a href="#mywork">
+                    <button type="button" class="brutalist-card__button brutalist-card__button--mark">
+                        See my work <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </a>
 
-          </div>
+            </div>
 
         </div>
 
 
-
-
-
-
-
-      </div>
     </div>
-  </div>
-
-
-</div>
-
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const images = [
-      
-          "\/images\/bg\/bg2.jpg",
-    
-      ];
-
-  let currentIndex = 0;
-  const section = document.getElementById('background-carousel');
-
-  if (!section) {
-    console.error("Element with id 'background-carousel' not found");
-    return;
-  }
-
-  function changeBackground() {
-    currentIndex = (currentIndex + 1) % images.length;
-    section.style.backgroundImage = `url(${images[currentIndex]})`;
-  }
-
-  setInterval(changeBackground, 5000);
-    });
-</script>
-
-    
 </section>
 
-<section id="mywork" class="mt-10">
+<section id="mywork">
     <div class="container">
         <div class="sm:flex  justify-between ">
-            <div class=" sm:w-4/5 sm:mr-6">
-                <div style="display: flex; align-items: center;">
-
-                    <button class="scroll-button" onclick="scrollToLeft()">
-                        <i class="fa-solid fa-arrow-left"></i>
-                    </button>
-                    <div class="categoryTab " id="categoryTab">
-
-                        
-                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
-                           href="/categories/2021">2021</a>
-                        
-                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
-                           href="/categories/apache">apache</a>
-                        
-                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
-                           href="/categories/cloud">cloud</a>
-                        
-                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
-                           href="/categories/dublin">dublin</a>
-                        
-                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
-                           href="/categories/flarum">flarum</a>
-                        
-                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
-                           href="/categories/flutter">flutter</a>
-                        
-                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
-                           href="/categories/galway">galway</a>
-                        
-                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
-                           href="/categories/github">github</a>
-                        
-                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
-                           href="/categories/hibernate">hibernate</a>
-                        
-                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
-                           href="/categories/hugo">hugo</a>
-                        
-                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
-                           href="/categories/java">java</a>
-                        
-                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
-                           href="/categories/jpa">jpa</a>
-                        
-                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
-                           href="/categories/kinsale">kinsale</a>
-                        
-                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
-                           href="/categories/leetcode">leetcode</a>
-                        
-                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
-                           href="/categories/lgbtq">lgbtq</a>
-                        
-                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
-                           href="/categories/namecheap">namecheap</a>
-                        
-                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
-                           href="/categories/reading">reading</a>
-                        
-                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
-                           href="/categories/riverpod">riverpod</a>
-                        
-                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
-                           href="/categories/travel">travel</a>
-                        
-                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
-                           href="/categories/travle">travle</a>
-                        
-                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
-                           href="/categories/tutorial">tutorial</a>
-                        
-                    </div>
-
-                    <button class="scroll-button" onclick="scrollRight()">
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </button>
-
-                </div>
-
-                <div class="mb-6"></div>
-
+            <div class=" sm:w-4/5 ">
                 <div class="three">
                     <h1 style="color: #74C0FC;"><i class="fa-brands fa-flutter"></i> Flutter</h1><div class="sm:flex" style="    flex-wrap: wrap;">
   <div class="  anime-card result__item" style="position: relative;">
@@ -519,12 +369,12 @@
         
         
 
-        <div class=" p-10">
-          <div class="text-base  three-line-title ">
-            I have been fully focused on IM (instant messaging) in Flutter. It&#39;s quite a …
-          </div>
 
-        </div>
+
+
+
+
+
 
 
       </div>
@@ -568,12 +418,12 @@
         
         
 
-        <div class=" p-10">
-          <div class="text-base  three-line-title ">
-            The Dart in-built method, for formatting, dates in Flutter according to the …
-          </div>
 
-        </div>
+
+
+
+
+
 
 
       </div>
@@ -621,12 +471,12 @@
         
         
 
-        <div class=" p-10">
-          <div class="text-base  three-line-title ">
-            In this section, you will learn listen value changes by using the state …
-          </div>
 
-        </div>
+
+
+
+
+
 
 
       </div>
@@ -681,12 +531,12 @@
         
         
 
-        <div class=" p-10">
-          <div class="text-base  three-line-title ">
-            
-          </div>
 
-        </div>
+
+
+
+
+
 
 
       </div>
@@ -738,12 +588,12 @@
         
         
 
-        <div class=" p-10">
-          <div class="text-base  three-line-title ">
-            
-          </div>
 
-        </div>
+
+
+
+
+
 
 
       </div>
@@ -787,12 +637,12 @@
         
         
 
-        <div class=" p-10">
-          <div class="text-base  three-line-title ">
-            
-          </div>
 
-        </div>
+
+
+
+
+
 
 
       </div>
@@ -843,12 +693,12 @@
         
         
 
-        <div class=" p-10">
-          <div class="text-base  three-line-title ">
-            This pipeline automates the build and deployment process of Docker images to AWS …
-          </div>
 
-        </div>
+
+
+
+
+
 
 
       </div>
@@ -904,12 +754,12 @@
         
         
 
-        <div class=" p-10">
-          <div class="text-base  three-line-title ">
-            本文记录所有配置命令，包括php环境，数据库环境，apache服务，以及框架配置。
-          </div>
 
-        </div>
+
+
+
+
+
 
 
       </div>
@@ -961,12 +811,12 @@
         
         
 
-        <div class=" p-10">
-          <div class="text-base  three-line-title ">
-            In this section, you can learn how to add icon in your menu navigation and how …
-          </div>
 
-        </div>
+
+
+
+
+
 
 
       </div>
@@ -1018,12 +868,12 @@
         
         
 
-        <div class=" p-10">
-          <div class="text-base  three-line-title ">
-            this is a custom feature we need to define in config.toml
-          </div>
 
-        </div>
+
+
+
+
+
 
 
       </div>
@@ -1049,49 +899,17 @@
   
 </div></div>
 
-
-
-
-
-
-
-
-
             </div>
-            <div class=" sm:w-1/5">
+            <div class=" sm:w-1/4">
 
-
-                <div class="brutalist-card" id="about">
-                    This blog was rebuilt in 2021 after the original address expired and its resources were emptied.
-                    Now, I have freed up time to organize and gradually restore it.
-
-                    <ul style="padding: 0;">
-                        <li><i class="fa-solid fa-chevron-right"></i><strong>Birthday:</strong>
-                            <span>September, 1997</span></li>
-                        
-                        <li><i class="fa-solid fa-chevron-right"></i><strong>City:</strong> <span>🌏</span></li>
-                        <li><i class="fa-solid fa-chevron-right"></i><strong>Gender:</strong> <span>Woman</span></li>
-                        <li><i class="fa-solid fa-chevron-right"></i><strong>Degree:</strong> <span>Master🧑‍🎓</span>
-                        </li>
-                        <li><i class="fa-solid fa-chevron-right"></i>
-                            <strong>Hobby:</strong>
-                        </li>
-                        <div>
-                            Kendo (Kendo) Level 1 (future and examination section), badminton, swimming, orienteering,
-                            good at sports
-                            . Lover of speculative fiction, big Conan fan. Photography, editing, photoshop.
-                        </div>
-
-                    </ul>
-                </div>
                 <div class="mb-6"></div><div class="music-card">
     <div class="music-image">
-      <img src="https://hupo-common.s3.ap-northeast-2.amazonaws.com/music_cover.jpg" alt="Album Art">
-      <div class="favorite-icon">❤️</div>
+        <img src="https://hupo-common.s3.ap-northeast-2.amazonaws.com/music_cover.jpg" alt="Album Art">
+        <div class="favorite-icon">❤️</div>
     </div>
     <div class="music-info">
-      <h2>Deja Vu</h2>
-      <p>Summer Salt</p>
+        <h2>Deja Vu</h2>
+        <p>Summer Salt</p>
     </div>
     <div class="progress-container">
         <span class="current-time">0:00</span>
@@ -1105,306 +923,302 @@
     </div>
     <audio id="audio-player" src="https://hupo-common.s3.ap-northeast-2.amazonaws.com/music.mp3"></audio>
 
-  </div>
-  
+</div>
+
 
 <style>
 
 
- 
-.music-card {
-  background: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-   
-  padding: 10px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
+     
+    .music-card {
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        background-color: var(--background-color);
+        border: 1px solid var(--main-color );
+        border-radius: 12px;
+        padding: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
 
- 
-.music-image {
-  position: relative;
-  overflow: hidden;
-}
+     
+    .music-image {
+        position: relative;
+        overflow: hidden;
+    }
 
-.music-image img {
-  width: 100%;
-  border-radius: 15px;
-}
+    .music-image img {
+        width: 100%;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 12px;
+    }
 
-.favorite-icon {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 20px;
-  color: red;
-  width: 40px;
-  height: 40px;
-  background: white;
-  border-radius: 50%;
-  padding: 5px;
-}
+    .favorite-icon {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+        color: red;
+        width: 40px;
+        height: 40px;
+        background: white;
+        border-radius: 50%;
+        padding: 5px;
+    }
 
- 
-.music-info h2 {
-  font-size: 18px;
-  margin: 10px 0 5px;
-  font-weight: bold;
-}
+     
+    .music-info h2 {
+        font-size: 18px;
+        margin: 0;
+        font-weight: bold;
+    }
 
-.music-info p {
-  font-size: 14px;
-  color: #666;
-}
+    .music-info p {
+        font-size: 14px;
+        margin: 0;
+        color: #666;
+    }
 
- 
-.progress-container {
-  display: flex;
-  align-items: center;
-  margin: 10px 0;
-}
+     
+    .progress-container {
+        display: flex;
+        align-items: center;
+        margin: 10px 0;
+    }
 
-.progress-container span {
-  font-size: 12px;
-  color: #666;
-}
+    .progress-container span {
+        font-size: 12px;
+        color: #666;
+    }
 
-.progress-bar {
-  flex: 1;
-  margin: 0 10px;
-  appearance: none;
-  height: 5px;
-  border-radius: 5px;
-  background: linear-gradient(90deg, #6a11cb, #2575fc);
-  outline: none;
-}
+    .progress-bar {
+        flex: 1;
+        margin: 0 10px;
+        appearance: none;
+        height: 5px;
+        border-radius: 5px;
+        background: linear-gradient(90deg, #6a11cb, #2575fc);
+        outline: none;
+    }
 
-.progress-bar::-webkit-slider-thumb {
-  appearance: none;
-  height: 12px;
-  width: 12px;
-  border-radius: 50%;
-  background: #6a11cb;
-  cursor: pointer;
-}
+    .progress-bar::-webkit-slider-thumb {
+        appearance: none;
+        height: 12px;
+        width: 12px;
+        border-radius: 50%;
+        background: #6a11cb;
+        cursor: pointer;
+    }
 
- 
-.controls {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+     
+    .controls {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-.control-btn {
-  background: none;
-  border: none;
-  font-size: 18px;
-  cursor: pointer;
-  padding: 10px;
-  transition: transform 0.2s ease;
-}
+    .control-btn {
+        background: none;
+        border: none;
+        font-size: 18px;
+        cursor: pointer;
+        padding: 10px;
+        transition: transform 0.2s ease;
+    }
 
-.control-btn:hover {
-  transform: scale(1.2);
-}
+    .control-btn:hover {
+        transform: scale(1.2);
+    }
 
-.play-btn {
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
-  color: white;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
+    .play-btn {
+        background: linear-gradient(135deg, #6a11cb, #2575fc);
+        color: white;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
 
 </style>
 
 <script>
-const audio = document.getElementById('audio-player');
-const playPauseBtn = document.getElementById('play-pause');
-const progressBar = document.querySelector('.progress-bar');
-const currentTimeEl = document.querySelector('.current-time');
-const durationEl = document.querySelector('.duration');
+    const audio = document.getElementById('audio-player');
+    const playPauseBtn = document.getElementById('play-pause');
+    const progressBar = document.querySelector('.progress-bar');
+    const currentTimeEl = document.querySelector('.current-time');
+    const durationEl = document.querySelector('.duration');
 
-let isPlaying = false;
+    let isPlaying = false;
+    
+    window.onload = () => {
+        audio.play().then(() => {
+            playPauseBtn.textContent = '⏸'; 
+            isPlaying = true;
+        }).catch(error => {
+            console.log("Auto-play blocked by browser:", error);
+        });
+    };
 
-window.onload = () => {
-  audio.play().then(() => {
-    playPauseBtn.textContent = '⏸'; 
-    isPlaying = true;
-  }).catch(error => {
-    console.log("Auto-play blocked by browser:", error);
-  });
-};
+    
+    
+    playPauseBtn.addEventListener('click', () => {
+        if (isPlaying) {
+            audio.pause();
+            playPauseBtn.textContent = '▶'; 
+        } else {
+            audio.play();
+            playPauseBtn.textContent = '⏸'; 
+        }
+        isPlaying = !isPlaying;
+    });
+
+    
+    audio.addEventListener('timeupdate', () => {
+        const currentTime = audio.currentTime;
+        const duration = audio.duration;
+
+        
+        progressBar.value = (currentTime / duration) * 100;
+
+        
+        currentTimeEl.textContent = formatTime(currentTime);
+        durationEl.textContent = formatTime(duration);
+    });
+
+    
+    progressBar.addEventListener('input', () => {
+        const duration = audio.duration;
+        audio.currentTime = (progressBar.value / 100) * duration;
+    });
+
+    
+    audio.addEventListener('loadedmetadata', () => {
+        durationEl.textContent = formatTime(audio.duration);
+    });
+
+    
+    function formatTime(seconds) {
+        const minutes = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+    }
+
+</script><div class="mb-6"></div>
+
+                <div class="category-section">
+                    <div class="category-header">
+                        <h2 class="category-title">Categories</h2>
+                    </div>
+
+                    <div class="categoryTab " id="categoryTab">
+                        
+                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
+                           href="/categories/2021">2021(1)</a>
+                        
+                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
+                           href="/categories/apache">apache(1)</a>
+                        
+                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
+                           href="/categories/cloud">cloud(1)</a>
+                        
+                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
+                           href="/categories/dublin">dublin(3)</a>
+                        
+                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
+                           href="/categories/flarum">flarum(6)</a>
+                        
+                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
+                           href="/categories/flutter">flutter(4)</a>
+                        
+                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
+                           href="/categories/galway">galway(1)</a>
+                        
+                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
+                           href="/categories/github">github(1)</a>
+                        
+                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
+                           href="/categories/hibernate">hibernate(1)</a>
+                        
+                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
+                           href="/categories/hugo">hugo(8)</a>
+                        
+                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
+                           href="/categories/java">java(1)</a>
+                        
+                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
+                           href="/categories/jpa">jpa(1)</a>
+                        
+                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
+                           href="/categories/kinsale">kinsale(1)</a>
+                        
+                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
+                           href="/categories/leetcode">leetcode(3)</a>
+                        
+                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
+                           href="/categories/lgbtq">lgbtq(1)</a>
+                        
+                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
+                           href="/categories/namecheap">namecheap(1)</a>
+                        
+                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
+                           href="/categories/reading">reading(1)</a>
+                        
+                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
+                           href="/categories/riverpod">riverpod(1)</a>
+                        
+                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
+                           href="/categories/travel">travel(3)</a>
+                        
+                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
+                           href="/categories/travle">travle(1)</a>
+                        
+                        <a target="_blank" class="brutalist-card brutalist-card__button--mark"
+                           href="/categories/tutorial">tutorial(12)</a>
+                        
+                    </div>
+                </div>
 
 
 
-playPauseBtn.addEventListener('click', () => {
-  if (isPlaying) {
-    audio.pause();
-    playPauseBtn.textContent = '▶'; 
-  } else {
-    audio.play();
-    playPauseBtn.textContent = '⏸'; 
-  }
-  isPlaying = !isPlaying;
-});
 
-
-audio.addEventListener('timeupdate', () => {
-  const currentTime = audio.currentTime;
-  const duration = audio.duration;
-
-  
-  progressBar.value = (currentTime / duration) * 100;
-
-  
-  currentTimeEl.textContent = formatTime(currentTime);
-  durationEl.textContent = formatTime(duration);
-});
-
-
-progressBar.addEventListener('input', () => {
-  const duration = audio.duration;
-  audio.currentTime = (progressBar.value / 100) * duration;
-});
-
-
-audio.addEventListener('loadedmetadata', () => {
-  durationEl.textContent = formatTime(audio.duration);
-});
-
-
-function formatTime(seconds) {
-  const minutes = Math.floor(seconds / 60);
-  const secs = Math.floor(seconds % 60);
-  return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
-}
-
-</script></div>
+            </div>
         </div>
+    </div>
 </section>
 
 
 
             </main>
-             
-
-<footer >
+             <footer >
     <div class="container flex flex-col sm:flex-row justify-between gap-y-10 sm:gap-4 py-14">
-    <div class="flex-1">
-      
-      <h4 class="font-bold mb-4 text-lg">Copyright© All rights reserved</h4>
-      <p class="text-sm mb-2"> 
-        <span id="js-year"></span> - tothemoon
-      </p>
-      <p class="flex gap-4 mt-4">
-        Design by bird. 
+        <div class="flex-1">
+            
+            <h4 class="font-bold mb-4 text-lg" >Copyright© All rights reserved</h4>
+            <p class=" mb-2" >
+                <span id="js-year" ></span> - tothemoon
+            </p>
+            <p class="flex gap-4" >
+                Design by bird. 
+            </p>
+            <p class=" flex">
+                <img src="https://i.imgur.com/k3YTzQE.png" width="100">
+                <img src="https://i.imgur.com/zHnVmA2.png" width="100">
+                <img src="https://i.imgur.com/PrwitJD.png" width="100">
+            </p>
+        </div>
+
         
-      </p>
-      <p class="text-sm mb-4 flex">
-        <img src="https://i.imgur.com/k3YTzQE.png" width="100">
-        <img src="https://i.imgur.com/zHnVmA2.png" width="100">
-        <img src="https://i.imgur.com/PrwitJD.png" width="100">
-      </p>
-    </div>
-
-
-
-    
-    <div class="flex-1">
-      <h4 class="font-bold mb-4 text-lg">Quick links</h4>
-      <ul class="list-none text-sm">
-
-
-
-
-
-
-
-
-
-
-
-
-<a href="/"  title="Home">
-    <li class="hover    active ">
-      <i class="fa-solid fa-house"></i>
-      Home
-    </li>
-</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<a href="/posts/"  title="My Blog">
-    <li class="hover  ">
-      <i class="fa-solid fa-paper-plane"></i>
-      My Blog
-    </li>
-</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<a href="/gallery/"  title="My Life">
-    <li class="hover  ">
-      <i class="fa-solid  fa-mountain-sun"></i>
-      My Life
-    </li>
-</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<a href="/tags/"  title="Tags">
-    <li class="hover  ">
-      <i class="fa-solid fa-tag"></i>
-      Tags
-    </li>
-</a>
-
-
-</ul>
-    </div>
-    
-    <div class="flex-1">        
-      <h4 class="font-bold mb-4 text-lg">Contact me</h4>
-      <a href="mailto:frygucki@gmail.com?subject=Hello" class="text-sm hover">hupochuan007@gmail.com</a>
-      <div class="flex gap-4 mt-4">
+        <div class="flex-1">
+            <h4 class="font-bold mb-4 text-lg " >Contact me</h4>
+            <a href="mailto:hupochuan007@gmail.com" class=" hover" >
+                hupochuan007@gmail.com
+            </a>
+            <div class="flex gap-4 mt-4" >
   
     <a href="https://www.instagram.com/tothemoonbird/"  target="_blank">
       <i class="fa-brands fa-instagram fa-lg"></i>
@@ -1423,9 +1237,8 @@ function formatTime(seconds) {
     </a>
   
 </div>
-
+        </div>
     </div>
-  </div>
 </footer>
 <button class="scrollToTopBtn showBtn">
     <i class="fa-solid fa-plane-up"></i>
@@ -2161,7 +1974,7 @@ function formatTime(seconds) {
         "https:\/\/hupochuanbird.github.io\/about\/": {
             "title": "About me",
             "tags": [],
-            "content": "Hello, I\u0026rsquo;m xxx kdm I come from Poland, and I'm a UI designer with some coding skills. I'm also interested in UX, as I believe that every product should be usable, accessible, profitable, and let users perform core tasks without any friction. I keep designing every day to polish my skills. Besides designing and coding, I love learning foreign languages. I graduated in 2021 in English Studies at the University of Opole, and now I'm learning German and Czech. ", 
+            "content": "Hello, I\u0026rsquo;m xxx kdm ", 
             "url": "https:\/\/hupochuanbird.github.io\/about\/"
         },
         

@@ -468,7 +468,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 @media (min-width: 1140px){
   .container{
-    max-width: 1140px;
+    max-width: 1280px;
   }
 }
 
@@ -1322,7 +1322,7 @@ Ensure the default browser behavior of the `hidden` attribute.
     width: 40%;
   }
   .sm\:w-4\/5{
-    width: 80%;
+    width: 75%;
   }
   .sm\:w-3\/5{
     width: 60%;
