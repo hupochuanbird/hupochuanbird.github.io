@@ -8,7 +8,7 @@
     <meta name="author" content="tothemoon">
     <meta name="keywords" content="blog,life,code,desgin,woman in stem, yejia yang">
 
-    <title>Pride Month in 2024 | tothemoon&#39;s blog</title>
+    <title>Building Offline-Ready Apps with Flutter Drift: My Experience | tothemoon&#39;s blog</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link rel="icon" type="image/png" href="/images/favicon.png"/>
@@ -86,7 +86,7 @@
 
 
 <a href="/posts/"  title="My Blog">
-    <li class="hover  ">
+    <li class="hover    active ">
       <i class="fa-solid fa-paper-plane"></i>
       My Blog
     </li>
@@ -105,7 +105,7 @@
 
 
 <a href="/gallery/"  title="My Life">
-    <li class="hover    active ">
+    <li class="hover  ">
       <i class="fa-solid  fa-mountain-sun"></i>
       My Life
     </li>
@@ -205,7 +205,7 @@
 
 
 <a href="/posts/"  title="My Blog">
-    <li class="hover  ">
+    <li class="hover    active ">
       <i class="fa-solid fa-paper-plane"></i>
       My Blog
     </li>
@@ -224,7 +224,7 @@
 
 
 <a href="/gallery/"  title="My Life">
-    <li class="hover    active ">
+    <li class="hover  ">
       <i class="fa-solid  fa-mountain-sun"></i>
       My Life
     </li>
@@ -281,245 +281,1134 @@
   </header>
              <main class="min-h-full"  >
 
-    <section class="s:mt-10" id="about">
-        <div class="container">
-            <div class="w-full ">
-                <blockquote>
-                    <p>那些旧的伤疤会组成新的记忆，长出新的血肉，让我们更懂得如何爱身边的人。过去那些不够圆满的关系并没有走失，而是内化在了我们的生命里。
-                        未来，我会带着我们曾经的记忆，与身边的人再次愉快的共舞。</p>
-                </blockquote>
-            </div>
-            <div class="gallery-content">
-                <div class="gallery">
-                    
-                        <input type="radio" name="gallery" id="img-1" checked>
-                        <div class="gallery-image">
-                            <figure>
-                                <img src="https://i.imgur.com/QQGxTbc.jpg" alt="Image 1">
-                                <figcaption>
-                                    
-                                    <span class="credit">Photo: tothemoon</span>
-                                </figcaption>
-                            </figure>
-                        </div>
-                    
-                        <input type="radio" name="gallery" id="img-2" >
-                        <div class="gallery-image">
-                            <figure>
-                                <img src="https://i.imgur.com/BkVo7Xb.jpg" alt="Image 2">
-                                <figcaption>
-                                    
-                                    <span class="credit">Photo: tothemoon</span>
-                                </figcaption>
-                            </figure>
-                        </div>
-                    
-                        <input type="radio" name="gallery" id="img-3" >
-                        <div class="gallery-image">
-                            <figure>
-                                <img src="https://i.imgur.com/mPs8KQf.jpg" alt="Image 3">
-                                <figcaption>
-                                    
-                                    <span class="credit">Photo: tothemoon</span>
-                                </figcaption>
-                            </figure>
-                        </div>
-                    
-                        <input type="radio" name="gallery" id="img-4" >
-                        <div class="gallery-image">
-                            <figure>
-                                <img src="https://i.imgur.com/rpP975x.jpg" alt="Image 4">
-                                <figcaption>
-                                    
-                                    <span class="credit">Photo: tothemoon</span>
-                                </figcaption>
-                            </figure>
-                        </div>
-                    
-                        <input type="radio" name="gallery" id="img-5" >
-                        <div class="gallery-image">
-                            <figure>
-                                <img src="https://i.imgur.com/vqseZyF.jpg" alt="Image 5">
-                                <figcaption>
-                                    
-                                    <span class="credit">Photo: tothemoon</span>
-                                </figcaption>
-                            </figure>
-                        </div>
-                    
-                        <input type="radio" name="gallery" id="img-6" >
-                        <div class="gallery-image">
-                            <figure>
-                                <img src="https://i.imgur.com/OsWcGd5.jpg" alt="Image 5">
-                                <figcaption>
-                                    
-                                    <span class="credit">Photo: tothemoon</span>
-                                </figcaption>
-                            </figure>
-                        </div>
-                    
-                        <input type="radio" name="gallery" id="img-7" >
-                        <div class="gallery-image">
-                            <figure>
-                                <img src="https://i.imgur.com/OYadDFt.jpg" alt="Image 6">
-                                <figcaption>
-                                    
-                                    <span class="credit">Photo: tothemoon</span>
-                                </figcaption>
-                            </figure>
-                        </div>
-                    
+<style>
+  
+  html {
+  scroll-behavior: smooth;
+}
+html, body {
+    scroll-padding-top: 100px;
+}
+#page-section {
+    display: block;
+    word-wrap: break-word;
+}
 
-                    <div class="gallery-thumbnails">
-                        
-                            <label for="img-1">
-                                <img src="https://i.imgur.com/QQGxTbc.jpg" alt="Image 1">
-                            </label>
-                        
-                            <label for="img-2">
-                                <img src="https://i.imgur.com/BkVo7Xb.jpg" alt="Image 2">
-                            </label>
-                        
-                            <label for="img-3">
-                                <img src="https://i.imgur.com/mPs8KQf.jpg" alt="Image 3">
-                            </label>
-                        
-                            <label for="img-4">
-                                <img src="https://i.imgur.com/rpP975x.jpg" alt="Image 4">
-                            </label>
-                        
-                            <label for="img-5">
-                                <img src="https://i.imgur.com/vqseZyF.jpg" alt="Image 5">
-                            </label>
-                        
-                            <label for="img-6">
-                                <img src="https://i.imgur.com/OsWcGd5.jpg" alt="Image 5">
-                            </label>
-                        
-                            <label for="img-7">
-                                <img src="https://i.imgur.com/OYadDFt.jpg" alt="Image 6">
-                            </label>
-                        
-                    </div>
-                </div>
-            </div>
 
-            <style>
-                .gallery-content {
-                    padding: 1rem;
-                    margin: 0 auto;
-                    border-radius: 8px;
-                    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.06);
-                }
-                .gallery {
-                    position: relative;
-                    min-height: 400px;
-                }
-                .gallery input[type="radio"] {
-                    display: none;
-                }
-                .gallery-image {
-                    opacity: 0;
-                    position: absolute;
-                    top: 0; left: 0; width: 100%;
-                    transition: opacity 0.3s;
-                    z-index: 0;
-                    pointer-events: none;
-                    box-sizing: border-box;
-                }
-                .gallery input[type="radio"]:checked + .gallery-image {
-                    opacity: 1;
-                    position: relative;
-                    z-index: 1;
-                    pointer-events: auto;
-                }
-                .gallery-image figure {
-                    display: flex;
-                    align-items: flex-end;
-                    gap: 10px;
-                    margin: 0;
-                    width: 100%;
+.blog-content {
+    padding-bottom: 3rem;
+}
 
-                }
-                .gallery-image img {
-                    width: 80%;
-                    max-width: 100%;
-                    object-fit: contain;
-                    max-height: 500px;
+@media(min-width: 1024px) {
+    #page-section>aside {
+        margin-left:1rem;
+        border-left-width: 4px;
+        border-color: #ffb703
+    }
 
-                }
-                .gallery-image figcaption {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    width: 30%;
-                }
-                .gallery-image .credit {
-                    color: #888;
-                    margin-top: 8px;
-                    font-size: 0.98em;
-                }
-                .gallery-thumbnails {
-                    display: flex;
-                    gap: 5px;
-                    margin-top: 1rem;
-                }
-                .gallery-thumbnails label {
-                    cursor: pointer;
-                    border-radius: 4px;
-                    transition: box-shadow 0.2s, border 0.2s;
-                    border: 3px solid transparent;
-                }
-                .gallery-thumbnails img {
-                    width: 54px;
-                    height: 54px;
-                    object-fit: cover;
-                    border-radius: 4px;
-                    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.06);
-                }
-            </style>
-            
-            <style>
-                
-                #img-1:checked ~ .gallery-thumbnails label[for="img-1"] {
-                    border-color: #3578e5;
-                    box-shadow: 0px 0px 0px 2px rgba(53,120,229,0.16);
-                }
-                
-                #img-2:checked ~ .gallery-thumbnails label[for="img-2"] {
-                    border-color: #3578e5;
-                    box-shadow: 0px 0px 0px 2px rgba(53,120,229,0.16);
-                }
-                
-                #img-3:checked ~ .gallery-thumbnails label[for="img-3"] {
-                    border-color: #3578e5;
-                    box-shadow: 0px 0px 0px 2px rgba(53,120,229,0.16);
-                }
-                
-                #img-4:checked ~ .gallery-thumbnails label[for="img-4"] {
-                    border-color: #3578e5;
-                    box-shadow: 0px 0px 0px 2px rgba(53,120,229,0.16);
-                }
-                
-                #img-5:checked ~ .gallery-thumbnails label[for="img-5"] {
-                    border-color: #3578e5;
-                    box-shadow: 0px 0px 0px 2px rgba(53,120,229,0.16);
-                }
-                
-                #img-6:checked ~ .gallery-thumbnails label[for="img-6"] {
-                    border-color: #3578e5;
-                    box-shadow: 0px 0px 0px 2px rgba(53,120,229,0.16);
-                }
-                
-                #img-7:checked ~ .gallery-thumbnails label[for="img-7"] {
-                    border-color: #3578e5;
-                    box-shadow: 0px 0px 0px 2px rgba(53,120,229,0.16);
-                }
-                
-            </style>
+    #page-section>aside.tableOfContentContainer {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 79px;
+        align-self: start
+    }
 
+    #page-section>aside>h3 {
+        font-size: 1rem;
+        padding-left: .5rem;
+        font-weight: 700;
+        padding-bottom: .5rem;
+        padding-top: 1rem
+    }
+
+    #page-section {
+        display: grid;
+        grid-template-columns: 100% 12em;
+        width: 80%
+    }
+
+    #TableOfContents {
+        display: block;
+        padding-left: .5rem;
+        padding-bottom: 1rem;
+        font-size: 1rem;
+        color: var(--copyright-info-color)
+    }
+
+    #TableOfContents li {
+        padding-top: .25rem;
+        padding-bottom: .25rem;
+        list-style: none;
+        font-size: small;
+    }
+
+    #TableOfContents li.active {
+        padding-left: 0
+    }
+
+    #TableOfContents li.active:before {
+        content: "→";
+        display: inline-block;
+        margin-left: -20px;
+        width: 20px
+    }
+
+    .cronweekly #TableOfContents ul {
+        margin-left: 1rem!important
+    }
+
+    #TableOfContents li {
+        margin-left: 1rem
+    }
+
+    #TableOfContents li.active>a {
+        color: var(--copyright-info-color);
+        font-weight: 700
+    }
+
+    #TableOfContents a {
+        text-decoration: none;
+        padding: .125rem 0;
+        color: rgb(142, 142, 142);
+        -webkit-transition: all 50ms ease-in-out;
+        transition: all 50ms ease-in-out
+    }
+
+    #TableOfContents a:hover,#TableOfContents a:focus,#TableOfContents a:active {
+        color: var(--primary-color)
+    }
+
+    #tableOfContentContainer ol,ul {
+      list-style: none;
+      margin: 0;
+      padding: 0
+    }
+}
+
+
+
+.content blockquote {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-left-width: 4px;
+    border-color: #ffb703;
+    font-style: italic;
+}
+
+.content a,.homepage-intro a,.link-dark {
+    border-bottom-width: 2px;
+    padding-bottom: .1rem;
+    padding-top: .1rem;
+    border-color: #ffb703
+}
+
+.link-talks-meta {
+    padding-bottom: .3rem!important;
+    margin-right: 1rem;
+    color: #718096;
+    font-size: 1rem
+}
+
+.link-dark {
+    border-color: #744210
+}
+
+.content a:hover,.homepage-intro a:hover,footer a:hover,.link-dark a:hover {
+    background-color: #f6e05e
+}
+
+.comments svg {
+    height: 2rem;
+    width: 2rem;
+    fill: currentColor;
+    display: inline-block;
+    margin: .5rem
+}
+
+.comments .share-links a {
+    border-width: 0;
+    background-color: #f7fafc;
+    display: inline-block;
+    border-color: #cbd5e0;
+    border-width: 1px;
+    margin-right: 1rem
+}
+
+.comments .share-links a:hover {
+    background-color: #edf2f7
+}
+
+.comments h3 {
+    border-bottom-width: 0!important;
+    display: block!important;
+    font-size: 1.875rem!important
+}
+
+.content h1,.content h2,.content h3 {
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+    border-bottom-width: 2px;
+    padding-bottom: 0;
+    border-color: #e2e8f0;
+    line-height: 2
+}
+
+.content h2 {
+    margin-bottom: .25rem
+}
+
+.content h3 {
+    font-size: 1.25rem
+}
+.polaroid{
+    display: flex;
+    justify-content: center;
+}
+
+.content img {
+    max-height: 500px;
+    width: 100%;
+    height: inherit;
+    display: block;
+    object-fit: cover;
+    border-radius: .25rem;
+    border-width: 1px;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -2px rgba(0,0,0,.05);
+}
+
+</style>
+<section class="s:mt-10">
+  <div class="w-screen max-w-full pt-20 header-curved  ">
+    <div class="container w-full md:max-w-4xl px-4 md:px-6 text-xl text-gray-800 leading-normal mx-auto">
+        <div class="pb-8">
+            <h1 class="font-thin break-normal leading-tight text-gray-900 pt-6 pb-4 text-4xl md:text-5xl">
+              Building Offline-Ready Apps with Flutter Drift: My Experience
+            </h1>
+           
         </div>
-    </section>
+      </div>
+    </div>
+        <div class="container w-full md:max-w-4xl mx-auto mt-8 ">
+          <div class="w-full px-4 md:px-6  text-gray-800 leading-normal">
+            <div class="page-metadata">
+<div class="article-header">
+    <div class="avatar">
+        <img src="https://hupo-common.s3.ap-northeast-2.amazonaws.com/W0FUuPX.jpeg">
+    </div>
+    <div class="info">
+        <div class="author">
+            <span class="name">tothemoon</span>
+            <span class="author-label"></span>
+        </div>
+        <div class="meta-info">
+            <div class="article-meta-info">
+                <span class="article-date article-meta-item">
+                    <i class="fa fa-pen"></i>&nbsp;
+                    <span class="pc">June 21, 2025</span>
+                </span>
+                
+                <div class="article-categories article-meta-item">
+                    <span class="fa fa-folder-open"></span>
+                    
+                    <a href="https://hupochuanbird.github.io/categories/flutter/">flutter</a>&nbsp;
+                    
+                </div>
+                
+                
+                <span class="article-tags article-meta-item">
+                    <i class="fa fa-tag"></i>&nbsp;
+                    <ul>
+                        
+                        <li>
+                        #<a href="https://hupochuanbird.github.io/tags/flutter/">flutter</a>&nbsp;
+                        </li>
+                        
+                        <li>
+                        #<a href="https://hupochuanbird.github.io/tags/drift/">drift</a>&nbsp;
+                        </li>
+                        
+                    </ul>
+                </span>
+                
+                <span class="article-wordcount article-meta-item">
+                    <i class="fa fa-book"></i>&nbsp;<span>1097 Words</span>
+                </span>
+                <span class="article-min2read article-meta-item">
+                    <i class="fa fa-clock"></i>&nbsp;<span>6 mins</span>
+                </span>
+
+
+            </div>
+        </div>
+    </div>
+</div></div>
+            <mian id="page-section">
+              
+              <div class="content blog-content">
+                
+                
+              
+                <p>has been long time didnt write any article, working hardly, code and system design</p>
+<blockquote>
+<p>Our clients hope the system can keep running offline—some areas have no network at all, and others have very unstable
+connections. This requirement made us rethink our whole data storage approach for the project. We needed something
+robust enough to handle offline reads and writes, and smart enough to sync changes whenever the network returns.</p></blockquote>
+<h2 id="intro">Intro</h2>
+<p>After researching various options, we landed on Drift as our local database solution for Flutter. Drift (formerly known
+as Moor) offers powerful features like type-safe queries, auto-updating streams, and easy schema migrations, making it a
+great fit for apps that need to perform reliably—online and offline.</p>
+<p>To address this, our Flutter system includes:</p>
+<ol>
+<li>A network real-time checker: It constantly monitors connectivity status to smartly switch between online and offline
+modes.</li>
+<li>Cloud sync (download/upload): Data created or updated locally is synced to the cloud when connectivity is restored,
+while server-side changes are downloaded for local use.</li>
+<li>Background Task: Sync local orders in midnight.</li>
+<li>smart data retrieval strategy: The app decides whether to fetch data from the cloud or local database based on the
+current network state, giving users a seamless experience regardless of connection quality.</li>
+</ol>
+<p>In this blog, I’ll walk through my implementing offline-first data persistence with Drift, BTW, I use MVVM pattern.</p>
+<h2 id="why-chose-drift-for-flutter">Why Chose Drift for Flutter</h2>
+<p>For our offline-first Flutter app, we needed a local database solution that was:</p>
+<ul>
+<li>Reliable</li>
+<li>Type-safe</li>
+<li>Reactive</li>
+<li>Easy to maintain</li>
+</ul>
+<p>After comparing options like sqflite, Isar, we chose Drift because it offers:</p>
+<ol>
+<li>Queries return Streams that automatically notify the UI of data changes, making real-time updates seamless.</li>
+<li>With clear separation between tables, DAOs, and database logic, it fits perfectly into a clean architecture.</li>
+<li>Manual Migration Control</li>
+</ol>
+<h2 id="getting-started-with-drift">Getting Started with Drift</h2>
+<p>Here is the folder structure:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>core/
+</span></span><span style="display:flex;"><span>├── database/
+</span></span><span style="display:flex;"><span>│ ├── dao/                  &lt;- Each table’s DAO <span style="color:#f92672">(</span>query logic<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>│ ├── table/                &lt;- Table definitions <span style="color:#f92672">(</span>Drift Tables<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>│ └── app_database.dart     &lt;- Central database and migration logic</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>Modular: Easy to scale as new tables are added.</li>
+<li>Readable: Each concern (schema vs logic) is isolated.</li>
+<li>Testable: DAOs and migrations can be tested independently.</li>
+</ul>
+<h3 id="setting-up-appdatabase">Setting Up AppDatabase</h3>
+<p><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;package:drift/drift.dart&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;package:drift/native.dart&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;dart:io&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;package:path_provider/path_provider.dart&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;package:path/path.dart&#39;</span> <span style="color:#66d9ef">as</span> p;
+</span></span><span style="display:flex;"><span>.....
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">part</span> <span style="color:#e6db74">&#39;app_database.g.dart&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">@</span>DriftDatabase(
+</span></span><span style="display:flex;"><span>tables: [SystemConfig, PosUser, PosOrder, ...],
+</span></span><span style="display:flex;"><span>daos: [SystemConfigDao, PosUserDao, PosOrderDao, ...],
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AppDatabase</span> <span style="color:#66d9ef">extends</span> _$AppDatabase {
+</span></span><span style="display:flex;"><span>AppDatabase() <span style="color:#f92672">:</span> <span style="color:#66d9ef">super</span>(_openConnection());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">@</span>override
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#66d9ef">get</span> schemaVersion <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">@</span>override
+</span></span><span style="display:flex;"><span>MigrationStrategy <span style="color:#66d9ef">get</span> migration <span style="color:#f92672">=&gt;</span> MigrationStrategy(
+</span></span><span style="display:flex;"><span>      onCreate: (m) <span style="color:#66d9ef">async</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">await</span> m.createAll();
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>      onUpgrade: (m, from, to) <span style="color:#66d9ef">async</span> {
+</span></span><span style="display:flex;"><span>         print(<span style="color:#e6db74">&#39;Upgrading DB from </span><span style="color:#e6db74">$</span>from<span style="color:#e6db74"> to </span><span style="color:#e6db74">$</span>to<span style="color:#e6db74">...&#39;</span>);
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>LazyDatabase _openConnection() {
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">return</span> LazyDatabase(() <span style="color:#66d9ef">async</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">final</span> dir <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> getApplicationDocumentsDirectory();
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">final</span> file <span style="color:#f92672">=</span> File(p.join(dir.path, <span style="color:#e6db74">&#39;your_db_name.sqlite&#39;</span>));
+</span></span><span style="display:flex;"><span>      print(file.path);
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> NativeDatabase(file);
+</span></span><span style="display:flex;"><span>   });
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+In this file, we define the core AppDatabase class that serves as the entry point to all Drift tables and DAOs.</p>
+<ol>
+<li>Declare Tables &amp; DAOs</li>
+<li>Implement schemaVersion</li>
+<li>Define MigrationStrategy</li>
+<li>Set Up LazyDatabase</li>
+</ol>
+<p>The app_database.g.dart file is initially empty or missing. This is normal. It will be auto-generated once you run the Drift code generator using the following command:</p>
+<div class="component-content pagebody component code">
+  
+  
+  
+  <div class=""><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> flutter pub run build_runner build --delete-conflicting-outputs</span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+  
+</div><h2 id="dao-and-table">DAO and Table</h2>
+<p>To keep our codebase organized and scalable, we separate each table and its corresponding query logic into two dedicated folders: table/ and dao/.</p>
+<h3 id="drift-table-definitions-table">Drift Table Definitions (table/)</h3>
+<div class="component-content pagebody component code">
+  
+  
+  
+  <div class=""><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PosOrder</span> <span style="color:#66d9ef">extends</span> Table {
+</span></span><span style="display:flex;"><span> <span style="color:#960050;background-color:#1e0010">@</span>override
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">String</span> <span style="color:#66d9ef">get</span> tableName <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;xxxx&#39;</span>;   <span style="color:#75715e">//  you can overwrite the table name
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> 
+</span></span><span style="display:flex;"><span>  IntColumn <span style="color:#66d9ef">get</span> id <span style="color:#f92672">=&gt;</span> integer().autoIncrement()();
+</span></span><span style="display:flex;"><span>  TextColumn <span style="color:#66d9ef">get</span> orderCode <span style="color:#f92672">=&gt;</span> text()();
+</span></span><span style="display:flex;"><span>  RealColumn <span style="color:#66d9ef">get</span> orderAmount <span style="color:#f92672">=&gt;</span> real().withDefault(<span style="color:#66d9ef">const</span> Constant(<span style="color:#ae81ff">0.00</span>))();
+</span></span><span style="display:flex;"><span>  TextColumn <span style="color:#66d9ef">get</span> paymentStatus <span style="color:#f92672">=&gt;</span> text().withDefault(<span style="color:#66d9ef">const</span> Constant(<span style="color:#e6db74">&#39;unpaid&#39;</span>))();
+</span></span><span style="display:flex;"><span>  TextColumn <span style="color:#66d9ef">get</span> orderStatus <span style="color:#f92672">=&gt;</span> text().withDefault(<span style="color:#66d9ef">const</span> Constant(<span style="color:#e6db74">&#39;pending&#39;</span>))();
+</span></span><span style="display:flex;"><span>  RealColumn <span style="color:#66d9ef">get</span> totalTaxAmount <span style="color:#f92672">=&gt;</span> real().withDefault(<span style="color:#66d9ef">const</span> Constant(<span style="color:#ae81ff">0.00</span>))();
+</span></span><span style="display:flex;"><span>  TextColumn <span style="color:#66d9ef">get</span> paymentMethod <span style="color:#f92672">=&gt;</span> text().nullable()();
+</span></span><span style="display:flex;"><span>  TextColumn <span style="color:#66d9ef">get</span> orderNote <span style="color:#f92672">=&gt;</span> text().nullable()();
+</span></span><span style="display:flex;"><span>  TextColumn <span style="color:#66d9ef">get</span> orderType <span style="color:#f92672">=&gt;</span> text().withDefault(<span style="color:#66d9ef">const</span> Constant(<span style="color:#e6db74">&#39;delivery&#39;</span>))();
+</span></span><span style="display:flex;"><span>  TextColumn <span style="color:#66d9ef">get</span> deliveryDate <span style="color:#f92672">=&gt;</span> text().nullable()();
+</span></span><span style="display:flex;"><span>  TextColumn <span style="color:#66d9ef">get</span> deliveryTime <span style="color:#f92672">=&gt;</span> text().nullable()();
+</span></span><span style="display:flex;"><span>....
+</span></span><span style="display:flex;"><span>  TextColumn <span style="color:#66d9ef">get</span> customer <span style="color:#f92672">=&gt;</span> text().nullable()(); <span style="color:#75715e">// snapshot
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  TextColumn <span style="color:#66d9ef">get</span> customerAddress <span style="color:#f92672">=&gt;</span> text().nullable()(); <span style="color:#75715e">// snapshot
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  DateTimeColumn <span style="color:#66d9ef">get</span> createdAt <span style="color:#f92672">=&gt;</span> dateTime().nullable()();
+</span></span><span style="display:flex;"><span>  IntColumn <span style="color:#66d9ef">get</span> customerId <span style="color:#f92672">=&gt;</span> integer().nullable()();
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+  
+</div><h3 id="dao-classes-dao">DAO Classes (dao/)</h3>
+<p>DAOs (Data Access Objects) contain the read/write/query(CRUD) logic for each table.</p>
+<div class="component-content pagebody component code">
+  
+  
+  
+  <div class=""><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#75715e">// dao/pos_order_dao.dart
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">@</span>DriftAccessor(tables: [PosOrder])
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PosOrderDao</span> <span style="color:#66d9ef">extends</span> DatabaseAccessor<span style="color:#f92672">&lt;</span>AppDatabase<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">with</span> _$PosOrderDaoMixin {
+</span></span><span style="display:flex;"><span>  PosOrderDao(AppDatabase db) <span style="color:#f92672">:</span> <span style="color:#66d9ef">super</span>(db);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Future<span style="color:#f92672">&lt;</span>List<span style="color:#f92672">&lt;</span>PosOrderData<span style="color:#f92672">&gt;&gt;</span> getAllOrders() <span style="color:#f92672">=&gt;</span> select(posOrder).<span style="color:#66d9ef">get</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Stream<span style="color:#f92672">&lt;</span>List<span style="color:#f92672">&lt;</span>PosOrderData<span style="color:#f92672">&gt;&gt;</span> watchAllOrders() <span style="color:#f92672">=&gt;</span> select(posOrder).watch();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Future<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> insertOrder(PosOrderCompanion order) <span style="color:#f92672">=&gt;</span> into(posOrder).insert(order);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Future<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">bool</span><span style="color:#f92672">&gt;</span> updateOrder(PosOrderCompanion order) <span style="color:#f92672">=&gt;</span> update(posOrder).replace(order);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Future<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> deleteOrderById(<span style="color:#66d9ef">int</span> id) <span style="color:#f92672">=&gt;</span>
+</span></span><span style="display:flex;"><span>      (delete(posOrder)..where((t) <span style="color:#f92672">=&gt;</span> t.id.equals(id))).go();
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+  
+</div><p>Notes:</p>
+<ol>
+<li>watch() enables reactive UI updates (ideal for Flutter)</li>
+<li>Using Companion classes allows partial inserts and updates</li>
+</ol>
+<p>Any class like SystemConfigData, PosOrderData, or PosUserData is not something you write manually — it’s automatically generated by Drift&rsquo;s code generator based on your table definitions.</p>
+<p>So if you see a red underline or “undefined class” error in your IDE when you first reference something like PosOrderData, don’t panic — this is normal.
+Just Run</p>
+<div class="component-content pagebody component code">
+  
+  
+  
+  <div class=""><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> flutter pub run build_runner build --delete-conflicting-outputs</span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+  
+</div><h3 id="comes-together">Comes Together</h3>
+<p>In <code> app_database.dart</code></p>
+<div class="component-content pagebody component code">
+  
+  
+  
+  <div class=""><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">@</span>DriftDatabase(
+</span></span><span style="display:flex;"><span>  tables: [PosOrder, ...],
+</span></span><span style="display:flex;"><span>  daos: [PosOrderDao, ...],
+</span></span><span style="display:flex;"><span>)</span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+  
+</div><p>And run that CLI, Generate the app_database.g.dart file</p>
+<h2 id="migrations-and-schema-changes">Migrations and Schema Changes</h2>
+<p>As your app grows, so will your database. New features often require adding tables, columns, or modifying constraints. In Flutter Drift, migrations ensure that existing users’ data stays safe and usable when schema changes occur.</p>
+<p>We handled this using Drift’s built-in MigrationStrategy in app_database.dart.
+We override the migration getter to define both onCreate and onUpgrade logic:</p>
+<div class="component-content pagebody component code">
+  
+  
+  
+  <div class=""><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">@</span>override
+</span></span><span style="display:flex;"><span>MigrationStrategy <span style="color:#66d9ef">get</span> migration <span style="color:#f92672">=&gt;</span> MigrationStrategy(
+</span></span><span style="display:flex;"><span>  onCreate: (m) <span style="color:#66d9ef">async</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">await</span> m.createAll();
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  onUpgrade: (m, from, to) <span style="color:#66d9ef">async</span> {
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#39;Upgrading DB from </span><span style="color:#e6db74">$</span>from<span style="color:#e6db74"> to </span><span style="color:#e6db74">$</span>to<span style="color:#e6db74">...&#39;</span>);
+</span></span><span style="display:flex;"><span>    ....
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (from <span style="color:#f92672">==</span> <span style="color:#ae81ff">7</span> <span style="color:#f92672">&amp;&amp;</span> to <span style="color:#f92672">==</span> <span style="color:#ae81ff">8</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">await</span> m.createTable(xxxx);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (from <span style="color:#f92672">==</span> <span style="color:#ae81ff">8</span> <span style="color:#f92672">&amp;&amp;</span> to <span style="color:#f92672">==</span> <span style="color:#ae81ff">9</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">await</span> m.createTable(xxx);
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">await</span> m.createTable(xxx);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>);</span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+  
+</div><p>⚠️ Tips</p>
+<ol>
+<li>Always increment schemaVersion when making schema changes:</li>
+</ol>
+<div class="component-content pagebody component code">
+  
+  
+  
+  <div class=""><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">@</span>override
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#66d9ef">get</span> schemaVersion <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">2</span>;</span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+  
+</div><ol start="2">
+<li>Avoid dropping tables/columns without backups. Drift doesn’t support dropping columns directly, so you need to:
+<ul>
+<li>Create a new table</li>
+<li>Migrate old data manually</li>
+<li>Drop the old table after verification</li>
+</ul>
+</li>
+<li>Use conditionals (if (from == x &amp;&amp; to == y)) for clarity.</li>
+<li>Log everything in onUpgrade</li>
+</ol>
+<p>In Dev Env(DONT USE IN PROD ENV), we can easily reset DB</p>
+<div class="component-content pagebody component code">
+  
+  
+  
+  <div class=""><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#66d9ef">await</span> deleteDatabase(file.path); <span style="color:#f92672">//</span> only <span style="color:#66d9ef">for</span> development<span style="color:#f92672">!</span></span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+  
+</div>
+              </div>
+             <aside class="hidden lg:block tableOfContentContainer" id="tableOfContentContainer">
+              <h3>Table of contents</h3>
+                
+              <nav id="TableOfContents">
+  <ul>
+    <li><a href="#intro">Intro</a></li>
+    <li><a href="#why-chose-drift-for-flutter">Why Chose Drift for Flutter</a></li>
+    <li><a href="#getting-started-with-drift">Getting Started with Drift</a>
+      <ul>
+        <li><a href="#setting-up-appdatabase">Setting Up AppDatabase</a></li>
+      </ul>
+    </li>
+    <li><a href="#dao-and-table">DAO and Table</a>
+      <ul>
+        <li><a href="#drift-table-definitions-table">Drift Table Definitions (table/)</a></li>
+        <li><a href="#dao-classes-dao">DAO Classes (dao/)</a></li>
+        <li><a href="#comes-together">Comes Together</a></li>
+      </ul>
+    </li>
+    <li><a href="#migrations-and-schema-changes">Migrations and Schema Changes</a></li>
+  </ul>
+</nav>
+              </aside>
+            </mian>
+          </div>
+            
+      
+
+
+          <div class="my-14">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+ 
+
+
+
+
+  
+
+
+
+<style>
+.resp-sharing-button__link,
+.resp-sharing-button__icon {
+  display: inline-block
+}
+
+.resp-sharing-button__link {
+  text-decoration: none;
+  color: #fff !important;
+  margin: 0.2em
+}
+
+.resp-sharing-button {
+  border-radius: 5px;
+  transition: 25ms ease-out;
+  padding: 0.5em 0.75em;
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+  
+}
+
+.resp-sharing-button__icon svg {
+  width: 1em;
+  height: 1em;
+  margin-right: 0.4em;
+  vertical-align: middle
+}
+
+.resp-sharing-button--small svg {
+  margin: 0;
+  vertical-align: middle
+}
+
+ 
+.resp-sharing-button__icon {
+  stroke: #fff;
+  fill: none
+}
+
+ 
+.resp-sharing-button__icon--solid,
+.resp-sharing-button__icon--solidcircle {
+  fill: #fff;
+  stroke: none
+}
+
+.resp-sharing-button--twitter {
+  background-color: #55acee
+}
+
+.resp-sharing-button--twitter:hover {
+  background-color: #2795e9
+}
+
+.resp-sharing-button--pinterest {
+  background-color: #bd081c
+}
+
+.resp-sharing-button--pinterest:hover {
+  background-color: #8c0615
+}
+
+.resp-sharing-button--facebook {
+  background-color: #3b5998
+}
+
+.resp-sharing-button--facebook:hover {
+  background-color: #2d4373
+}
+
+.resp-sharing-button--tumblr {
+  background-color: #35465C
+}
+
+.resp-sharing-button--tumblr:hover {
+  background-color: #222d3c
+}
+
+.resp-sharing-button--reddit {
+  background-color: #ff4500
+}
+
+.resp-sharing-button--reddit:hover {
+  background-color: #3a80c1
+}
+
+.resp-sharing-button--google {
+  background-color: #dd4b39
+}
+
+.resp-sharing-button--google:hover {
+  background-color: #c23321
+}
+
+.resp-sharing-button--linkedin {
+  background-color: #0077b5
+}
+
+.resp-sharing-button--linkedin:hover {
+  background-color: #046293
+}
+
+.resp-sharing-button--email {
+  background-color: #777
+}
+
+.resp-sharing-button--email:hover {
+  background-color: #5e5e5e
+}
+
+.resp-sharing-button--xing {
+  background-color: #1a7576
+}
+
+.resp-sharing-button--xing:hover {
+  background-color: #114c4c
+}
+
+.resp-sharing-button--whatsapp {
+  background-color: #25D366
+}
+
+.resp-sharing-button--whatsapp:hover {
+  background-color: #1da851
+}
+
+.resp-sharing-button--hackernews {
+background-color: #FF6600
+}
+.resp-sharing-button--hackernews:hover, .resp-sharing-button--hackernews:focus {   background-color: #FB6200 }
+
+.resp-sharing-button--vk {
+  background-color: #507299
+}
+
+.resp-sharing-button--vk:hover {
+  background-color: #43648c
+}
+
+.resp-sharing-button--facebook {
+  background-color: #3b5998;
+  border-color: #3b5998;
+}
+
+.resp-sharing-button--facebook:hover,
+.resp-sharing-button--facebook:active {
+  background-color: #2d4373;
+  border-color: #2d4373;
+}
+
+.resp-sharing-button--twitter {
+  background-color: #55acee;
+  border-color: #55acee;
+}
+
+.resp-sharing-button--twitter:hover,
+.resp-sharing-button--twitter:active {
+  background-color: #2795e9;
+  border-color: #2795e9;
+}
+
+.resp-sharing-button--tumblr {
+  background-color: #35465C;
+  border-color: #35465C;
+}
+
+.resp-sharing-button--tumblr:hover,
+.resp-sharing-button--tumblr:active {
+  background-color: #222d3c;
+  border-color: #222d3c;
+}
+
+.resp-sharing-button--email {
+  background-color: #777777;
+  border-color: #777777;
+}
+
+.resp-sharing-button--email:hover,
+.resp-sharing-button--email:active {
+  background-color: #5e5e5e;
+  border-color: #5e5e5e;
+}
+
+.resp-sharing-button--pinterest {
+  background-color: #bd081c;
+  border-color: #bd081c;
+}
+
+.resp-sharing-button--pinterest:hover,
+.resp-sharing-button--pinterest:active {
+  background-color: #8c0615;
+  border-color: #8c0615;
+}
+
+.resp-sharing-button--linkedin {
+  background-color: #0077b5;
+  border-color: #0077b5;
+}
+
+.resp-sharing-button--linkedin:hover,
+.resp-sharing-button--linkedin:active {
+  background-color: #046293;
+  border-color: #046293;
+}
+
+.resp-sharing-button--reddit {
+  background-color: #ff4500;
+  border-color: #ff4500;
+}
+
+.resp-sharing-button--reddit:hover,
+.resp-sharing-button--reddit:active {
+  background-color: #ff5700;
+  border-color: #ff5700;
+}
+
+.resp-sharing-button--xing {
+  background-color: #1a7576;
+  border-color: #1a7576;
+}
+
+.resp-sharing-button--xing:hover
+.resp-sharing-button--xing:active {
+  background-color: #114C4C;
+  border-color: #114C4C;
+}
+
+.resp-sharing-button--whatsapp {
+  background-color: #25D366;
+  border-color: #25D366;
+}
+
+.resp-sharing-button--whatsapp:hover,
+.resp-sharing-button--whatsapp:active {
+  background-color: #1DA851;
+  border-color: #1DA851;
+}
+
+.resp-sharing-button--hackernews {
+  background-color: #FF6600;
+  border-color: #FF6600;
+}
+
+.resp-sharing-button--hackernews:hover
+.resp-sharing-button--hackernews:active {
+  background-color: #FB6200;
+  border-color: #FB6200;
+}
+
+.resp-sharing-button--vk {
+  background-color: #507299;
+  border-color: #507299;
+}
+
+.resp-sharing-button--vk:hover
+.resp-sharing-button--vk:active {
+  background-color: #43648c;
+  border-color: #43648c;
+}
+
+.resp-sharing-button--telegram {
+  background-color: #54A9EB;
+}
+
+.resp-sharing-button--telegram:hover {
+  background-color: #4B97D1;
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+<a class="resp-sharing-button__link" href="mailto:?subject=Building%20Offline-Ready%20Apps%20with%20Flutter%20Drift%3a%20My%20Experience&amp;body=https://hupochuanbird.github.io/posts/flutter-drift-localdb/" target="_self" rel="noopener" aria-label="" title="E-Mail">
+  <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z"/></svg>
+
+    
+    </div>
+  </div>
+</a>
+
+
+
+
+
+
+<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://hupochuanbird.github.io/posts/flutter-drift-localdb/&amp;title=Building%20Offline-Ready%20Apps%20with%20Flutter%20Drift%3a%20My%20Experience&amp;summary=Building%20Offline-Ready%20Apps%20with%20Flutter%20Drift%3a%20My%20Experience&amp;https://hupochuanbird.github.io/posts/flutter-drift-localdb/" target="_blank" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.5 21.5h-5v-13h5v13zM4 6.5C2.5 6.5 1.5 5.3 1.5 4s1-2.4 2.5-2.4c1.6 0 2.5 1 2.6 2.5 0 1.4-1 2.5-2.6 2.5zm11.5 6c-1 0-2 1-2 2v7h-5v-13h5V10s1.6-1.5 4-1.5c3 0 5 2.2 5 6.3v6.7h-5v-7c0-1-1-2-2-2z"/></svg>
+
+    
+    </div>
+  </div>
+</a>
+
+
+
+
+<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=https://hupochuanbird.github.io/posts/flutter-drift-localdb/&amp;resubmit=true&amp;title=Building%20Offline-Ready%20Apps%20with%20Flutter%20Drift%3a%20My%20Experience" target="_blank" rel="noopener" aria-label="" title="Reddit">
+  <div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z"/></svg>
+
+    
+    </div>
+  </div>
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+
+          <div class="pagination"><div class="paginator" >
+    
+    
+        <a class="next btn" style="font-size: small;" href="https://hupochuanbird.github.io/posts/maximum-sum-of-an-hourglass/">Maximum Sum of an Hourglass <i class="fa-solid fa-arrow-right"></i></a>
+       
+    
+</div></div>
+          <div class="comment-block">
+
+ <div class="giscus">
+    <iframe class="giscus-frame">
+    
+    </iframe>
+ </div>
+ <script src="https://giscus.app/client.js"
+ data-repo="hupochuanbird/hupochuanbird.github.io"
+ data-repo-id="R_kgDOLShynw"
+ data-category="Announcements"
+ data-category-id="DIC_kwDOLShyn84CdQiv"
+ data-mapping="pathname"
+ data-strict="0"
+ data-reactions-enabled="1"
+ data-emit-metadata="0"
+ data-input-position="bottom"
+ data-theme="light_tritanopia"
+ data-lang="en"
+ crossorigin="anonymous"
+ async>
+</script></div>
+        </div>
+
+    
+  </section>
+
+  <script>
+
+
+window.addEventListener('DOMContentLoaded', () => {
+        const observerForTableOfContentActiveState = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                const id = entry.target.getAttribute('id');
+                if (entry.intersectionRatio > 0) {
+                  clearActiveStatesInTableOfContents();
+                  document.querySelector(`aside nav li a[href="#${id}"]`).parentElement.classList.add('active');
+              }
+          });
+      });
+      document.querySelectorAll('h1[id],h2[id],h3[id],h4[id]').forEach((section) => {
+          observerForTableOfContentActiveState.observe(section);
+      });
+
+    });
+
+    function clearActiveStatesInTableOfContents() {
+        document.querySelectorAll('aside nav li').forEach((section) => {
+            section.classList.remove('active');
+        });
+    }
+
+  </script>
             </main>
              <footer class="mt-20">
     <div class="footer">
