@@ -355,8 +355,4 @@ function closePassBox(type) {
     if (type === 2) {
         window.location.replace("/posts");
     }
-
-
 }
-
-
