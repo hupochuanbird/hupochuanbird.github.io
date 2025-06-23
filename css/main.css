@@ -688,12 +688,12 @@ ul li {
 
     .content h2 {
         font-size: 1.5rem;
-        color: #fff;
+        color:var(--text-color) ;
         margin-top: 0;
     }
 
     .content span {
-        color: #fff;
+        color:var(--text-color) ;
         font-size: .813rem;
     }
 
