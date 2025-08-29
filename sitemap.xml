@@ -2,22 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://hupochuanbird.github.io/categories/</loc>
+    <lastmod>2025-08-28T16:21:25+01:00</lastmod>
+  </url><url>
+    <loc>https://hupochuanbird.github.io/categories/flutter/</loc>
+    <lastmod>2025-08-28T16:21:25+01:00</lastmod>
+  </url><url>
+    <loc>https://hupochuanbird.github.io/tags/flutter/</loc>
+    <lastmod>2025-08-28T16:21:25+01:00</lastmod>
+  </url><url>
+    <loc>https://hupochuanbird.github.io/posts/callerid_flutter/</loc>
+    <lastmod>2025-08-28T16:21:25+01:00</lastmod>
+  </url><url>
+    <loc>https://hupochuanbird.github.io/posts/</loc>
+    <lastmod>2025-08-28T16:21:25+01:00</lastmod>
+  </url><url>
+    <loc>https://hupochuanbird.github.io/tags/tutorial/</loc>
+    <lastmod>2025-08-28T16:21:25+01:00</lastmod>
+  </url><url>
+    <loc>https://hupochuanbird.github.io/tags/usb-deivces/</loc>
+    <lastmod>2025-08-28T16:21:25+01:00</lastmod>
+  </url><url>
     <loc>https://hupochuanbird.github.io/posts/flutter-drift-localdb/</loc>
     <lastmod>2025-06-21T16:11:45+01:00</lastmod>
   </url><url>
-    <loc>https://hupochuanbird.github.io/categories/</loc>
-    <lastmod>2025-06-21T16:11:45+01:00</lastmod>
-  </url><url>
     <loc>https://hupochuanbird.github.io/tags/drift/</loc>
-    <lastmod>2025-06-21T16:11:45+01:00</lastmod>
-  </url><url>
-    <loc>https://hupochuanbird.github.io/categories/flutter/</loc>
-    <lastmod>2025-06-21T16:11:45+01:00</lastmod>
-  </url><url>
-    <loc>https://hupochuanbird.github.io/tags/flutter/</loc>
-    <lastmod>2025-06-21T16:11:45+01:00</lastmod>
-  </url><url>
-    <loc>https://hupochuanbird.github.io/posts/</loc>
     <lastmod>2025-06-21T16:11:45+01:00</lastmod>
   </url><url>
     <loc>https://hupochuanbird.github.io/tags/galway/</loc>
@@ -81,9 +90,6 @@
     <lastmod>2024-09-13T09:26:31+01:00</lastmod>
   </url><url>
     <loc>https://hupochuanbird.github.io/posts/ssl-config-in-ec2-namecheap/</loc>
-    <lastmod>2024-09-13T09:26:31+01:00</lastmod>
-  </url><url>
-    <loc>https://hupochuanbird.github.io/tags/tutorial/</loc>
     <lastmod>2024-09-13T09:26:31+01:00</lastmod>
   </url><url>
     <loc>https://hupochuanbird.github.io/tags/iminstant-messaging/</loc>

@@ -8,7 +8,7 @@
     <meta name="author" content="tothemoon">
     <meta name="keywords" content="blog,life,code,desgin,woman in stem, yejia yang">
 
-    <title>Archive | tothemoon&#39;s blog</title>
+    <title>How to read Data from USB CallerID deivce in Flutter | tothemoon&#39;s blog</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link rel="icon" type="image/png" href="/images/favicon.png"/>
@@ -86,7 +86,7 @@
 
 
 <a href="/posts/"  title="My Blog">
-    <li class="hover  ">
+    <li class="hover    active ">
       <i class="fa-solid fa-paper-plane"></i>
       My Blog
     </li>
@@ -205,7 +205,7 @@
 
 
 <a href="/posts/"  title="My Blog">
-    <li class="hover  ">
+    <li class="hover    active ">
       <i class="fa-solid fa-paper-plane"></i>
       My Blog
     </li>
@@ -280,347 +280,1888 @@
     </nav>
   </header>
              <main class="min-h-full"  >
+
+<style>
+  
+  html {
+  scroll-behavior: smooth;
+}
+html, body {
+    scroll-padding-top: 100px;
+}
+#page-section {
+    display: block;
+    word-wrap: break-word;
+}
+
+
+.blog-content {
+    padding-bottom: 3rem;
+}
+
+@media(min-width: 1024px) {
+    #page-section>aside {
+        margin-left:1rem;
+        border-left-width: 4px;
+        border-color: #ffb703
+    }
+
+    #page-section>aside.tableOfContentContainer {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 79px;
+        align-self: start
+    }
+
+    #page-section>aside>h3 {
+        font-size: 1rem;
+        padding-left: .5rem;
+        font-weight: 700;
+        padding-bottom: .5rem;
+        padding-top: 1rem
+    }
+
+    #page-section {
+        display: grid;
+        grid-template-columns: 100% 12em;
+        width: 80%
+    }
+
+    #TableOfContents {
+        display: block;
+        padding-left: .5rem;
+        padding-bottom: 1rem;
+        font-size: 1rem;
+        color: var(--copyright-info-color)
+    }
+
+    #TableOfContents li {
+        padding-top: .25rem;
+        padding-bottom: .25rem;
+        list-style: none;
+        font-size: small;
+    }
+
+    #TableOfContents li.active {
+        padding-left: 0
+    }
+
+    #TableOfContents li.active:before {
+        content: "→";
+        display: inline-block;
+        margin-left: -20px;
+        width: 20px
+    }
+
+    .cronweekly #TableOfContents ul {
+        margin-left: 1rem!important
+    }
+
+    #TableOfContents li {
+        margin-left: 1rem
+    }
+
+    #TableOfContents li.active>a {
+        color: var(--copyright-info-color);
+        font-weight: 700
+    }
+
+    #TableOfContents a {
+        text-decoration: none;
+        padding: .125rem 0;
+        color: rgb(142, 142, 142);
+        -webkit-transition: all 50ms ease-in-out;
+        transition: all 50ms ease-in-out
+    }
+
+    #TableOfContents a:hover,#TableOfContents a:focus,#TableOfContents a:active {
+        color: var(--primary-color)
+    }
+
+    #tableOfContentContainer ol,ul {
+      list-style: none;
+      margin: 0;
+      padding: 0
+    }
+}
+
+
+
+.content blockquote {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-left-width: 4px;
+    border-color: #ffb703;
+    font-style: italic;
+}
+
+.content a,.homepage-intro a,.link-dark {
+    border-bottom-width: 2px;
+    padding-bottom: .1rem;
+    padding-top: .1rem;
+    border-color: #ffb703
+}
+
+.link-talks-meta {
+    padding-bottom: .3rem!important;
+    margin-right: 1rem;
+    color: #718096;
+    font-size: 1rem
+}
+
+.link-dark {
+    border-color: #744210
+}
+
+.content a:hover,.homepage-intro a:hover,footer a:hover,.link-dark a:hover {
+    background-color: #f6e05e
+}
+
+.comments svg {
+    height: 2rem;
+    width: 2rem;
+    fill: currentColor;
+    display: inline-block;
+    margin: .5rem
+}
+
+.comments .share-links a {
+    border-width: 0;
+    background-color: #f7fafc;
+    display: inline-block;
+    border-color: #cbd5e0;
+    border-width: 1px;
+    margin-right: 1rem
+}
+
+.comments .share-links a:hover {
+    background-color: #edf2f7
+}
+
+.comments h3 {
+    border-bottom-width: 0!important;
+    display: block!important;
+    font-size: 1.875rem!important
+}
+
+.content h1,.content h2,.content h3 {
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+    border-bottom-width: 2px;
+    padding-bottom: 0;
+    border-color: #e2e8f0;
+    line-height: 2
+}
+
+.content h2 {
+    margin-bottom: .25rem
+}
+
+.content h3 {
+    font-size: 1.25rem
+}
+.polaroid{
+    display: flex;
+    justify-content: center;
+}
+
+.content img {
+    max-height: 500px;
+    width: 100%;
+    height: inherit;
+    display: block;
+    object-fit: cover;
+    border-radius: .25rem;
+    border-width: 1px;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -2px rgba(0,0,0,.05);
+}
+
+</style>
 <section class="s:mt-10">
-    <div class="container sm:my-14 " style="    margin-top: 5em;">
-      
-        <div class="w-full sm:w-10 sm:mt-10">
-          <h1 id="hello-im-archives">Hello, I&rsquo;m Archives</h1>
-
-          <blockquote>
-            <p>一切烦恼都来自于人际关系。</p>&nbsp; &nbsp; 
-            <p>All troubles stem from interpersonal relationships.</p>
-            
-        </blockquote>
-          <div class="flex  flex-col sm:flex-row ">  
-            
-                <ul class="categories-ul">
-                  <h3>Categories</h3>
-                    
-                      <li>
-                          <a target="_blank" class="category-li" href="/categories/2021">2021</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="category-li" href="/categories/apache">apache</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="category-li" href="/categories/cloud">cloud</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="category-li" href="/categories/dublin">dublin</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="category-li" href="/categories/flarum">flarum</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="category-li" href="/categories/flutter">flutter</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="category-li" href="/categories/galway">galway</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="category-li" href="/categories/github">github</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="category-li" href="/categories/hibernate">hibernate</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="category-li" href="/categories/hugo">hugo</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="category-li" href="/categories/java">java</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="category-li" href="/categories/jpa">jpa</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="category-li" href="/categories/kinsale">kinsale</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="category-li" href="/categories/leetcode">leetcode</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="category-li" href="/categories/lgbtq">lgbtq</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="category-li" href="/categories/namecheap">namecheap</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="category-li" href="/categories/reading">reading</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="category-li" href="/categories/riverpod">riverpod</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="category-li" href="/categories/travel">travel</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="category-li" href="/categories/travle">travle</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="category-li" href="/categories/tutorial">tutorial</a>
-                      </li>
-                  
-
-                  
-              </ul>
-            </div>
-            <div class="flex flex-col sm:flex-row ">  
-              
-              <ul class="tags-ul">
-                  <h3>Tags</h3>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/aboutme">aboutme (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/array">array (3)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/aws">aws (3)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/bitbucket">bitbucket (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/busuanzi">busuanzi (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/christmas">christmas (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/cloud">cloud (4)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/custom">custom (2)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/cycling">cycling (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/database">database (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/drift">drift (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/dublin">dublin (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/dublin-howth">dublin howth (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/entry">entry (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/flutter">flutter (4)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/format-date">format date (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/galway">galway (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/github">github (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/happynewyear">happynewyear (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/hash-table">hash table (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/hibernate">hibernate (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/hiking">hiking (2)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/hugo">hugo (4)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/iminstant-messaging">im(instant messaging) (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/installation">installation (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/introduction">introduction (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/lgbtq">lgbtq (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/linux">linux (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/localdepoly">localdepoly (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/lunr.js">lunr.js (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/macos">macos (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/matrix">matrix (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/medium">medium (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/menu">menu (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/php">php (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/plugin">plugin (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/prefix-sum">prefix sum (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/rds">rds (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/restful">restful (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/riverpod">riverpod (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/search-index">search-index (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/sort">sort (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/ssl">ssl (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/state-management">state-management (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/tailand">tailand (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/taxonomy">taxonomy (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/tencent">tencent (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/travel">travel (2)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/travle">travle (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/tutorial">tutorial (6)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/ubuntu">ubuntu (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/usb-deivces">usb deivces (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/write-a-blog">write a blog (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/xmas">xmas (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/%E6%9D%B1%E9%87%8E%E5%9C%AD%E5%90%BE">東野圭吾 (1)</a>
-                      </li>
-                  
-                      <li>
-                          <a target="_blank" class="tag-li" href="/tags/%E9%80%8F%E6%98%8E%E3%81%AA%E8%9E%BA%E6%97%8B">透明な螺旋 (1)</a>
-                      </li>
-                  
-              </ul>
-              
-            </div>
-     
+  <div class="w-screen max-w-full pt-20 header-curved  ">
+    <div class="container w-full md:max-w-4xl px-4 md:px-6 text-xl text-gray-800 leading-normal mx-auto">
+        <div class="pb-8">
+            <h1 class="font-thin break-normal leading-tight text-gray-900 pt-6 pb-4 text-4xl md:text-5xl">
+              How to read Data from USB CallerID deivce in Flutter
+            </h1>
+           
         </div>
-     
+      </div>
     </div>
+        <div class="container w-full md:max-w-4xl mx-auto mt-8 ">
+          <div class="w-full px-4 md:px-6  text-gray-800 leading-normal">
+            <div class="page-metadata">
+<div class="article-header">
+    <div class="avatar">
+        <img src="https://hupo-common.s3.ap-northeast-2.amazonaws.com/W0FUuPX.jpeg">
+    </div>
+    <div class="info">
+        <div class="author">
+            <span class="name">tothemoon</span>
+            <span class="author-label"></span>
+        </div>
+        <div class="meta-info">
+            <div class="article-meta-info">
+                <span class="article-date article-meta-item">
+                    <i class="fa fa-pen"></i>&nbsp;
+                    <span class="pc">August 28, 2025</span>
+                </span>
+                
+                <div class="article-categories article-meta-item">
+                    <span class="fa fa-folder-open"></span>
+                    
+                    <a href="https://hupochuanbird.github.io/categories/flutter/">flutter</a>&nbsp;
+                    
+                </div>
+                
+                
+                <span class="article-tags article-meta-item">
+                    <i class="fa fa-tag"></i>&nbsp;
+                    <ul>
+                        
+                        <li>
+                        #<a href="https://hupochuanbird.github.io/tags/tutorial/">Tutorial</a>&nbsp;
+                        </li>
+                        
+                        <li>
+                        #<a href="https://hupochuanbird.github.io/tags/flutter/">flutter</a>&nbsp;
+                        </li>
+                        
+                        <li>
+                        #<a href="https://hupochuanbird.github.io/tags/usb-deivces/">usb deivces</a>&nbsp;
+                        </li>
+                        
+                    </ul>
+                </span>
+                
+                <span class="article-wordcount article-meta-item">
+                    <i class="fa fa-book"></i>&nbsp;<span>2803 Words</span>
+                </span>
+                <span class="article-min2read article-meta-item">
+                    <i class="fa fa-clock"></i>&nbsp;<span>14 mins</span>
+                </span>
+
+
+            </div>
+        </div>
+    </div>
+</div></div>
+            <mian id="page-section">
+              
+              <div class="content blog-content">
+                
+                
+              
+                <h2 id="intro">Intro</h2>
+<p>In the restaurant ordering scenario, phone orders are still quite common (though to be honest, I personally think this approach feels pretty traditional, even a bit outdated). When a restaurant takes a call, the staff usually has to ask for the phone number, address, and name, then manually type everything into the system. This process is not only slow but also prone to mistakes.</p>
+<p>If we could recognize the phone number right when the call comes in, and directly match it with the customer’s past information (like delivery address or frequently ordered dishes), we could save a lot of repetitive work. That’s exactly what I’m trying to do here: integrate a CallerID device into a Flutter app. When a customer calls, the system instantly recognizes the number, and if the customer already exists in the database, their info pops up automatically—no manual input needed.</p>
+<p>CallerID is basically a small hardware device that connects to the telephone line. When a call comes in, it captures the number and sends the data to the computer via <strong>USB</strong> or <strong>serial port</strong>. When buying such a device, you need to check what platforms it supports. For example, the Artech110 only works on Windows, so I ended up using the <strong>CID EASY</strong> device for my development.</p>
+<p>Here’s the catch: Flutter is essentially a cross-platform UI framework, and it can’t directly talk to low-level hardware like this. A CallerID device continuously pushes out USB/serial data streams, which Dart simply can’t access. I couldn’t find any ready-made Flutter plugin for this either. So, the only option was to implement it myself: read the raw USB data, parse it into a plain phone number, and then pass it over to Flutter using a <strong>Platform Channel</strong> or <strong>Event Channel</strong>. Once Flutter receives the number, it can check the database, and if it’s an existing customer, show their info right away.</p>
+<h2 id="the-flow-how-to-realise">The Flow: How to realise</h2>
+<p>To make this work in practice, the overall flow looks like this:</p>
+<ol>
+<li>
+<p>Capture the raw data
+On the native side (Windows/Linux/macOS/Android), read the raw stream from the CallerID device via USB or serial port.</p>
+</li>
+<li>
+<p>Parse the number
+The raw stream usually contains control characters and formatting codes. Strip those out and extract a clean phone number string.</p>
+</li>
+<li>
+<p>Bridge to Flutter
+Use Platform Channel or Event Channel to pass the parsed phone number from the native layer to the Dart side.</p>
+</li>
+<li>
+<p>Your Own logic &amp; Display customer info
+Once Flutter receives the number, query the local or remote database to check if this number belongs to an existing customer.
+If the customer exists, show their saved information (address, past orders, etc.) right away, skipping manual entry. If not, proceed with normal input.</p>
+</li>
+</ol>
+<h2 id="implementation">Implementation</h2>
+<h3 id="plugin">Plugin</h3>
+<ol>
+<li>Scan devices by USB connection</li>
+<li>Connet the device</li>
+<li>Setup the thread for listening data from incoming call</li>
+<li>Catch the Data from USB, pass it to your own flutter app</li>
+</ol>
+<div class="polaroid"  style="width:30%" >
+   <a data-fancybox="gallery" data-src="https://hupo-posts.s3.ap-northeast-2.amazonaws.com/2025-08-28/1.png">
+        <img src="https://hupo-posts.s3.ap-northeast-2.amazonaws.com/2025-08-28/1.png" />
+    </a>
+</div>
+<p>This is the main entry &mdash; flutter_callerid.dart, It usually exports the public-facing API that app developers will us</p>
+<p>flutter_callerid_method_channel.dart &mdash; provides the default implementation (talks to native).</p>
+<p>flutter_callerid_platform_interface.dart  &ndash; defines the abstract interface.</p>
+<h3 id="set-up-an-eventchannel-to-receive-streamed-data">Set up an EventChannel to receive streamed data</h3>
+<p>In this step, need to use a <strong>native USB library</strong> on each platform to <strong>scan and open the CallerID device</strong>, then start a background listener that reads the raw bytes continuously. The native layer pushes the parsed phone number upstream via an <strong>EventChannel</strong>, so Flutter can subscribe to the <strong>stream</strong> and react in real time.</p>
+<p><strong>What happens under the hood (high level):</strong></p>
+<ul>
+<li>Use the platform’s native USB package to <strong>enumerate devices</strong> and <strong>select the CallerID</strong>.</li>
+<li><strong>Open</strong> the device and <strong>start a background thread</strong> to read the incoming data.</li>
+<li><strong>Parse</strong> the raw stream (strip control codes → get a clean number).</li>
+<li><strong>Emit</strong> each parsed number through the EventChannel → Flutter listens and updates the UI / queries the DB.</li>
+</ul>
+<div class="component-content pagebody component code">
+  
+  
+  
+  <div class=""><div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#ff79c6">&lt;!--</span> devices_service.dart <span style="color:#ff79c6">--&gt;</span>
+</span></span><span style="display:flex;"><span>  Future<span style="color:#ff79c6">&lt;</span><span style="color:#8be9fd">void</span><span style="color:#ff79c6">&gt;</span> _getUSBDevices() <span style="color:#8be9fd;font-style:italic">async</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">try</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#8be9fd;font-style:italic">final</span> devices <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">await</span> FlutterCalleridPlatform.instance.startUsbScan();
+</span></span><span style="display:flex;"><span>      List<span style="color:#ff79c6">&lt;</span>DeviceModel<span style="color:#ff79c6">&gt;</span> usbPrinters <span style="color:#ff79c6">=</span> [];
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">for</span> (<span style="color:#8be9fd;font-style:italic">var</span> map <span style="color:#ff79c6">in</span> devices) {
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd;font-style:italic">final</span> device <span style="color:#ff79c6">=</span> DeviceModel(
+</span></span><span style="display:flex;"><span>          <span style="color:#8be9fd;font-style:italic">vendorId:</span> map[<span style="color:#f1fa8c">&#39;vendorId&#39;</span>].toString(),
+</span></span><span style="display:flex;"><span>          <span style="color:#8be9fd;font-style:italic">productId:</span> map[<span style="color:#f1fa8c">&#39;productId&#39;</span>].toString(),
+</span></span><span style="display:flex;"><span>          <span style="color:#8be9fd;font-style:italic">name:</span> map[<span style="color:#f1fa8c">&#39;name&#39;</span>],
+</span></span><span style="display:flex;"><span>          <span style="color:#8be9fd;font-style:italic">connectionType:</span> ConnectionType.USB,
+</span></span><span style="display:flex;"><span>          <span style="color:#8be9fd;font-style:italic">address:</span> map[<span style="color:#f1fa8c">&#39;vendorId&#39;</span>].toString(),
+</span></span><span style="display:flex;"><span>          ....
+</span></span><span style="display:flex;"><span>        );
+</span></span><span style="display:flex;"><span>        usbPrinters.add(device);
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      _devices.addAll(usbPrinters);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#6272a4">// Start listening to USB events
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>      _usbSubscription <span style="color:#ff79c6">=</span> _deviceEventChannel.receiveBroadcastStream().listen((
+</span></span><span style="display:flex;"><span>        event,
+</span></span><span style="display:flex;"><span>      ) {
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd;font-style:italic">final</span> map <span style="color:#ff79c6">=</span> Map<span style="color:#ff79c6">&lt;</span><span style="color:#8be9fd">String</span>, <span style="color:#8be9fd">dynamic</span><span style="color:#ff79c6">&gt;</span>.from(event);
+</span></span><span style="display:flex;"><span>        _updateOrAddPrinter(
+</span></span><span style="display:flex;"><span>          DeviceModel(
+</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd;font-style:italic">vendorId:</span> map[<span style="color:#f1fa8c">&#39;vendorId&#39;</span>].toString(),
+</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd;font-style:italic">productId:</span> map[<span style="color:#f1fa8c">&#39;productId&#39;</span>].toString(),
+</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd;font-style:italic">name:</span> map[<span style="color:#f1fa8c">&#39;name&#39;</span>],
+</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd;font-style:italic">connectionType:</span> ConnectionType.USB,
+</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd;font-style:italic">address:</span> map[<span style="color:#f1fa8c">&#39;vendorId&#39;</span>].toString(),
+</span></span><span style="display:flex;"><span>           ...
+</span></span><span style="display:flex;"><span>          ),
+</span></span><span style="display:flex;"><span>        );
+</span></span><span style="display:flex;"><span>      });
+</span></span><span style="display:flex;"><span>      <span style="color:#6272a4">// remove Duplicate deivces
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>      _sortDevices();
+</span></span><span style="display:flex;"><span>    } <span style="color:#ff79c6">catch</span> (e) {
+</span></span><span style="display:flex;"><span>      log(<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">$</span>e<span style="color:#f1fa8c"> [USB Connection]&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }</span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+  
+</div><p><code>FlutterCalleridPlatform.instance.startUsbScan(); </code> method need to define in <code>flutter_callerid_platform_interface.dart</code> <code>flutter_callerid_method_channel.dart</code> and <code>flutter_callerid.dart</code></p>
+<div class="component-content pagebody component code">
+  
+  
+  
+  <div class=""><div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#6272a4">// flutter_callerid_platform_interface.dart
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>
+</span></span><span style="display:flex;"><span>  Future<span style="color:#ff79c6">&lt;</span><span style="color:#8be9fd">dynamic</span><span style="color:#ff79c6">&gt;</span> startUsbScan() {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">throw</span> UnimplementedError(<span style="color:#f1fa8c">&#39;startUsbScan() has not been implemented.&#39;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#6272a4">// flutter_callerid_method_channel.dart
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>  @override 
+</span></span><span style="display:flex;"><span>  Future<span style="color:#ff79c6">&lt;</span><span style="color:#8be9fd">dynamic</span><span style="color:#ff79c6">&gt;</span> startUsbScan() <span style="color:#8be9fd;font-style:italic">async</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> <span style="color:#8be9fd;font-style:italic">await</span> methodChannel.invokeMethod(<span style="color:#f1fa8c">&#39;getAvailableDevices&#39;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#6272a4">// flutter_callerid.dart, you can ignore cloudPrinterNum and  androidUsesFineLocation, this is for my printer scanning
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>
+</span></span><span style="display:flex;"><span>  Future<span style="color:#ff79c6">&lt;</span><span style="color:#8be9fd">void</span><span style="color:#ff79c6">&gt;</span> getDevices({
+</span></span><span style="display:flex;"><span>    List<span style="color:#ff79c6">&lt;</span>ConnectionType<span style="color:#ff79c6">&gt;</span> connectionTypes <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">const</span> [ConnectionType.USB],
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd">bool</span> androidUsesFineLocation <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">false</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd">int</span> cloudPrinterNum <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span>,
+</span></span><span style="display:flex;"><span>  }) <span style="color:#8be9fd;font-style:italic">async</span> {
+</span></span><span style="display:flex;"><span>    DevicesService().getDevices(
+</span></span><span style="display:flex;"><span>      <span style="color:#8be9fd;font-style:italic">connectionTypes:</span> connectionTypes,
+</span></span><span style="display:flex;"><span>      <span style="color:#8be9fd;font-style:italic">androidUsesFineLocation:</span> androidUsesFineLocation,
+</span></span><span style="display:flex;"><span>      <span style="color:#8be9fd;font-style:italic">cloudPrinterNum:</span> cloudPrinterNum,
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>  }</span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+  
+</div><p>In the Android side, define method in onMethodCall to get usb devices</p>
+<div class="component-content pagebody component code">
+  
+  
+  
+  <div class=""><div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    @Override
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">onMethodCall</span>(@NonNull MethodCall call, @NonNull MethodChannel.<span style="color:#50fa7b">Result</span> result) {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">switch</span> (call.<span style="color:#50fa7b">method</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">case</span> <span style="color:#f1fa8c">&#34;getAvailableDevices&#34;</span>:
+</span></span><span style="display:flex;"><span>                result.<span style="color:#50fa7b">success</span>(flutterCallerIdMethod.<span style="color:#50fa7b">getUsbDevicesList</span>());
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">break</span>;
+</span></span><span style="display:flex;"><span>          ....
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }</span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+  
+</div><h3 id="connet-the-device">Connet the device</h3>
+<div class="component-content pagebody component code">
+  
+  
+  
+  <div class=""><div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#6272a4">// flutter_callerid_platform_interface.dart
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>  Future<span style="color:#ff79c6">&lt;</span><span style="color:#8be9fd">bool</span><span style="color:#ff79c6">&gt;</span> connectToHidDevice(<span style="color:#8be9fd">String</span> vid, <span style="color:#8be9fd">String</span> pid) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">throw</span> UnimplementedError(<span style="color:#f1fa8c">&#39;connectToHidDevice() has not been implemented.&#39;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#6272a4">// flutter_callerid_method_channel.dart
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>  @override
+</span></span><span style="display:flex;"><span>  Future<span style="color:#ff79c6">&lt;</span><span style="color:#8be9fd">bool</span><span style="color:#ff79c6">&gt;</span> connectToHidDevice(<span style="color:#8be9fd">String</span> vid, <span style="color:#8be9fd">String</span> pid) <span style="color:#8be9fd;font-style:italic">async</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> <span style="color:#8be9fd;font-style:italic">await</span> methodChannel.invokeMethod(<span style="color:#f1fa8c">&#39;connectToHidDevice&#39;</span>, {<span style="color:#f1fa8c">&#39;vendorId&#39;</span><span style="color:#ff79c6">:</span> vid, <span style="color:#f1fa8c">&#39;productId&#39;</span><span style="color:#ff79c6">:</span> pid});
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#6272a4">// flutter_callerid.dart,  callerID is HID device
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>  <span style="color:#6272a4">/// Connect to a specific HID device by device ID
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>  Future<span style="color:#ff79c6">&lt;</span><span style="color:#8be9fd">bool</span><span style="color:#ff79c6">&gt;</span> connectToHidDevice(DeviceModel device) <span style="color:#8be9fd;font-style:italic">async</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> <span style="color:#8be9fd;font-style:italic">await</span> DevicesService().connect(device);
+</span></span><span style="display:flex;"><span>  }</span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+  
+</div><p>In the Android side, define method in onMethodCall to connect HID device</p>
+<div class="component-content pagebody component code">
+  
+  
+  
+  <div class=""><div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    @Override
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">onMethodCall</span>(@NonNull MethodCall call, @NonNull MethodChannel.<span style="color:#50fa7b">Result</span> result) {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">switch</span> (call.<span style="color:#50fa7b">method</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">case</span> <span style="color:#f1fa8c">&#34;connectToHidDevice&#34;</span>: {
+</span></span><span style="display:flex;"><span>                String vendorId <span style="color:#ff79c6">=</span> call.<span style="color:#50fa7b">argument</span>(<span style="color:#f1fa8c">&#34;vendorId&#34;</span>);
+</span></span><span style="display:flex;"><span>                String productId <span style="color:#ff79c6">=</span> call.<span style="color:#50fa7b">argument</span>(<span style="color:#f1fa8c">&#34;productId&#34;</span>);
+</span></span><span style="display:flex;"><span>                flutterCallerIdMethod.<span style="color:#50fa7b">connect</span>(vendorId, productId);
+</span></span><span style="display:flex;"><span>                result.<span style="color:#50fa7b">success</span>(<span style="color:#ff79c6">false</span>);
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">break</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>          ....
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }</span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+  
+</div><p>FlutterCallerIdMethod.java Implementation here. Usb device will pop the syetem connetion dialog when connect in the first time , then it will detect automatically</p>
+<div class="component-content pagebody component code">
+  
+  
+  
+  <div class=""><div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// Connect using VendorId and ProductId</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">connect</span>(String vendorId, String productId) {
+</span></span><span style="display:flex;"><span>        connectionVendorId <span style="color:#ff79c6">=</span> vendorId;
+</span></span><span style="display:flex;"><span>        connectionProductId <span style="color:#ff79c6">=</span> productId;
+</span></span><span style="display:flex;"><span>        UsbManager m <span style="color:#ff79c6">=</span> (UsbManager) context.<span style="color:#50fa7b">getSystemService</span>(Context.<span style="color:#50fa7b">USB_SERVICE</span>);
+</span></span><span style="display:flex;"><span>        UsbDevice device <span style="color:#ff79c6">=</span> findDevice(m, vendorId, productId);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> (device <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">null</span>) {
+</span></span><span style="display:flex;"><span>            AppLogger.<span style="color:#50fa7b">d</span>(TAG, <span style="color:#f1fa8c">&#34;when connect but Device not found.&#34;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">return</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> (<span style="color:#ff79c6">!</span>m.<span style="color:#50fa7b">hasPermission</span>(device)) {
+</span></span><span style="display:flex;"><span>            AppLogger.<span style="color:#50fa7b">d</span>(TAG, <span style="color:#f1fa8c">&#34;Requesting permission for device...&#34;</span>);
+</span></span><span style="display:flex;"><span>            PendingIntent permissionIntent <span style="color:#ff79c6">=</span> PendingIntent.<span style="color:#50fa7b">getBroadcast</span>(context, 0, <span style="color:#ff79c6">new</span> Intent(ACTION_USB_PERMISSION), PendingIntent.<span style="color:#50fa7b">FLAG_IMMUTABLE</span>);
+</span></span><span style="display:flex;"><span>            m.<span style="color:#50fa7b">requestPermission</span>(device, permissionIntent);
+</span></span><span style="display:flex;"><span>        } <span style="color:#ff79c6">else</span> {
+</span></span><span style="display:flex;"><span>            AppLogger.<span style="color:#50fa7b">d</span>(TAG, <span style="color:#f1fa8c">&#34;Permission already granted. Proceeding.&#34;</span>);
+</span></span><span style="display:flex;"><span>            sendDevice(device, <span style="color:#ff79c6">false</span>); <span style="color:#6272a4">// Proceed directly if permission exists</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }</span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+  
+</div><h3 id="setup-the-thread-for-listening-data-from-incoming-call">Setup the thread for listening data from incoming call</h3>
+<p>Connect the USB device, then launch a background listener thread to read incoming data.</p>
+<div class="component-content pagebody component code">
+  
+  
+  
+  <div class=""><div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">122
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">123
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">124
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">125
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">126
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">127
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">128
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">129
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">130
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">131
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">132
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">133
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">134
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">135
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">136
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">137
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">138
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">139
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">140
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">141
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">142
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">143
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">144
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">145
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">146
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">147
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">148
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">149
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">153
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">154
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">155
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">156
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">157
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">158
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">159
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">160
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">161
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">162
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">163
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">164
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">165
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">166
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">167
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">168
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">169
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">170
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">171
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">172
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">173
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">174
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">175
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">176
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">177
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">178
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">179
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">180
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">181
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">182
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">183
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">184
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">185
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">186
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">187
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">188
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">189
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">190
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">191
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">192
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">193
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">194
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">195
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">196
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">197
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">198
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">199
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">200
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">201
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">202
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">203
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">204
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">205
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">206
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">207
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">208
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">209
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">210
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">211
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">212
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">213
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">214
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">215
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">216
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">217
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">218
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">219
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">220
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">221
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">222
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">223
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">224
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">225
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">226
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">227
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">228
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">229
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">230
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">231
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">232
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">233
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">234
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">235
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">236
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">237
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">238
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">239
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">240
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">241
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">242
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">243
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">244
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">245
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">246
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">247
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">248
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">249
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">250
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">251
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">252
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">253
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">254
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">255
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">256
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">257
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">258
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">259
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">260
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">261
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">262
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">263
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">264
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">265
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">266
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">267
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">268
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">269
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">270
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">271
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">272
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">273
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">274
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">275
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">276
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">277
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">278
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">279
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">280
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">281
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">282
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">283
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">284
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">285
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">286
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">287
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">288
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">289
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">290
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">291
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">292
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">293
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">294
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">295
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">296
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">297
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">298
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    UsbDevice listeningDevice <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">null</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// Method to start listening on the USB device for CallerID data</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">startListening</span>(String vendorId, String productId) {
+</span></span><span style="display:flex;"><span>        AppLogger.<span style="color:#50fa7b">d</span>(TAG, <span style="color:#f1fa8c">&#34;Attempting to connect to device...&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        UsbManager m <span style="color:#ff79c6">=</span> (UsbManager) context.<span style="color:#50fa7b">getSystemService</span>(Context.<span style="color:#50fa7b">USB_SERVICE</span>);
+</span></span><span style="display:flex;"><span>        UsbDevice currentDevice <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">null</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">for</span> (UsbDevice device : m.<span style="color:#50fa7b">getDeviceList</span>().<span style="color:#50fa7b">values</span>()) {
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">if</span> (String.<span style="color:#50fa7b">valueOf</span>(device.<span style="color:#50fa7b">getVendorId</span>()).<span style="color:#50fa7b">equals</span>(vendorId) <span style="color:#ff79c6">&amp;&amp;</span> String.<span style="color:#50fa7b">valueOf</span>(device.<span style="color:#50fa7b">getProductId</span>()).<span style="color:#50fa7b">equals</span>(productId)) {
+</span></span><span style="display:flex;"><span>                currentDevice <span style="color:#ff79c6">=</span> device;
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">break</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> (currentDevice <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">null</span>) {
+</span></span><span style="display:flex;"><span>            AppLogger.<span style="color:#50fa7b">e</span>(TAG, <span style="color:#f1fa8c">&#34;No connected device.&#34;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">return</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> (<span style="color:#ff79c6">!</span>m.<span style="color:#50fa7b">hasPermission</span>(currentDevice)) {
+</span></span><span style="display:flex;"><span>            AppLogger.<span style="color:#50fa7b">e</span>(TAG, <span style="color:#f1fa8c">&#34;No permission for device. Please request it via broadcast.&#34;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">return</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        listeningDevice <span style="color:#ff79c6">=</span> currentDevice;
+</span></span><span style="display:flex;"><span>        UsbInterface intf <span style="color:#ff79c6">=</span> currentDevice.<span style="color:#50fa7b">getInterface</span>(0);
+</span></span><span style="display:flex;"><span>        String deviceType <span style="color:#ff79c6">=</span> getDeviceType(intf);
+</span></span><span style="display:flex;"><span>        AppLogger.<span style="color:#50fa7b">d</span>(<span style="color:#f1fa8c">&#34;USB&#34;</span>, deviceType);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        connection <span style="color:#ff79c6">=</span> m.<span style="color:#50fa7b">openDevice</span>(currentDevice);
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> (connection <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">null</span>) {
+</span></span><span style="display:flex;"><span>            AppLogger.<span style="color:#50fa7b">e</span>(TAG, <span style="color:#f1fa8c">&#34;Failed to open or claim interface.&#34;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">return</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        mIntf <span style="color:#ff79c6">=</span> currentDevice.<span style="color:#50fa7b">getInterface</span>(0);
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> (<span style="color:#ff79c6">!</span>connection.<span style="color:#50fa7b">claimInterface</span>(mIntf, <span style="color:#ff79c6">true</span>)) {
+</span></span><span style="display:flex;"><span>            AppLogger.<span style="color:#50fa7b">e</span>(TAG, <span style="color:#f1fa8c">&#34;Failed to claim interface.&#34;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">return</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        AppLogger.<span style="color:#50fa7b">d</span>(TAG, <span style="color:#f1fa8c">&#34;  Interface Class: &#34;</span> <span style="color:#ff79c6">+</span> mIntf.<span style="color:#50fa7b">getInterfaceClass</span>());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#6272a4">// Dynamically pick endpoints by direction</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">for</span> (<span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> 0; i <span style="color:#ff79c6">&lt;</span> mIntf.<span style="color:#50fa7b">getEndpointCount</span>(); i<span style="color:#ff79c6">++</span>) {
+</span></span><span style="display:flex;"><span>            UsbEndpoint ep <span style="color:#ff79c6">=</span> mIntf.<span style="color:#50fa7b">getEndpoint</span>(i);
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">if</span> (ep.<span style="color:#50fa7b">getDirection</span>() <span style="color:#ff79c6">==</span> UsbConstants.<span style="color:#50fa7b">USB_DIR_IN</span>) rEndpoint <span style="color:#ff79c6">=</span> ep;
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> (ep.<span style="color:#50fa7b">getDirection</span>() <span style="color:#ff79c6">==</span> UsbConstants.<span style="color:#50fa7b">USB_DIR_OUT</span>) wEndpoint <span style="color:#ff79c6">=</span> ep;
+</span></span><span style="display:flex;"><span>            AppLogger.<span style="color:#50fa7b">d</span>(TAG, <span style="color:#f1fa8c">&#34;Endpoint #&#34;</span> <span style="color:#ff79c6">+</span> i <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34; type=&#34;</span> <span style="color:#ff79c6">+</span> ep.<span style="color:#50fa7b">getType</span>() <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;, direction=&#34;</span> <span style="color:#ff79c6">+</span> (ep.<span style="color:#50fa7b">getDirection</span>() <span style="color:#ff79c6">==</span> UsbConstants.<span style="color:#50fa7b">USB_DIR_IN</span> <span style="color:#ff79c6">?</span> <span style="color:#f1fa8c">&#34;IN&#34;</span> : <span style="color:#f1fa8c">&#34;OUT&#34;</span>) <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;, address=&#34;</span> <span style="color:#ff79c6">+</span> ep.<span style="color:#50fa7b">getAddress</span>() <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;, maxPacketSize=&#34;</span> <span style="color:#ff79c6">+</span> ep.<span style="color:#50fa7b">getMaxPacketSize</span>());
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> (rEndpoint <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">null</span>) {
+</span></span><span style="display:flex;"><span>            AppLogger.<span style="color:#50fa7b">e</span>(TAG, <span style="color:#f1fa8c">&#34;No readable endpoint found.&#34;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">return</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        AppLogger.<span style="color:#50fa7b">d</span>(TAG, <span style="color:#f1fa8c">&#34;Claimed interface and endpoints. Starting read loop...&#34;</span>);
+</span></span><span style="display:flex;"><span>        sendData(<span style="color:#f1fa8c">&#34;AT+VCID=1\\r&#34;</span>);
+</span></span><span style="display:flex;"><span>        readThread <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Thread(<span style="color:#ff79c6">this</span>::readLoop);
+</span></span><span style="display:flex;"><span>        readThread.<span style="color:#50fa7b">start</span>();
+</span></span><span style="display:flex;"><span>        reading <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">true</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#6272a4">// Thread</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">readLoop</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd">byte</span><span style="color:#ff79c6">[]</span> buffer <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">byte</span><span style="color:#ff79c6">[</span>64<span style="color:#ff79c6">]</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">while</span> (reading) {
+</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd">int</span> len <span style="color:#ff79c6">=</span> connection.<span style="color:#50fa7b">bulkTransfer</span>(rEndpoint, buffer, buffer.<span style="color:#50fa7b">length</span>, TIMEOUT);
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">if</span> (len <span style="color:#ff79c6">&gt;</span> 0) {
+</span></span><span style="display:flex;"><span>                analyzePackage(buffer);
+</span></span><span style="display:flex;"><span>            } <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> (len <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">-</span>1) {
+</span></span><span style="display:flex;"><span>                AppLogger.<span style="color:#50fa7b">w</span>(TAG, <span style="color:#f1fa8c">&#34;No data or timeout.&#34;</span>);
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            Sleep(SLEEP);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// Parse data</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">private</span> String sDateTime <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">private</span> String sCaller <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">private</span> String sCallee <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">private</span> String sOther <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd">char</span> sPort <span style="color:#ff79c6">=</span> 0;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">analyzePackage</span>(<span style="color:#8be9fd">byte</span><span style="color:#ff79c6">[]</span> bytes) {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">try</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd;font-style:italic">final</span> String strPackage <span style="color:#ff79c6">=</span> composeString(bytes);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">if</span> (strPackage.<span style="color:#50fa7b">contains</span>(<span style="color:#f1fa8c">&#34;ENQ&#34;</span>) <span style="color:#ff79c6">||</span>strPackage.<span style="color:#50fa7b">contains</span>(<span style="color:#f1fa8c">&#34;ETB&#34;</span>)){
+</span></span><span style="display:flex;"><span>                sendData(ACK);
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">else</span> {
+</span></span><span style="display:flex;"><span>                sendData(DCK);
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">if</span> (testCliPackage(bytes)) {
+</span></span><span style="display:flex;"><span>                    <span style="color:#6272a4">//Pass data to flutter</span>
+</span></span><span style="display:flex;"><span>                    Map<span style="color:#ff79c6">&lt;</span>String, Object<span style="color:#ff79c6">&gt;</span> callInfo <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> HashMap<span style="color:#ff79c6">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>                    callInfo.<span style="color:#50fa7b">put</span>(<span style="color:#f1fa8c">&#34;caller&#34;</span>, sCaller);
+</span></span><span style="display:flex;"><span>                    callInfo.<span style="color:#50fa7b">put</span>(<span style="color:#f1fa8c">&#34;callee&#34;</span>, sCallee);
+</span></span><span style="display:flex;"><span>                    callInfo.<span style="color:#50fa7b">put</span>(<span style="color:#f1fa8c">&#34;datetime&#34;</span>, sDateTime);
+</span></span><span style="display:flex;"><span>                    callInfo.<span style="color:#50fa7b">put</span>(<span style="color:#f1fa8c">&#34;port&#34;</span>, String.<span style="color:#50fa7b">valueOf</span>(sPort));
+</span></span><span style="display:flex;"><span>                    <span style="color:#ff79c6">if</span> (callerIdEventSink <span style="color:#ff79c6">!=</span> <span style="color:#ff79c6">null</span>)
+</span></span><span style="display:flex;"><span>                        mainHandler.<span style="color:#50fa7b">post</span>(() <span style="color:#ff79c6">-&gt;</span> callerIdEventSink.<span style="color:#50fa7b">success</span>(callInfo));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        } <span style="color:#ff79c6">catch</span> (Exception e) {
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd">boolean</span> <span style="color:#50fa7b">testCliPackage</span>(<span style="color:#8be9fd">byte</span><span style="color:#ff79c6">[]</span> Package) {
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd">boolean</span> res <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">false</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">try</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd">byte</span><span style="color:#ff79c6">[]</span> portNames <span style="color:#ff79c6">=</span> {<span style="color:#f1fa8c">&#39;A&#39;</span>, <span style="color:#f1fa8c">&#39;B&#39;</span>, <span style="color:#f1fa8c">&#39;C&#39;</span>, <span style="color:#f1fa8c">&#39;D&#39;</span>, <span style="color:#f1fa8c">&#39;S&#39;</span>};
+</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> pckTypes <span style="color:#ff79c6">=</span> {0x04, 0x80};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd">byte</span> pPort <span style="color:#ff79c6">=</span> Package<span style="color:#ff79c6">[</span>0<span style="color:#ff79c6">]</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd">int</span> pType <span style="color:#ff79c6">=</span> Math.<span style="color:#50fa7b">abs</span>((<span style="color:#8be9fd">int</span>) Package<span style="color:#ff79c6">[</span>1<span style="color:#ff79c6">]</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd">int</span> pLen <span style="color:#ff79c6">=</span> Math.<span style="color:#50fa7b">abs</span>((<span style="color:#8be9fd">int</span>) Package<span style="color:#ff79c6">[</span>2<span style="color:#ff79c6">]</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">if</span> ((pLen <span style="color:#ff79c6">&gt;</span> 0) <span style="color:#ff79c6">&amp;&amp;</span> (pLen <span style="color:#ff79c6">&lt;</span> 65) <span style="color:#ff79c6">&amp;&amp;</span> Arrays.<span style="color:#50fa7b">binarySearch</span>(portNames, pPort) <span style="color:#ff79c6">&gt;=</span> 0 <span style="color:#ff79c6">&amp;&amp;</span> Arrays.<span style="color:#50fa7b">binarySearch</span>(pckTypes, pType) <span style="color:#ff79c6">&gt;=</span> 0) {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">if</span> (pType <span style="color:#ff79c6">==</span> 0x80) {
+</span></span><span style="display:flex;"><span>                    res <span style="color:#ff79c6">=</span> parseMDMF(Package);
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">if</span> (pType <span style="color:#ff79c6">==</span> 0x04) {
+</span></span><span style="display:flex;"><span>                    res <span style="color:#ff79c6">=</span> parseSDMF(Package);
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        } <span style="color:#ff79c6">catch</span> (Exception e) {
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> res;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd">boolean</span> <span style="color:#50fa7b">parseSDMF</span>(<span style="color:#8be9fd">byte</span><span style="color:#ff79c6">[]</span> Package) {
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd">int</span> packlength <span style="color:#ff79c6">=</span> 0;
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd">char</span> theChar <span style="color:#ff79c6">=</span> 0;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">try</span> {
+</span></span><span style="display:flex;"><span>            packlength <span style="color:#ff79c6">=</span> Package<span style="color:#ff79c6">[</span>2<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">+</span> 4;
+</span></span><span style="display:flex;"><span>            sPort <span style="color:#ff79c6">=</span> (<span style="color:#8be9fd">char</span>) Package<span style="color:#ff79c6">[</span>0<span style="color:#ff79c6">]</span>;
+</span></span><span style="display:flex;"><span>            sCaller <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span>;
+</span></span><span style="display:flex;"><span>            sCallee <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span>;
+</span></span><span style="display:flex;"><span>            sDateTime <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span>;
+</span></span><span style="display:flex;"><span>            sOther <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">for</span> (<span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> 3; i <span style="color:#ff79c6">&lt;=</span> packlength <span style="color:#ff79c6">-</span> 2; i<span style="color:#ff79c6">++</span>) {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">if</span> (i <span style="color:#ff79c6">&lt;</span> Package.<span style="color:#50fa7b">length</span>) {
+</span></span><span style="display:flex;"><span>                    theChar <span style="color:#ff79c6">=</span> (<span style="color:#8be9fd">char</span>) Package<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span>;
+</span></span><span style="display:flex;"><span>                    <span style="color:#ff79c6">if</span> (i <span style="color:#ff79c6">&lt;</span> 11) {
+</span></span><span style="display:flex;"><span>                        sDateTime <span style="color:#ff79c6">=</span> sDateTime <span style="color:#ff79c6">+</span> (<span style="color:#8be9fd">char</span>) Package<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span>;
+</span></span><span style="display:flex;"><span>                    } <span style="color:#ff79c6">else</span> {
+</span></span><span style="display:flex;"><span>                        sCaller <span style="color:#ff79c6">=</span> sCaller <span style="color:#ff79c6">+</span> theChar;
+</span></span><span style="display:flex;"><span>                    }
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        } <span style="color:#ff79c6">catch</span> (Exception e) {
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> (<span style="color:#ff79c6">!</span>enableCheckDigitControl <span style="color:#ff79c6">||</span> testCheckDigit(Package));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd">boolean</span> <span style="color:#50fa7b">parseMDMF</span>(<span style="color:#8be9fd">byte</span><span style="color:#ff79c6">[]</span> Package) {
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd">int</span> packlength <span style="color:#ff79c6">=</span> 0;
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd">int</span> datalength <span style="color:#ff79c6">=</span> 0;
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd">char</span> theChar <span style="color:#ff79c6">=</span> 0;
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd">int</span> i;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">try</span> {
+</span></span><span style="display:flex;"><span>            packlength <span style="color:#ff79c6">=</span> Package<span style="color:#ff79c6">[</span>2<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">+</span> 4;
+</span></span><span style="display:flex;"><span>            sPort <span style="color:#ff79c6">=</span> (<span style="color:#8be9fd">char</span>) Package<span style="color:#ff79c6">[</span>0<span style="color:#ff79c6">]</span>;
+</span></span><span style="display:flex;"><span>            sCaller <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span>;
+</span></span><span style="display:flex;"><span>            sCallee <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span>;
+</span></span><span style="display:flex;"><span>            sDateTime <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span>;
+</span></span><span style="display:flex;"><span>            sOther <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">if</span> (packlength <span style="color:#ff79c6">&gt;</span> Package.<span style="color:#50fa7b">length</span>) {
+</span></span><span style="display:flex;"><span>                packlength <span style="color:#ff79c6">=</span> Package.<span style="color:#50fa7b">length</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">if</span> (packlength <span style="color:#ff79c6">&gt;</span> 0) {
+</span></span><span style="display:flex;"><span>                i <span style="color:#ff79c6">=</span> 3;
+</span></span><span style="display:flex;"><span>                datalength <span style="color:#ff79c6">=</span> 0;
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">while</span> (i <span style="color:#ff79c6">&lt;</span> Package.<span style="color:#50fa7b">length</span>) {
+</span></span><span style="display:flex;"><span>                    <span style="color:#ff79c6">if</span> (Package<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">==</span> 1) <span style="color:#6272a4">// Date Field</span>
+</span></span><span style="display:flex;"><span>                    {
+</span></span><span style="display:flex;"><span>                        i<span style="color:#ff79c6">++</span>;
+</span></span><span style="display:flex;"><span>                        <span style="color:#ff79c6">if</span> (i <span style="color:#ff79c6">&lt;</span> packlength <span style="color:#ff79c6">-</span> 1) {
+</span></span><span style="display:flex;"><span>                            datalength <span style="color:#ff79c6">=</span> Package<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span>;
+</span></span><span style="display:flex;"><span>                            <span style="color:#ff79c6">if</span> (datalength <span style="color:#ff79c6">!=</span> 8) datalength <span style="color:#ff79c6">=</span> 8;
+</span></span><span style="display:flex;"><span>                            <span style="color:#ff79c6">if</span> (datalength <span style="color:#ff79c6">==</span> 8) {
+</span></span><span style="display:flex;"><span>                                <span style="color:#ff79c6">while</span> ((datalength <span style="color:#ff79c6">&gt;</span> 0) <span style="color:#ff79c6">&amp;&amp;</span> (datalength <span style="color:#ff79c6">&lt;</span> packlength)) {
+</span></span><span style="display:flex;"><span>                                    i<span style="color:#ff79c6">++</span>;
+</span></span><span style="display:flex;"><span>                                    theChar <span style="color:#ff79c6">=</span> (<span style="color:#8be9fd">char</span>) Package<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span>;
+</span></span><span style="display:flex;"><span>                                    sDateTime <span style="color:#ff79c6">=</span> sDateTime <span style="color:#ff79c6">+</span> theChar;
+</span></span><span style="display:flex;"><span>                                    datalength<span style="color:#ff79c6">--</span>;
+</span></span><span style="display:flex;"><span>                                }
+</span></span><span style="display:flex;"><span>                            }
+</span></span><span style="display:flex;"><span>                        }
+</span></span><span style="display:flex;"><span>                    } <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> (Package<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">==</span> 2)  <span style="color:#6272a4">// Number Field</span>
+</span></span><span style="display:flex;"><span>                    {
+</span></span><span style="display:flex;"><span>                        i<span style="color:#ff79c6">++</span>;
+</span></span><span style="display:flex;"><span>                        <span style="color:#ff79c6">if</span> (i <span style="color:#ff79c6">&lt;</span> packlength <span style="color:#ff79c6">-</span> 1) {
+</span></span><span style="display:flex;"><span>                            datalength <span style="color:#ff79c6">=</span> Package<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span>;
+</span></span><span style="display:flex;"><span>                            <span style="color:#ff79c6">if</span> (datalength <span style="color:#ff79c6">&gt;</span> (packlength <span style="color:#ff79c6">-</span> i <span style="color:#ff79c6">-</span> 1))
+</span></span><span style="display:flex;"><span>                                datalength <span style="color:#ff79c6">=</span> (packlength <span style="color:#ff79c6">-</span> i <span style="color:#ff79c6">-</span> 1);
+</span></span><span style="display:flex;"><span>                            <span style="color:#ff79c6">while</span> ((datalength <span style="color:#ff79c6">&gt;</span> 0) <span style="color:#ff79c6">&amp;&amp;</span> (datalength <span style="color:#ff79c6">&lt;</span> packlength)) {
+</span></span><span style="display:flex;"><span>                                i<span style="color:#ff79c6">++</span>;
+</span></span><span style="display:flex;"><span>                                theChar <span style="color:#ff79c6">=</span> (<span style="color:#8be9fd">char</span>) Package<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span>;
+</span></span><span style="display:flex;"><span>                                sCaller <span style="color:#ff79c6">=</span> sCaller <span style="color:#ff79c6">+</span> theChar;
+</span></span><span style="display:flex;"><span>                                datalength<span style="color:#ff79c6">--</span>;
+</span></span><span style="display:flex;"><span>                            }
+</span></span><span style="display:flex;"><span>                        }
+</span></span><span style="display:flex;"><span>                    } <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> (Package<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">==</span> 34)  <span style="color:#6272a4">//Callee field</span>
+</span></span><span style="display:flex;"><span>                    {
+</span></span><span style="display:flex;"><span>                        <span style="color:#6272a4">// Other Fields</span>
+</span></span><span style="display:flex;"><span>                        i<span style="color:#ff79c6">++</span>;
+</span></span><span style="display:flex;"><span>                        <span style="color:#ff79c6">if</span> (i <span style="color:#ff79c6">&lt;</span> packlength <span style="color:#ff79c6">-</span> 1) {
+</span></span><span style="display:flex;"><span>                            datalength <span style="color:#ff79c6">=</span> Package<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span>;
+</span></span><span style="display:flex;"><span>                            <span style="color:#ff79c6">while</span> ((datalength <span style="color:#ff79c6">&gt;</span> 0) <span style="color:#ff79c6">&amp;&amp;</span> (datalength <span style="color:#ff79c6">&lt;</span> packlength)) {
+</span></span><span style="display:flex;"><span>                                i<span style="color:#ff79c6">++</span>;
+</span></span><span style="display:flex;"><span>                                theChar <span style="color:#ff79c6">=</span> (<span style="color:#8be9fd">char</span>) Package<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span>;
+</span></span><span style="display:flex;"><span>                                sCallee <span style="color:#ff79c6">=</span> sCallee <span style="color:#ff79c6">+</span> theChar;
+</span></span><span style="display:flex;"><span>                                datalength<span style="color:#ff79c6">--</span>;
+</span></span><span style="display:flex;"><span>                            }
+</span></span><span style="display:flex;"><span>                        }
+</span></span><span style="display:flex;"><span>                    } <span style="color:#ff79c6">else</span> {
+</span></span><span style="display:flex;"><span>                        <span style="color:#6272a4">// Other Fields</span>
+</span></span><span style="display:flex;"><span>                        i<span style="color:#ff79c6">++</span>;
+</span></span><span style="display:flex;"><span>                        <span style="color:#ff79c6">if</span> (i <span style="color:#ff79c6">&lt;</span> packlength <span style="color:#ff79c6">-</span> 1) {
+</span></span><span style="display:flex;"><span>                            datalength <span style="color:#ff79c6">=</span> Package<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span>;
+</span></span><span style="display:flex;"><span>                            <span style="color:#ff79c6">while</span> ((datalength <span style="color:#ff79c6">&gt;</span> 0) <span style="color:#ff79c6">&amp;&amp;</span> (datalength <span style="color:#ff79c6">&lt;</span> packlength)) {
+</span></span><span style="display:flex;"><span>                                i<span style="color:#ff79c6">++</span>;
+</span></span><span style="display:flex;"><span>                                theChar <span style="color:#ff79c6">=</span> (<span style="color:#8be9fd">char</span>) Package<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span>;
+</span></span><span style="display:flex;"><span>                                sOther <span style="color:#ff79c6">=</span> sOther <span style="color:#ff79c6">+</span> theChar;
+</span></span><span style="display:flex;"><span>                                datalength<span style="color:#ff79c6">--</span>;
+</span></span><span style="display:flex;"><span>                            }
+</span></span><span style="display:flex;"><span>                        }
+</span></span><span style="display:flex;"><span>                    }
+</span></span><span style="display:flex;"><span>                    i<span style="color:#ff79c6">++</span>;
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        } <span style="color:#ff79c6">catch</span> (Exception e) {
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> (<span style="color:#ff79c6">!</span>enableCheckDigitControl <span style="color:#ff79c6">||</span> testCheckDigit(Package));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd;font-style:italic">final</span> <span style="color:#8be9fd">boolean</span> enableCheckDigitControl <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">true</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">boolean</span> <span style="color:#50fa7b">testCheckDigit</span>(<span style="color:#8be9fd">byte</span><span style="color:#ff79c6">[]</span> inputReport) {
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd">int</span> pLen <span style="color:#ff79c6">=</span> 0;
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd">int</span> cDigit <span style="color:#ff79c6">=</span> 123;
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd">int</span> pDigit <span style="color:#ff79c6">=</span> 0;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">try</span> {
+</span></span><span style="display:flex;"><span>            pLen <span style="color:#ff79c6">=</span> inputReport<span style="color:#ff79c6">[</span>2<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">+</span> 3;
+</span></span><span style="display:flex;"><span>            cDigit <span style="color:#ff79c6">=</span> inputReport<span style="color:#ff79c6">[</span>pLen<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">&amp;</span> 255;
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">for</span> (<span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> 1; i <span style="color:#ff79c6">&lt;</span> pLen; i<span style="color:#ff79c6">++</span>)
+</span></span><span style="display:flex;"><span>                pDigit <span style="color:#ff79c6">=</span> (pDigit <span style="color:#ff79c6">+</span> Math.<span style="color:#50fa7b">abs</span>((<span style="color:#8be9fd">int</span>) inputReport<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">&amp;</span> 255)) <span style="color:#ff79c6">&amp;</span> 255;
+</span></span><span style="display:flex;"><span>            pDigit <span style="color:#ff79c6">=</span> Math.<span style="color:#50fa7b">abs</span>((<span style="color:#8be9fd">int</span>) (0x100 <span style="color:#ff79c6">-</span> pDigit)) <span style="color:#ff79c6">&amp;</span> 255;
+</span></span><span style="display:flex;"><span>        } <span style="color:#ff79c6">catch</span> (Exception e) {
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> pDigit <span style="color:#ff79c6">==</span> cDigit;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">private</span> String <span style="color:#50fa7b">composeString</span>(<span style="color:#8be9fd">byte</span><span style="color:#ff79c6">[]</span> bytes) {
+</span></span><span style="display:flex;"><span>        String strPackage <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">try</span> {
+</span></span><span style="display:flex;"><span>            StringBuilder builder <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> StringBuilder();
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">for</span> (<span style="color:#8be9fd">byte</span> b : bytes) {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">if</span> (b <span style="color:#ff79c6">&gt;</span> 0) {
+</span></span><span style="display:flex;"><span>                    <span style="color:#8be9fd">char</span> c <span style="color:#ff79c6">=</span> (<span style="color:#8be9fd">char</span>) b;
+</span></span><span style="display:flex;"><span>                    builder.<span style="color:#50fa7b">append</span>(c);
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            strPackage <span style="color:#ff79c6">=</span> builder.<span style="color:#50fa7b">toString</span>();
+</span></span><span style="display:flex;"><span>        } <span style="color:#ff79c6">catch</span> (Exception e) {
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> strPackage;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Sleep</span>(<span style="color:#8be9fd">int</span> milliseconds) {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">try</span> {
+</span></span><span style="display:flex;"><span>            Thread.<span style="color:#50fa7b">sleep</span>(milliseconds);
+</span></span><span style="display:flex;"><span>        } <span style="color:#ff79c6">catch</span> (InterruptedException e) {
+</span></span><span style="display:flex;"><span>            e.<span style="color:#50fa7b">printStackTrace</span>();
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }</span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+  
+</div><h3 id="logic-in-your-flutter-app">Logic in Your flutter app</h3>
+<p>Connect the CallerID device → start the listener → receive the stream data → process it according to your business logic.</p>
+<div class="component-content pagebody component code">
+  
+  
+  
+  <div class=""><div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span>   <span style="color:#6272a4">// Import package
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span> 
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">import</span> <span style="color:#f1fa8c">&#39;package:flutter_callerid/model/usb_device_model.dart&#39;</span> <span style="color:#ff79c6">as</span> callerid;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">YourClassName</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#8be9fd;font-style:italic">final</span> _flutterCalleridPlugin <span style="color:#ff79c6">=</span> FlutterCallerid();
+</span></span><span style="display:flex;"><span>  StreamSubscription<span style="color:#ff79c6">&lt;</span>Map<span style="color:#ff79c6">&lt;</span><span style="color:#8be9fd">String</span>, <span style="color:#8be9fd">dynamic</span><span style="color:#ff79c6">&gt;&gt;?</span> _callerIdStreamSubscription;
+</span></span><span style="display:flex;"><span>  StreamSubscription<span style="color:#ff79c6">&lt;</span>List<span style="color:#ff79c6">&lt;</span>callerid.DeviceModel<span style="color:#ff79c6">&gt;&gt;?</span> _devicesStreamSubscription;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  callerid.DeviceModel<span style="color:#ff79c6">?</span> _connectedCallerIdDevice;
+</span></span><span style="display:flex;"><span>  List<span style="color:#ff79c6">&lt;</span>callerid.ConnectionType<span style="color:#ff79c6">&gt;</span> getScanConnectionType() {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> [
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&lt;!--</span> callerid.ConnectionType.BLE, <span style="color:#ff79c6">--&gt;</span>
+</span></span><span style="display:flex;"><span>     callerid.ConnectionType.USB,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&lt;!--</span> callerid.ConnectionType.NETWORK, <span style="color:#ff79c6">--&gt;</span>
+</span></span><span style="display:flex;"><span>    ];
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span> <span style="color:#6272a4">// Method Strat Scan devices
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>  Future<span style="color:#ff79c6">&lt;</span><span style="color:#8be9fd">void</span><span style="color:#ff79c6">&gt;</span> startScan() <span style="color:#8be9fd;font-style:italic">async</span> {
+</span></span><span style="display:flex;"><span>    _devices <span style="color:#ff79c6">=</span> [];
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">await</span> _devicesStreamSubscription<span style="color:#ff79c6">?</span>.cancel();
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">await</span> _flutterCalleridPlugin.getDevices(
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd;font-style:italic">connectionTypes:</span> getScanConnectionType());
+</span></span><span style="display:flex;"><span>    _devicesStreamSubscription <span style="color:#ff79c6">=</span> _flutterCalleridPlugin.devicesStream.listen((List<span style="color:#ff79c6">&lt;</span>callerid.DeviceModel<span style="color:#ff79c6">&gt;</span> event) {
+</span></span><span style="display:flex;"><span>      <span style="color:#6272a4">// Only keep devices with a non-empty name containing &#39;caller&#39; 
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>      _devices <span style="color:#ff79c6">=</span> event
+</span></span><span style="display:flex;"><span>          .where((element) <span style="color:#ff79c6">=&gt;</span>
+</span></span><span style="display:flex;"><span>              (element.name<span style="color:#ff79c6">?</span>.isNotEmpty <span style="color:#ff79c6">??</span> <span style="color:#ff79c6">false</span>) <span style="color:#ff79c6">&amp;&amp;</span>
+</span></span><span style="display:flex;"><span>              ((element.name<span style="color:#ff79c6">?</span>.toLowerCase().contains(<span style="color:#f1fa8c">&#39;caller&#39;</span>) <span style="color:#ff79c6">??</span> <span style="color:#ff79c6">false</span>)))
+</span></span><span style="display:flex;"><span>          .toList();
+</span></span><span style="display:flex;"><span>      _devices <span style="color:#ff79c6">=</span> _devices.where((element) <span style="color:#ff79c6">=&gt;</span> element.isRemove <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">null</span> <span style="color:#ff79c6">||</span> element.isRemove <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">false</span>).toList();
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Future<span style="color:#ff79c6">&lt;</span><span style="color:#8be9fd">void</span><span style="color:#ff79c6">&gt;</span> onConnectedCallerId(callerid.DeviceModel findDevice) <span style="color:#8be9fd;font-style:italic">async</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#8be9fd">bool</span> res <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">await</span> _flutterCalleridPlugin.connectToHidDevice(findDevice);
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">if</span> (res) {
+</span></span><span style="display:flex;"><span>        _connectedCallerIdDevice <span style="color:#ff79c6">=</span> findDevice;
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd;font-style:italic">await</span> startListening();
+</span></span><span style="display:flex;"><span>      } 
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  Future<span style="color:#ff79c6">&lt;</span><span style="color:#8be9fd">void</span><span style="color:#ff79c6">&gt;</span> startListening() <span style="color:#8be9fd;font-style:italic">async</span> {
+</span></span><span style="display:flex;"><span>    _callerIdStreamSubscription<span style="color:#ff79c6">?</span>.cancel();
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// stream
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    _callerIdStreamSubscription <span style="color:#ff79c6">=</span> _flutterCalleridPlugin.callerIdStream.listen((callInfo) <span style="color:#8be9fd;font-style:italic">async</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#6272a4">// Recive data from the plugin
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>
+</span></span><span style="display:flex;"><span>      <span style="color:#6272a4">// Your own logic to parse Map to Model , and search from  DB
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>      CallerIdModel callerIdModel <span style="color:#ff79c6">=</span> CallerIdModel.fromJson(callInfo);
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">if</span> (callerIdModel.caller <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">null</span> <span style="color:#ff79c6">||</span> (callerIdModel.caller <span style="color:#ff79c6">??</span> <span style="color:#f1fa8c">&#34;&#34;</span>).isEmpty) {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span>;
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>      YOUR_OWN_HANDLE_MTHOD(callerIdModel);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">await</span> _flutterCalleridPlugin.startListening(_connectedCallerIdDevice<span style="color:#ff79c6">!</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>  </span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+  
+</div><p>My logic is straightforward: as soon as the number comes in, I look it up in the database and show the result inside a draggable overlay card.</p>
+<h2 id="repo-source-code">Repo Source Code</h2>
+<p><a href="https://github.com/Amber916Young/flutter_callerID">https://github.com/Amber916Young/flutter_callerID</a></p>
+<p>This repo actually combines <strong>CallerID</strong> and <strong>printer support</strong> (USB/WiFi/BLE), which is why it covers quite a lot of things.</p>
+<p>But the core idea is really simple:</p>
+<ul>
+<li>Connect the device over <strong>USB</strong></li>
+<li>Start a thread to <strong>listen for incoming data</strong> from the landline</li>
+<li><strong>Parse</strong> the raw stream</li>
+<li><strong>Return</strong> the clean phone number back to Flutter</li>
+</ul>
+<p>That’s the essential flow. Everything else is just implementation details that vary depending on your hardware and platform.</p>
+
+              </div>
+             <aside class="hidden lg:block tableOfContentContainer" id="tableOfContentContainer">
+              <h3>Table of contents</h3>
+                
+              <nav id="TableOfContents">
+  <ul>
+    <li><a href="#intro">Intro</a></li>
+    <li><a href="#the-flow-how-to-realise">The Flow: How to realise</a></li>
+    <li><a href="#implementation">Implementation</a>
+      <ul>
+        <li><a href="#plugin">Plugin</a></li>
+        <li><a href="#set-up-an-eventchannel-to-receive-streamed-data">Set up an EventChannel to receive streamed data</a></li>
+        <li><a href="#connet-the-device">Connet the device</a></li>
+        <li><a href="#setup-the-thread-for-listening-data-from-incoming-call">Setup the thread for listening data from incoming call</a></li>
+        <li><a href="#logic-in-your-flutter-app">Logic in Your flutter app</a></li>
+      </ul>
+    </li>
+    <li><a href="#repo-source-code">Repo Source Code</a></li>
+  </ul>
+</nav>
+              </aside>
+            </mian>
+          </div>
+            
+      
+
+
+          <div class="my-14">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+ 
+
+
+
+
+  
+
+
+
+<style>
+.resp-sharing-button__link,
+.resp-sharing-button__icon {
+  display: inline-block
+}
+
+.resp-sharing-button__link {
+  text-decoration: none;
+  color: #fff !important;
+  margin: 0.2em
+}
+
+.resp-sharing-button {
+  border-radius: 5px;
+  transition: 25ms ease-out;
+  padding: 0.5em 0.75em;
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+  
+}
+
+.resp-sharing-button__icon svg {
+  width: 1em;
+  height: 1em;
+  margin-right: 0.4em;
+  vertical-align: middle
+}
+
+.resp-sharing-button--small svg {
+  margin: 0;
+  vertical-align: middle
+}
+
+ 
+.resp-sharing-button__icon {
+  stroke: #fff;
+  fill: none
+}
+
+ 
+.resp-sharing-button__icon--solid,
+.resp-sharing-button__icon--solidcircle {
+  fill: #fff;
+  stroke: none
+}
+
+.resp-sharing-button--twitter {
+  background-color: #55acee
+}
+
+.resp-sharing-button--twitter:hover {
+  background-color: #2795e9
+}
+
+.resp-sharing-button--pinterest {
+  background-color: #bd081c
+}
+
+.resp-sharing-button--pinterest:hover {
+  background-color: #8c0615
+}
+
+.resp-sharing-button--facebook {
+  background-color: #3b5998
+}
+
+.resp-sharing-button--facebook:hover {
+  background-color: #2d4373
+}
+
+.resp-sharing-button--tumblr {
+  background-color: #35465C
+}
+
+.resp-sharing-button--tumblr:hover {
+  background-color: #222d3c
+}
+
+.resp-sharing-button--reddit {
+  background-color: #ff4500
+}
+
+.resp-sharing-button--reddit:hover {
+  background-color: #3a80c1
+}
+
+.resp-sharing-button--google {
+  background-color: #dd4b39
+}
+
+.resp-sharing-button--google:hover {
+  background-color: #c23321
+}
+
+.resp-sharing-button--linkedin {
+  background-color: #0077b5
+}
+
+.resp-sharing-button--linkedin:hover {
+  background-color: #046293
+}
+
+.resp-sharing-button--email {
+  background-color: #777
+}
+
+.resp-sharing-button--email:hover {
+  background-color: #5e5e5e
+}
+
+.resp-sharing-button--xing {
+  background-color: #1a7576
+}
+
+.resp-sharing-button--xing:hover {
+  background-color: #114c4c
+}
+
+.resp-sharing-button--whatsapp {
+  background-color: #25D366
+}
+
+.resp-sharing-button--whatsapp:hover {
+  background-color: #1da851
+}
+
+.resp-sharing-button--hackernews {
+background-color: #FF6600
+}
+.resp-sharing-button--hackernews:hover, .resp-sharing-button--hackernews:focus {   background-color: #FB6200 }
+
+.resp-sharing-button--vk {
+  background-color: #507299
+}
+
+.resp-sharing-button--vk:hover {
+  background-color: #43648c
+}
+
+.resp-sharing-button--facebook {
+  background-color: #3b5998;
+  border-color: #3b5998;
+}
+
+.resp-sharing-button--facebook:hover,
+.resp-sharing-button--facebook:active {
+  background-color: #2d4373;
+  border-color: #2d4373;
+}
+
+.resp-sharing-button--twitter {
+  background-color: #55acee;
+  border-color: #55acee;
+}
+
+.resp-sharing-button--twitter:hover,
+.resp-sharing-button--twitter:active {
+  background-color: #2795e9;
+  border-color: #2795e9;
+}
+
+.resp-sharing-button--tumblr {
+  background-color: #35465C;
+  border-color: #35465C;
+}
+
+.resp-sharing-button--tumblr:hover,
+.resp-sharing-button--tumblr:active {
+  background-color: #222d3c;
+  border-color: #222d3c;
+}
+
+.resp-sharing-button--email {
+  background-color: #777777;
+  border-color: #777777;
+}
+
+.resp-sharing-button--email:hover,
+.resp-sharing-button--email:active {
+  background-color: #5e5e5e;
+  border-color: #5e5e5e;
+}
+
+.resp-sharing-button--pinterest {
+  background-color: #bd081c;
+  border-color: #bd081c;
+}
+
+.resp-sharing-button--pinterest:hover,
+.resp-sharing-button--pinterest:active {
+  background-color: #8c0615;
+  border-color: #8c0615;
+}
+
+.resp-sharing-button--linkedin {
+  background-color: #0077b5;
+  border-color: #0077b5;
+}
+
+.resp-sharing-button--linkedin:hover,
+.resp-sharing-button--linkedin:active {
+  background-color: #046293;
+  border-color: #046293;
+}
+
+.resp-sharing-button--reddit {
+  background-color: #ff4500;
+  border-color: #ff4500;
+}
+
+.resp-sharing-button--reddit:hover,
+.resp-sharing-button--reddit:active {
+  background-color: #ff5700;
+  border-color: #ff5700;
+}
+
+.resp-sharing-button--xing {
+  background-color: #1a7576;
+  border-color: #1a7576;
+}
+
+.resp-sharing-button--xing:hover
+.resp-sharing-button--xing:active {
+  background-color: #114C4C;
+  border-color: #114C4C;
+}
+
+.resp-sharing-button--whatsapp {
+  background-color: #25D366;
+  border-color: #25D366;
+}
+
+.resp-sharing-button--whatsapp:hover,
+.resp-sharing-button--whatsapp:active {
+  background-color: #1DA851;
+  border-color: #1DA851;
+}
+
+.resp-sharing-button--hackernews {
+  background-color: #FF6600;
+  border-color: #FF6600;
+}
+
+.resp-sharing-button--hackernews:hover
+.resp-sharing-button--hackernews:active {
+  background-color: #FB6200;
+  border-color: #FB6200;
+}
+
+.resp-sharing-button--vk {
+  background-color: #507299;
+  border-color: #507299;
+}
+
+.resp-sharing-button--vk:hover
+.resp-sharing-button--vk:active {
+  background-color: #43648c;
+  border-color: #43648c;
+}
+
+.resp-sharing-button--telegram {
+  background-color: #54A9EB;
+}
+
+.resp-sharing-button--telegram:hover {
+  background-color: #4B97D1;
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+<a class="resp-sharing-button__link" href="mailto:?subject=How%20to%20read%20Data%20from%20USB%20CallerID%20deivce%20in%20Flutter&amp;body=https://hupochuanbird.github.io/posts/callerid_flutter/" target="_self" rel="noopener" aria-label="" title="E-Mail">
+  <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z"/></svg>
+
+    
+    </div>
+  </div>
+</a>
+
+
+
+
+
+
+<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://hupochuanbird.github.io/posts/callerid_flutter/&amp;title=How%20to%20read%20Data%20from%20USB%20CallerID%20deivce%20in%20Flutter&amp;summary=How%20to%20read%20Data%20from%20USB%20CallerID%20deivce%20in%20Flutter&amp;https://hupochuanbird.github.io/posts/callerid_flutter/" target="_blank" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.5 21.5h-5v-13h5v13zM4 6.5C2.5 6.5 1.5 5.3 1.5 4s1-2.4 2.5-2.4c1.6 0 2.5 1 2.6 2.5 0 1.4-1 2.5-2.6 2.5zm11.5 6c-1 0-2 1-2 2v7h-5v-13h5V10s1.6-1.5 4-1.5c3 0 5 2.2 5 6.3v6.7h-5v-7c0-1-1-2-2-2z"/></svg>
+
+    
+    </div>
+  </div>
+</a>
+
+
+
+
+<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=https://hupochuanbird.github.io/posts/callerid_flutter/&amp;resubmit=true&amp;title=How%20to%20read%20Data%20from%20USB%20CallerID%20deivce%20in%20Flutter" target="_blank" rel="noopener" aria-label="" title="Reddit">
+  <div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z"/></svg>
+
+    
+    </div>
+  </div>
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+
+          <div class="pagination"><div class="paginator" >
+    
+    
+        <a class="next btn" style="font-size: small;" href="https://hupochuanbird.github.io/posts/flutter-drift-localdb/">Building Offline-Ready Apps … <i class="fa-solid fa-arrow-right"></i></a>
+       
+    
+</div></div>
+          <div class="comment-block">
+
+ <div class="giscus">
+    <iframe class="giscus-frame">
+    
+    </iframe>
+ </div>
+ <script src="https://giscus.app/client.js"
+ data-repo="hupochuanbird/hupochuanbird.github.io"
+ data-repo-id="R_kgDOLShynw"
+ data-category="Announcements"
+ data-category-id="DIC_kwDOLShyn84CdQiv"
+ data-mapping="pathname"
+ data-strict="0"
+ data-reactions-enabled="1"
+ data-emit-metadata="0"
+ data-input-position="bottom"
+ data-theme="light_tritanopia"
+ data-lang="en"
+ crossorigin="anonymous"
+ async>
+</script></div>
+        </div>
+
+    
   </section>
+
+  <script>
+
+
+window.addEventListener('DOMContentLoaded', () => {
+        const observerForTableOfContentActiveState = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                const id = entry.target.getAttribute('id');
+                if (entry.intersectionRatio > 0) {
+                  clearActiveStatesInTableOfContents();
+                  document.querySelector(`aside nav li a[href="#${id}"]`).parentElement.classList.add('active');
+              }
+          });
+      });
+      document.querySelectorAll('h1[id],h2[id],h3[id],h4[id]').forEach((section) => {
+          observerForTableOfContentActiveState.observe(section);
+      });
+
+    });
+
+    function clearActiveStatesInTableOfContents() {
+        document.querySelectorAll('aside nav li').forEach((section) => {
+            section.classList.remove('active');
+        });
+    }
+
+  </script>
             </main>
              <footer class="mt-20">
     <div class="footer">
