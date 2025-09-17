@@ -17,13 +17,6 @@
       <description>&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;&#xA;&lt;p&gt;In the restaurant ordering scenario, phone orders are still quite common (though to be honest, I personally think this approach feels pretty traditional, even a bit outdated). When a restaurant takes a call, the staff usually has to ask for the phone number, address, and name, then manually type everything into the system. This process is not only slow but also prone to mistakes.&lt;/p&gt;&#xA;&lt;p&gt;If we could recognize the phone number right when the call comes in, and directly match it with the customer’s past information (like delivery address or frequently ordered dishes), we could save a lot of repetitive work. That’s exactly what I’m trying to do here: integrate a CallerID device into a Flutter app. When a customer calls, the system instantly recognizes the number, and if the customer already exists in the database, their info pops up automatically—no manual input needed.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>SSL Configration in Ec2 Namecheap</title>
-      <link>https://hupochuanbird.github.io/posts/ssl-config-in-ec2-namecheap/</link>
-      <pubDate>Fri, 13 Sep 2024 09:26:31 +0100</pubDate>
-      <guid>https://hupochuanbird.github.io/posts/ssl-config-in-ec2-namecheap/</guid>
-      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;In this section, I will show you how to config the SSL in Namecheap and AWS EC2.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;preparation&#34;&gt;Preparation&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Buy a domain name&lt;/li&gt;&#xA;&lt;li&gt;Buy a SSL certificate&lt;/li&gt;&#xA;&lt;li&gt;Generate a key and csr file&lt;/li&gt;&#xA;&lt;li&gt;Config the SSL in Namecheap&lt;/li&gt;&#xA;&lt;li&gt;Config the SSL in AWS EC2 ubuntu&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;buy-a-domain-name&#34;&gt;Buy a domain name&lt;/h2&gt;&#xA;&lt;p&gt;Go to &lt;a href=&#34;https://www.namecheap.com/&#34;&gt;Namecheap&lt;/a&gt; and buy a domain name.&lt;/p&gt;&#xA;&lt;h2 id=&#34;buy-a-ssl-certificate&#34;&gt;Buy a SSL certificate&lt;/h2&gt;&#xA;&lt;p&gt;Go to Dashboard -&amp;gt; SSL Certificates -&amp;gt; Buy SSL Certificates.&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>Ubuntu 22.04.3: Chinese Search in Flarum and How to fix &#39;PHP Notice: fwrite(): send failed with errno=32 Broken pipe&#39; error in my case</title>
       <link>https://hupochuanbird.github.io/posts/chinese-search-in-flarum/</link>
       <pubDate>Sun, 11 Feb 2024 19:24:37 +0000</pubDate>
